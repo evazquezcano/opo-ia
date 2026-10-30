@@ -23,10 +23,10 @@ OUT = ROOT / "resultados_reintento"
 OUT.mkdir(exist_ok=True)
 IDS = {
     "AS-primaria", "AS-eso", "AS-bachillerato",
-    "CB-primaria", "CB-eso", "CB-bachillerato",
-    "CV-eso", "NA-primaria", "NA-eso",
+    "CV-eso",
     "RI-primaria", "RI-eso", "RI-bachillerato"
 }
+
 MAX_BYTES = 40 * 1024 * 1024
 OFFICIAL_DOMAINS = {
     "www.educastur.es", "miprincipado.asturias.es",
