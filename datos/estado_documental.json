@@ -1,0 +1,1322 @@
+{
+  "resumen": {
+    "fecha_utc": "2026-10-30T19:27:51.272578+00:00",
+    "manifiestos_procesados": 5,
+    "referencias_documentales_recuperadas": 50,
+    "documentos_unicos_por_sha256": 42,
+    "documentos_con_identificacion_preliminar": 34,
+    "documentos_descargados_sin_identificacion": 7,
+    "documentos_con_error_extraccion": 1,
+    "faltantes_en_archivos": 0,
+    "registros_autonomicos_catalogados": 51,
+    "curriculos_completamente_verificados": 0,
+    "materias_habilitadas_para_generar": 0,
+    "alerta": "Documento descargado o norma identificada NO implica anexos completos, vigencia ni cobertura curricular. Requiere comprobación humana íntegra por materia y curso.",
+    "procedencia": "GitHub Actions: descargas de lotes y reintentos."
+  },
+  "documentos": [
+    {
+      "tipo": "HTML",
+      "bytes": 518019,
+      "sha256": "0ba19a3428b0db5ecb5b54c93f615fc27958d1a065bae801ffb6debc1ad68d2d",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Real Decreto 157/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": true,
+      "indicio_criterios_evaluacion": true,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 408555,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "0ba19a3428b0db5e",
+      "identificadores_de_curriculo": [
+        "EST-primaria"
+      ],
+      "normas_esperadas": [
+        "Real Decreto 157/2022"
+      ],
+      "urls_de_origen": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2022-3296"
+      ],
+      "lotes": [
+        "lote25/lote_25/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 214649,
+      "sha256": "23d94418e8e8447761478bc5d6230bcb74f6fcbfad041c7af6f81c485260f4c6",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Decreto 155/2022"
+      ],
+      "indicio_anexos": false,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": false,
+      "muestra_caracteres": 6995,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "23d94418e8e84477",
+      "identificadores_de_curriculo": [
+        "GA-primaria"
+      ],
+      "normas_esperadas": [
+        "Decreto 155/2022"
+      ],
+      "urls_de_origen": [
+        "https://transparencia.xunta.gal/tema/informacion-de-relevancia-xuridica/normativa-en-tramitacion/aprobada-e-publicada-no-dog/-/nt/0609/decreto-1552022-15-setembro-polo-que-establecen-ordenacion-curriculo-educacion"
+      ],
+      "lotes": [
+        "lote25/lote_25/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 100356,
+      "sha256": "276e1058fd8fe23ec23ed44c6a2850db95c76553a973c7435bb26373014713d8",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Decreto Foral 71/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 81990,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "276e1058fd8fe23e",
+      "identificadores_de_curriculo": [
+        "NA-eso"
+      ],
+      "normas_esperadas": [
+        "Decreto Foral 71/2022"
+      ],
+      "urls_de_origen": [
+        "https://www.lexnavarra.navarra.es/detalle.asp?r=54997"
+      ],
+      "lotes": [
+        "reintento1/manifest.json"
+      ]
+    },
+    {
+      "tipo": "PDF",
+      "bytes": 447982,
+      "sha256": "2cbcd4107b838d3430b57dcdb46e6f780d3f04fa274d5c23e57e1e69bcc0afbf",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "paginas": 39,
+      "paginas_muestreadas": 15,
+      "normas_esperadas_identificadas": [],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": true,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 51257,
+      "estado": "DESCARGA_NO_IDENTIFICADA",
+      "identificador_documental": "2cbcd4107b838d34",
+      "identificadores_de_curriculo": [
+        "EST-bach-2026"
+      ],
+      "normas_esperadas": [
+        "Real Decreto 535/2026, modificación de Bachillerato"
+      ],
+      "urls_de_origen": [
+        "https://www.boe.es/eli/es/rd/2026/06/30/535/dof/spa/pdf"
+      ],
+      "lotes": [
+        "inicial/manifest.json",
+        "lote25/lote_25/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 26782,
+      "sha256": "40a3dcd0605eb4be08468605af54952eaabc877bc91481af09d51cfa62b87aa2",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Decreto 76/2023",
+        "Decreto 77/2023"
+      ],
+      "indicio_anexos": false,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": false,
+      "muestra_caracteres": 2881,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "40a3dcd0605eb4be",
+      "identificadores_de_curriculo": [
+        "PV-bachillerato",
+        "PV-eso",
+        "PV-primaria"
+      ],
+      "normas_esperadas": [
+        "Decreto 76/2023",
+        "Decreto 77/2023"
+      ],
+      "urls_de_origen": [
+        "https://www.euskadi.eus/gobierno-vasco/-/desarrollo-curricular/"
+      ],
+      "lotes": [
+        "lote25/lote_25/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 1530422,
+      "sha256": "42a164fcdde485fd43084d8733f56303eff4525322a5afd16066ee43b805969d",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Real Decreto 243/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": true,
+      "indicio_criterios_evaluacion": true,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 1304289,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "42a164fcdde485fd",
+      "identificadores_de_curriculo": [
+        "EST-bachillerato"
+      ],
+      "normas_esperadas": [
+        "Real Decreto 243/2022"
+      ],
+      "urls_de_origen": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2022-5521"
+      ],
+      "lotes": [
+        "inicial/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 216851,
+      "sha256": "43329a066113761dd976b09065163faab2e58902b2b9c87d558f01cf058ba0c7",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Decreto 156/2022"
+      ],
+      "indicio_anexos": false,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": false,
+      "muestra_caracteres": 7406,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "43329a066113761d",
+      "identificadores_de_curriculo": [
+        "GA-eso"
+      ],
+      "normas_esperadas": [
+        "Decreto 156/2022"
+      ],
+      "urls_de_origen": [
+        "https://transparencia.xunta.gal/es/tema/informacion-de-relevancia-xuridica/normativa-en-tramitacion/aprobada-e-publicada-no-dog/-/nt/0649/decreto-1172023-27-julio-por-que-modifica-decreto-1562022-15-septiembre-por-que"
+      ],
+      "lotes": [
+        "lote25/lote_25/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 77882,
+      "sha256": "457a7d8d82f96324c56824ed35fabf8ff5c0ad7785e2346f397d616121cfcc37",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Decreto 102/2023"
+      ],
+      "indicio_anexos": false,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": false,
+      "muestra_caracteres": 1255,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "457a7d8d82f96324",
+      "identificadores_de_curriculo": [
+        "AN-eso"
+      ],
+      "normas_esperadas": [
+        "Decreto 102/2023"
+      ],
+      "urls_de_origen": [
+        "https://ws040.juntadeandalucia.es/sedeboja/web/textos-consolidados/resumen-ficha?_resumenrecursolegal_WAR_sedebojatextoconsolidadoportlet_recursoLegalAbstractoId=34716&p_p_id=resumenrecursolegal_WAR_sedebojatextoconsolidadoportlet&p_p_lifecycle=0"
+      ],
+      "lotes": [
+        "lote0/lote_0/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 35893,
+      "sha256": "4e30750f155a7c18afa1af87f69df348e5781fcfb75c6d15b196e50034e26a9d",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Decreto 110/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 14790,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "4e30750f155a7c18",
+      "identificadores_de_curriculo": [
+        "EX-eso"
+      ],
+      "normas_esperadas": [
+        "Decreto 110/2022"
+      ],
+      "urls_de_origen": [
+        "https://doe.juntaex.es/otrosFormatos/html.php?anio=2026&doe=1480o&xml=2026040196"
+      ],
+      "lotes": [
+        "lote0/lote_0/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 129840,
+      "sha256": "52c10d88003e6ddb183c6088106cb71e08ab635d99e5f27effc900420a605b17",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Orden ECD/1172/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 8034,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "52c10d88003e6ddb",
+      "identificadores_de_curriculo": [
+        "AR-eso"
+      ],
+      "normas_esperadas": [
+        "Orden ECD/1172/2022"
+      ],
+      "urls_de_origen": [
+        "https://educa.aragon.es/-/normativa-eso"
+      ],
+      "lotes": [
+        "lote0/lote_0/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 202825,
+      "sha256": "54db5159fd2a877c2c51ef337efe45ca060eca23725eeae11a976cd4ff7ce6ae",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Decreto 30/2023"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": true,
+      "indicio_criterios_evaluacion": true,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 140652,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "54db5159fd2a877c",
+      "identificadores_de_curriculo": [
+        "CN-bachillerato",
+        "CN-eso",
+        "CN-eso-bach"
+      ],
+      "normas_esperadas": [
+        "Decreto 30/2023",
+        "Decreto 30/2023, Canarias"
+      ],
+      "urls_de_origen": [
+        "https://www.gobiernodecanarias.org/boc/2023/058/001.html"
+      ],
+      "lotes": [
+        "inicial/manifest.json",
+        "lote0/lote_0/manifest.json"
+      ]
+    },
+    {
+      "tipo": "PDF",
+      "bytes": 4796643,
+      "sha256": "664f5f9a8bacde0c78d3f9c8405eaeb43f9ba09146c97a93814d2f9c1bc811df",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "paginas": 568,
+      "paginas_muestreadas": 16,
+      "normas_esperadas_identificadas": [
+        "Decreto 235/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": true,
+      "indicio_criterios_evaluacion": true,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 47263,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "664f5f9a8bacde0c",
+      "identificadores_de_curriculo": [
+        "MU-eso"
+      ],
+      "normas_esperadas": [
+        "Decreto 235/2022"
+      ],
+      "urls_de_origen": [
+        "https://www.borm.es/services/anuncio/ano/2022/numero/6346/pdf"
+      ],
+      "lotes": [
+        "lote25/lote_25/manifest.json"
+      ]
+    },
+    {
+      "tipo": "PDF",
+      "bytes": 1896544,
+      "sha256": "7087c7d8cdd5a172ecb620a8742acb43864b17563984c407b5f4d498e6399343",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "paginas": 112,
+      "paginas_muestreadas": 16,
+      "normas_esperadas_identificadas": [
+        "Decreto 61/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": true,
+      "indicio_criterios_evaluacion": true,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 63483,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "7087c7d8cdd5a172",
+      "identificadores_de_curriculo": [
+        "MD-primaria",
+        "MD-primaria-2022"
+      ],
+      "normas_esperadas": [
+        "Decreto 61/2022",
+        "Decreto 61/2022, Primaria"
+      ],
+      "urls_de_origen": [
+        "https://www.bocm.es/boletin/CM_Orden_BOCM/2022/07/18/BOCM-20220718-1.PDF"
+      ],
+      "lotes": [
+        "inicial/manifest.json",
+        "lote25/lote_25/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 518019,
+      "sha256": "713c7db83cedaa411b1819a068cc01ae48292f9d78626e240863ca9bd1ff92d3",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Real Decreto 157/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": true,
+      "indicio_criterios_evaluacion": true,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 408555,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "713c7db83cedaa41",
+      "identificadores_de_curriculo": [
+        "EST-primaria"
+      ],
+      "normas_esperadas": [
+        "Real Decreto 157/2022"
+      ],
+      "urls_de_origen": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2022-3296"
+      ],
+      "lotes": [
+        "inicial/manifest.json"
+      ]
+    },
+    {
+      "tipo": "PDF",
+      "bytes": 1457376,
+      "sha256": "715c5472914690ad6aa86e32709135c719418d665cfaf6a78f4455207a15a9ce",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "paginas": 352,
+      "paginas_muestreadas": 16,
+      "normas_esperadas_identificadas": [
+        "Decreto 73/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": true,
+      "indicio_criterios_evaluacion": true,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 41859,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "715c5472914690ad",
+      "identificadores_de_curriculo": [
+        "CB-bachillerato",
+        "CB-eso"
+      ],
+      "normas_esperadas": [
+        "Decreto 73/2022"
+      ],
+      "urls_de_origen": [
+        "https://cantabriastec.org/wp-content/uploads/2022/08/boc-05.08.22-curriculum-ESO-BACH_compressed-2-1-1-352.pdf"
+      ],
+      "lotes": [
+        "reintento1/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 112251,
+      "sha256": "72044b7522aa0ce863e8c42a2e736700a89d70d1ef30b5a4b4a3ad1ebb190edd",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Decreto 108/2022"
+      ],
+      "indicio_anexos": false,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": false,
+      "muestra_caracteres": 5987,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "72044b7522aa0ce8",
+      "identificadores_de_curriculo": [
+        "CV-bachillerato"
+      ],
+      "normas_esperadas": [
+        "Decreto 108/2022"
+      ],
+      "urls_de_origen": [
+        "https://ceice.gva.es/es/web/ordenacion-academica/bachillerato"
+      ],
+      "lotes": [
+        "lote0/lote_0/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 83462,
+      "sha256": "80c2b16cba50d814b1a8070f1bf3d49bda1a8f6a1f22e7a3a866677de87c343a",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Orden ECD/1112/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 5425,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "80c2b16cba50d814",
+      "identificadores_de_curriculo": [
+        "AR-primaria"
+      ],
+      "normas_esperadas": [
+        "Orden ECD/1112/2022"
+      ],
+      "urls_de_origen": [
+        "https://educa.aragon.es/-/normativa-primaria"
+      ],
+      "lotes": [
+        "lote0/lote_0/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 280435,
+      "sha256": "821473127783e48c0a123face8fde86d9457c4b3b93b93ee32aa44c29327c858",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [],
+      "indicio_anexos": false,
+      "indicio_competencias_especificas": true,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": false,
+      "muestra_caracteres": 7928,
+      "estado": "DESCARGA_NO_IDENTIFICADA",
+      "identificador_documental": "821473127783e48c",
+      "identificadores_de_curriculo": [
+        "CT-bachillerato"
+      ],
+      "normas_esperadas": [
+        "Decreto 171/2022"
+      ],
+      "urls_de_origen": [
+        "https://projectes.xtec.cat/nou-curriculum/batxillerat/decret-batxillerat/"
+      ],
+      "lotes": [
+        "lote0/lote_0/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 260896,
+      "sha256": "9beb66f4ddf1620fd1b146ada87b970e2c63b1b702c78427d6fb4ead9e90958f",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Decreto 41/2025",
+        "Decreto 42/2025",
+        "Decreto 43/2025"
+      ],
+      "indicio_anexos": false,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": false,
+      "muestra_caracteres": 4106,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "9beb66f4ddf1620f",
+      "identificadores_de_curriculo": [
+        "IB-bachillerato",
+        "IB-eso",
+        "IB-primaria"
+      ],
+      "normas_esperadas": [
+        "Decreto 41/2025",
+        "Decreto 42/2025",
+        "Decreto 43/2025"
+      ],
+      "urls_de_origen": [
+        "https://www.caib.es/webgoib/es/contenido-relacionado?category=158414&delta=20&start=2"
+      ],
+      "lotes": [
+        "lote0/lote_0/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 75243,
+      "sha256": "9e25a4b3f898c9b325569cea115c0f137ac51ab31ea3b4b123d78465dc1d1b87",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Decreto 38/2022",
+        "Decreto 39/2022",
+        "Decreto 40/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": false,
+      "muestra_caracteres": 18875,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "9e25a4b3f898c9b3",
+      "identificadores_de_curriculo": [
+        "CYL-bachillerato",
+        "CYL-eso",
+        "CYL-primaria"
+      ],
+      "normas_esperadas": [
+        "Decreto 38/2022",
+        "Decreto 39/2022",
+        "Decreto 40/2022"
+      ],
+      "urls_de_origen": [
+        "https://bocyl.jcyl.es/boletin.do?fechaBoletin=30%2F09%2F2022"
+      ],
+      "lotes": [
+        "lote0/lote_0/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 78002,
+      "sha256": "9f71c0e6c4988da5736255ff54684bfe83594308ebaa7ab0d7836907cb180b53",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Decreto 103/2023"
+      ],
+      "indicio_anexos": false,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": false,
+      "muestra_caracteres": 1272,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "9f71c0e6c4988da5",
+      "identificadores_de_curriculo": [
+        "AN-bachillerato"
+      ],
+      "normas_esperadas": [
+        "Decreto 103/2023"
+      ],
+      "urls_de_origen": [
+        "https://ws040.juntadeandalucia.es/sedeboja/web/textos-consolidados/resumen-ficha?_resumenrecursolegal_WAR_sedebojatextoconsolidadoportlet_recursoLegalAbstractoId=34717&p_p_id=resumenrecursolegal_WAR_sedebojatextoconsolidadoportlet&p_p_lifecycle=0"
+      ],
+      "lotes": [
+        "lote0/lote_0/manifest.json"
+      ]
+    },
+    {
+      "tipo": "PDF",
+      "bytes": 1963293,
+      "sha256": "a276e96a114c9727e464c4c5fcb989040aff9b774dd1a250e7ea665bb205ced4",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "paginas": 233,
+      "paginas_muestreadas": 16,
+      "normas_esperadas_identificadas": [],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": true,
+      "indicio_criterios_evaluacion": true,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 50414,
+      "estado": "DESCARGA_NO_IDENTIFICADA",
+      "identificador_documental": "a276e96a114c9727",
+      "identificadores_de_curriculo": [
+        "MU-primaria"
+      ],
+      "normas_esperadas": [
+        "Decreto 209/2022"
+      ],
+      "urls_de_origen": [
+        "https://www.borm.es/services/anuncio/ano/2022/numero/5907/pdf"
+      ],
+      "lotes": [
+        "lote25/lote_25/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 64902,
+      "sha256": "a4c8ed0d2a661445d29a48596f5295042cdc6fbd41c378f9f6c6ec1231b54b39",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Decreto Foral 72/2022"
+      ],
+      "indicio_anexos": false,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": false,
+      "muestra_caracteres": 6213,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "a4c8ed0d2a661445",
+      "identificadores_de_curriculo": [
+        "NA-bachillerato"
+      ],
+      "normas_esperadas": [
+        "Decreto Foral 72/2022"
+      ],
+      "urls_de_origen": [
+        "https://www.educacion.navarra.es/en_GB/web/dpto/profesorado/curriculos-y-normativa/bachillerato"
+      ],
+      "lotes": [
+        "lote25/lote_25/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 68037,
+      "sha256": "a5f5bf85df4e7f3273280ca9966673269540cb7289de20ddee51a70baceb0e9a",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Decreto Foral 67/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 53309,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "a5f5bf85df4e7f32",
+      "identificadores_de_curriculo": [
+        "NA-primaria"
+      ],
+      "normas_esperadas": [
+        "Decreto Foral 67/2022"
+      ],
+      "urls_de_origen": [
+        "https://www.lexnavarra.navarra.es/detalle.asp?r=54950"
+      ],
+      "lotes": [
+        "reintento1/manifest.json"
+      ]
+    },
+    {
+      "tipo": "PDF",
+      "bytes": 2835744,
+      "sha256": "abd5f51b1b7a8aab413c4975ee8ef538a6b0936c898c139514ee41820c6f1463",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "paginas": 176,
+      "paginas_muestreadas": 16,
+      "normas_esperadas_identificadas": [
+        "Decreto 66/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": true,
+      "indicio_criterios_evaluacion": true,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 44355,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "abd5f51b1b7a8aab",
+      "identificadores_de_curriculo": [
+        "CB-primaria"
+      ],
+      "normas_esperadas": [
+        "Decreto 66/2022"
+      ],
+      "urls_de_origen": [
+        "https://personales.unican.es/van-vaerenbe/doc/legal/BOC-2022-5545.pdf"
+      ],
+      "lotes": [
+        "reintento1/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 48123,
+      "sha256": "b49e7e2028ba285620f6b68e03543574a8e52251bcfbf10d54d2bb1f63d9020b",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Decreto 109/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 22994,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "b49e7e2028ba2856",
+      "identificadores_de_curriculo": [
+        "EX-bachillerato"
+      ],
+      "normas_esperadas": [
+        "Decreto 109/2022"
+      ],
+      "urls_de_origen": [
+        "https://doe.juntaex.es/otrosFormatos/html.php?anio=2025&doe=1350o&xml=2025040124"
+      ],
+      "lotes": [
+        "lote25/lote_25/manifest.json"
+      ]
+    },
+    {
+      "tipo": "PDF",
+      "bytes": 125561,
+      "sha256": "b77c3e24041b2e310c6079d895911c1f9e590c9cf42ede621203568ef43d734a",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "paginas": 5,
+      "paginas_muestreadas": 5,
+      "normas_esperadas_identificadas": [],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 19455,
+      "estado": "DESCARGA_NO_IDENTIFICADA",
+      "identificador_documental": "b77c3e24041b2e31",
+      "identificadores_de_curriculo": [
+        "MD-2024-mod"
+      ],
+      "normas_esperadas": [
+        "Decreto 59/2024, modificación"
+      ],
+      "urls_de_origen": [
+        "https://bocm.es/boletin/CM_Orden_BOCM/2024/06/13/BOCM-20240613-2.PDF"
+      ],
+      "lotes": [
+        "lote25/lote_25/manifest.json"
+      ]
+    },
+    {
+      "tipo": "PDF",
+      "bytes": 1539175,
+      "sha256": "be5d3d07c9362b533eaa60a5e097e2f1dfcf5e185fa0661a9ed929826ef05fd6",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "paginas": 173,
+      "paginas_muestreadas": 16,
+      "normas_esperadas_identificadas": [
+        "Decreto 211/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": true,
+      "indicio_criterios_evaluacion": true,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 59214,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "be5d3d07c9362b53",
+      "identificadores_de_curriculo": [
+        "CN-primaria"
+      ],
+      "normas_esperadas": [
+        "Decreto 211/2022"
+      ],
+      "urls_de_origen": [
+        "https://www3.gobiernodecanarias.org/libroazul/pdf/79159.pdf"
+      ],
+      "lotes": [
+        "lote0/lote_0/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 933106,
+      "sha256": "bf27cc7e4ead3b1337daa72704672953ce18c7321f41627b2f0f45de486f83fc",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Real Decreto 217/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": true,
+      "indicio_criterios_evaluacion": true,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 785421,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "bf27cc7e4ead3b13",
+      "identificadores_de_curriculo": [
+        "EST-eso"
+      ],
+      "normas_esperadas": [
+        "Real Decreto 217/2022"
+      ],
+      "urls_de_origen": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2022-4975"
+      ],
+      "lotes": [
+        "inicial/manifest.json"
+      ]
+    },
+    {
+      "tipo": "PDF",
+      "bytes": 7718510,
+      "sha256": "bfac82153cb0dc4e9246b5e94f278eae401ff9ce00f81b856135882cb26d348f",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "paginas": 382,
+      "paginas_muestreadas": 16,
+      "normas_esperadas_identificadas": [
+        "Decreto 64/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": true,
+      "indicio_criterios_evaluacion": true,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 55350,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "bfac82153cb0dc4e",
+      "identificadores_de_curriculo": [
+        "MD-bach-2022",
+        "MD-bachillerato"
+      ],
+      "normas_esperadas": [
+        "Decreto 64/2022",
+        "Decreto 64/2022, Bachillerato"
+      ],
+      "urls_de_origen": [
+        "https://www.bocm.es/boletin/CM_Orden_BOCM/2022/07/26/BOCM-20220726-1.PDF"
+      ],
+      "lotes": [
+        "inicial/manifest.json",
+        "lote25/lote_25/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 216823,
+      "sha256": "c2fc2ed7611721f95869354b129ea574d19016cc9a71d4453471f5c23063608a",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Decreto 157/2022"
+      ],
+      "indicio_anexos": false,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": false,
+      "muestra_caracteres": 7480,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "c2fc2ed7611721f9",
+      "identificadores_de_curriculo": [
+        "GA-bachillerato"
+      ],
+      "normas_esperadas": [
+        "Decreto 157/2022"
+      ],
+      "urls_de_origen": [
+        "https://transparencia.xunta.gal/es/tema/informacion-de-relevancia-xuridica/normativa-en-tramitacion/aprobada-e-publicada-no-dog/-/nt/0672/decreto-1182023-27-julio-por-que-modifica-decreto-1572022-15-septiembre-por-que"
+      ],
+      "lotes": [
+        "lote25/lote_25/manifest.json"
+      ]
+    },
+    {
+      "tipo": "PDF",
+      "bytes": 78678,
+      "sha256": "c51bc48073a3ef6bda28ec94015840aad06d283da7a6f17bd5cac305763197d1",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "paginas": 1,
+      "paginas_muestreadas": 1,
+      "normas_esperadas_identificadas": [
+        "Corrección de errores del Decreto 59/2024"
+      ],
+      "indicio_anexos": false,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": false,
+      "muestra_caracteres": 2389,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "c51bc48073a3ef6b",
+      "identificadores_de_curriculo": [
+        "MD-2024-fe"
+      ],
+      "normas_esperadas": [
+        "Corrección de errores del Decreto 59/2024"
+      ],
+      "urls_de_origen": [
+        "https://www.bocm.es/boletin/CM_Orden_BOCM/2024/06/19/BOCM-20240619-1.PDF"
+      ],
+      "lotes": [
+        "inicial/manifest.json",
+        "lote25/lote_25/manifest.json"
+      ]
+    },
+    {
+      "tipo": "PDF",
+      "bytes": 3094916,
+      "sha256": "c8debf0c71ea350752c84113fe7d68434f49006340ba6ca5af4c39c31e92e777",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "estado": "ERROR_EXTRACCION",
+      "error": "Stream has ended unexpectedly",
+      "identificador_documental": "c8debf0c71ea3507",
+      "identificadores_de_curriculo": [
+        "CV-primaria"
+      ],
+      "normas_esperadas": [
+        "Decreto 106/2022"
+      ],
+      "urls_de_origen": [
+        "https://dogv.gva.es/datos/2022/08/10/pdf/2022_7572.pdf"
+      ],
+      "lotes": [
+        "lote0/lote_0/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 1530422,
+      "sha256": "d723cf2d60e3900658d62c65abd3deac48046b2afc11ebe4c08f14181576313e",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Real Decreto 243/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": true,
+      "indicio_criterios_evaluacion": true,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 1304289,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "d723cf2d60e39006",
+      "identificadores_de_curriculo": [
+        "EST-bachillerato"
+      ],
+      "normas_esperadas": [
+        "Real Decreto 243/2022"
+      ],
+      "urls_de_origen": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2022-5521"
+      ],
+      "lotes": [
+        "lote25/lote_25/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 531673,
+      "sha256": "dd50a5a174a8cd37ebbf1f68e1aaacdc36f83a161f9b9e2c69e48c26452a016a",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [],
+      "indicio_anexos": false,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": false,
+      "muestra_caracteres": 33759,
+      "estado": "DESCARGA_NO_IDENTIFICADA",
+      "identificador_documental": "dd50a5a174a8cd37",
+      "identificadores_de_curriculo": [
+        "CT-eso",
+        "CT-primaria"
+      ],
+      "normas_esperadas": [
+        "Decreto 175/2022"
+      ],
+      "urls_de_origen": [
+        "https://educacio.gencat.cat/ca/departament/normativa/normativa-educacio/"
+      ],
+      "lotes": [
+        "lote0/lote_0/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 160997,
+      "sha256": "ddbdea246f050002d1dccf071feacf1a4be5081e13f613e8daa10051f5f98736",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Decreto 107/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 65584,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "ddbdea246f050002",
+      "identificadores_de_curriculo": [
+        "EX-primaria"
+      ],
+      "normas_esperadas": [
+        "Decreto 107/2022"
+      ],
+      "urls_de_origen": [
+        "https://doe.juntaex.es/otrosFormatos/html.php?anio=2022&doe=1510o&xml=2022040159"
+      ],
+      "lotes": [
+        "lote0/lote_0/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 78014,
+      "sha256": "de279c4fce48a19c201eb9b9fee5589e66f4e808ef0f1b016569b8dbc4abd43e",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Decreto 101/2023"
+      ],
+      "indicio_anexos": false,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": false,
+      "muestra_caracteres": 1284,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "de279c4fce48a19c",
+      "identificadores_de_curriculo": [
+        "AN-primaria"
+      ],
+      "normas_esperadas": [
+        "Decreto 101/2023"
+      ],
+      "urls_de_origen": [
+        "https://ws040.juntadeandalucia.es/sedeboja/web/textos-consolidados/resumen-ficha?_resumenrecursolegal_WAR_sedebojatextoconsolidadoportlet_recursoLegalAbstractoId=34715&p_p_id=resumenrecursolegal_WAR_sedebojatextoconsolidadoportlet&p_p_lifecycle=0"
+      ],
+      "lotes": [
+        "lote0/lote_0/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 254753,
+      "sha256": "e28ffb72305558965e1247eaf34850456cd328473b25baa03a3875ed70b6d06e",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [],
+      "indicio_anexos": false,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": false,
+      "muestra_caracteres": 7655,
+      "estado": "DESCARGA_NO_IDENTIFICADA",
+      "identificador_documental": "e28ffb7230555896",
+      "identificadores_de_curriculo": [
+        "CLM-bachillerato",
+        "CLM-eso",
+        "CLM-primaria"
+      ],
+      "normas_esperadas": [
+        "Decreto 81/2022",
+        "Decreto 82/2022",
+        "Decreto 83/2022"
+      ],
+      "urls_de_origen": [
+        "https://www.educa.jccm.es/educa-jccm/cm/educa_jccm/tkContent?idContent=13721&locale=es_ES&pgseed=1267522294813",
+        "https://www.educa.jccm.es/educa-jccm/cm/educa_jccm/tkContent?idContent=13722&locale=es_ES",
+        "https://www.educa.jccm.es/educa-jccm/cm/educa_jccm/tkContent?idContent=40444&locale=es_ES&pgseed=1252492353208"
+      ],
+      "lotes": [
+        "lote0/lote_0/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 166424,
+      "sha256": "e83d962786ae9ee04434268469e46058e11290979d13c597927a967b428560fa",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Orden ECD/1173/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": false,
+      "indicio_criterios_evaluacion": false,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 10897,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "e83d962786ae9ee0",
+      "identificadores_de_curriculo": [
+        "AR-bachillerato"
+      ],
+      "normas_esperadas": [
+        "Orden ECD/1173/2022"
+      ],
+      "urls_de_origen": [
+        "https://educa.aragon.es/web/guest/-/norma-bachillerato"
+      ],
+      "lotes": [
+        "lote0/lote_0/manifest.json"
+      ]
+    },
+    {
+      "tipo": "PDF",
+      "bytes": 5947881,
+      "sha256": "f3b24662e3da0da59d7c791c3e36c3869b7d3bf259bf88a7c4f6d2847b9da075",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "paginas": 674,
+      "paginas_muestreadas": 16,
+      "normas_esperadas_identificadas": [],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": true,
+      "indicio_criterios_evaluacion": true,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 40573,
+      "estado": "DESCARGA_NO_IDENTIFICADA",
+      "identificador_documental": "f3b24662e3da0da5",
+      "identificadores_de_curriculo": [
+        "MU-bachillerato"
+      ],
+      "normas_esperadas": [
+        "Decreto 251/2022"
+      ],
+      "urls_de_origen": [
+        "https://www.borm.es/services/anuncio/ano/2022/numero/6755/pdf"
+      ],
+      "lotes": [
+        "lote25/lote_25/manifest.json"
+      ]
+    },
+    {
+      "tipo": "PDF",
+      "bytes": 6346788,
+      "sha256": "fba12d2dd0a19cb11cd670a922213aac5acdfb82db774dea187ed481430ffb53",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "paginas": 321,
+      "paginas_muestreadas": 16,
+      "normas_esperadas_identificadas": [
+        "Decreto 65/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": true,
+      "indicio_criterios_evaluacion": true,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 59749,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "fba12d2dd0a19cb1",
+      "identificadores_de_curriculo": [
+        "MD-eso",
+        "MD-eso-2022"
+      ],
+      "normas_esperadas": [
+        "Decreto 65/2022",
+        "Decreto 65/2022, ESO"
+      ],
+      "urls_de_origen": [
+        "https://www.bocm.es/boletin/CM_Orden_BOCM/2022/07/26/BOCM-20220726-2.PDF"
+      ],
+      "lotes": [
+        "inicial/manifest.json",
+        "lote25/lote_25/manifest.json"
+      ]
+    },
+    {
+      "tipo": "HTML",
+      "bytes": 933106,
+      "sha256": "fd926af34a56358d75c6c08587119a65aa314bb1edc613b43d8ddfefafebeda2",
+      "revision_integral_anexos": false,
+      "validez_juridica_confirmada": false,
+      "habilitado_para_generar": false,
+      "normas_esperadas_identificadas": [
+        "Real Decreto 217/2022"
+      ],
+      "indicio_anexos": true,
+      "indicio_competencias_especificas": true,
+      "indicio_criterios_evaluacion": true,
+      "indicio_saberes_basicos": true,
+      "muestra_caracteres": 785421,
+      "estado": "IDENTIDAD_PRELIMINAR",
+      "identificador_documental": "fd926af34a56358d",
+      "identificadores_de_curriculo": [
+        "EST-eso"
+      ],
+      "normas_esperadas": [
+        "Real Decreto 217/2022"
+      ],
+      "urls_de_origen": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2022-4975"
+      ],
+      "lotes": [
+        "lote25/lote_25/manifest.json"
+      ]
+    }
+  ],
+  "faltantes": []
+}
