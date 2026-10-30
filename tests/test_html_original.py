@@ -15,7 +15,7 @@ def style(html):
 
 
 def inline_logos(html):
-    return re.findall(r'<img\\b[^>]*\\bsrc="(data:image/[^"]+)"', html, re.I | re.S)
+    return re.findall(r'<img\b[^>]*\bsrc="(data:image/[^"]+)"', html, re.I | re.S)
 
 
 def script(html):
@@ -44,7 +44,7 @@ class AparienciaOriginal(unittest.TestCase):
     def test_los_documentos_extra_son_opcionales(self):
         codigo = script(CURRENT)
         for ancla in (
-            "norm-file-curriculum",
+            "normFileBlock('curriculum'",
             "Modificaciones o correcciones curriculares",
             "Orden o decreto de evaluación",
             "No aportes archivos adicionales",
