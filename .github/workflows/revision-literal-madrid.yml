@@ -1,0 +1,41 @@
+name: OPO-IA · Revisión literal LCL Madrid
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/extraer_madrid_3eso_mupdf.py'
+      - '.github/workflows/revision-literal-madrid.yml'
+permissions:
+  contents: write
+  actions: read
+jobs:
+  cotejo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install "pymupdf>=1.24,<1.28"
+      - uses: actions/download-artifact@v4
+        with:
+          run-id: 41109001469
+          name: opo-ia-fuentes-provisionales
+          path: fuentes_temporales/
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Extraer y comprobar criterios originales
+        run: python scripts/extraer_madrid_3eso_mupdf.py
+      - name: Guardar extracción mejorada
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add datos/madrid/eso/3/lengua-castellana-literatura/
+          git diff --cached --quiet || (git commit -m "Registrar extracción literal preliminar con PyMuPDF LCL 3 ESO" && git push)
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: opo-ia-lcl-3eso-mupdf
+          path: datos/madrid/eso/3/lengua-castellana-literatura/
+          if-no-files-found: warn
+          retention-days: 30
