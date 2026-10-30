@@ -1,0 +1,257 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OPO-IA · currículo de una materia/curso · estructura de ingestión",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "comunidad",
+    "etapa",
+    "curso",
+    "materia",
+    "fuentes",
+    "competencias_especificas",
+    "criterios_evaluacion",
+    "saberes_basicos",
+    "estado_validacion"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 4
+    },
+    "comunidad": {
+      "type": "string",
+      "minLength": 2
+    },
+    "etapa": {
+      "enum": [
+        "Primaria",
+        "ESO",
+        "Bachillerato"
+      ]
+    },
+    "curso": {
+      "type": "string",
+      "minLength": 1
+    },
+    "materia": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fuentes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "norma",
+          "url",
+          "version",
+          "revisado"
+        ],
+        "properties": {
+          "norma": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "revisado": {
+            "type": "boolean"
+          },
+          "referencia_anexo": {
+            "type": "string"
+          },
+          "modificacion": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "objetivos_etapa": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/elemento"
+      }
+    },
+    "descriptores_perfil_salida": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/elemento"
+      }
+    },
+    "competencias_especificas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "codigo",
+          "texto_literal",
+          "descriptores"
+        ],
+        "properties": {
+          "codigo": {
+            "type": "string"
+          },
+          "texto_literal": {
+            "type": "string"
+          },
+          "descriptores": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "criterios_evaluacion": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "codigo",
+          "competencia_especifica",
+          "texto_literal"
+        ],
+        "properties": {
+          "codigo": {
+            "type": "string"
+          },
+          "competencia_especifica": {
+            "type": "string"
+          },
+          "texto_literal": {
+            "type": "string"
+          },
+          "curso_o_ciclo_aplicacion": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "saberes_basicos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "bloque",
+          "titulo_literal",
+          "elementos"
+        ],
+        "properties": {
+          "bloque": {
+            "type": "string"
+          },
+          "titulo_literal": {
+            "type": "string"
+          },
+          "elementos": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "codigo_interno",
+                "texto_literal"
+              ],
+              "properties": {
+                "codigo_interno": {
+                  "type": "string"
+                },
+                "codigo_oficial": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "texto_literal": {
+                  "type": "string"
+                },
+                "codigo_padre": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "curso_o_ciclo_aplicacion": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "objetivos_didacticos": {
+      "type": "array",
+      "maxItems": 0,
+      "description": "No se extraen del currículo; los genera después la programación."
+    },
+    "estado_validacion": {
+      "type": "object",
+      "required": [
+        "curriculo_completo_verificado",
+        "fecha",
+        "responsable_revision",
+        "observaciones"
+      ],
+      "properties": {
+        "curriculo_completo_verificado": {
+          "type": "boolean"
+        },
+        "fecha": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "responsable_revision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "observaciones": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "elemento": {
+      "type": "object",
+      "required": [
+        "codigo",
+        "texto_literal"
+      ],
+      "properties": {
+        "codigo": {
+          "type": "string"
+        },
+        "texto_literal": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
