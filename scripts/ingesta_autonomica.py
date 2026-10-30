@@ -19,7 +19,7 @@ def load_sources():
     unique={}
     for r in catalog["registros"]:
         k=r["url"].strip()
-        unique.setdefault(k,{"url":k,"ids":[],"normas":[],"tipo":r["tipo_fuente"]})
+        unique.setdefault(k,{"url":k,"ids":[],"normas":[],"tipo":r["tipo_fuente"],"url_alternativa":r.get("url_alternativa")})
         unique[k]["ids"].append(r["id"]); unique[k]["normas"].append(r["norma_de_referencia"])
     for r in originals:
         k=r["url"].strip()
@@ -27,7 +27,7 @@ def load_sources():
         unique[k]["ids"].append(r["id"]);unique[k]["normas"].append(r["norma"])
     return list(unique.values()),len(catalog["registros"])
 def download(r, dest):
-    record={"ids":r["ids"],"normas":r["normas"],"url":r["url"],"estado":"ERROR_DESCARGA","validacion_juridica":"PENDIENTE","validacion_contenido":"PENDIENTE","habilitado_para_generar":False}
+    record={"ids":r["ids"],"normas":r["normas"],"url":r["url"],"url_alternativa":r.get("url_alternativa"),"estado":"ERROR_DESCARGA","validacion_juridica":"PENDIENTE","validacion_contenido":"PENDIENTE","habilitado_para_generar":False}
     try:
         u=urlparse(r["url"])
         if u.scheme!="https" or not u.hostname:raise ValueError("URL no HTTPS")
@@ -56,6 +56,7 @@ def download(r, dest):
             record["aviso"]="PDF descargado; integridad de anexos y vigencia no comprobadas"
     except Exception as err:
         record["error"]=str(err)[:400]
+        record["nota"]="No se ha utilizado automáticamente una copia alternativa: requiere cotejo con la publicación oficial."
     return record
 def main():
     p=argparse.ArgumentParser()
