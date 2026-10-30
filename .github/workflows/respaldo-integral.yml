@@ -1,0 +1,86 @@
+name: OPO-IA · Respaldo integral permanente
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/generar_respaldo_github.py'
+      - '.github/workflows/respaldo-integral.yml'
+permissions:
+  contents: write
+  actions: read
+jobs:
+  respaldar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Recuperar íntegramente el repositorio y su historial
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Preparar carpetas de respaldo
+        run: mkdir -p export_github/repositorio export_github/acciones/logs export_github/artefactos
+      - name: Archivar código fuente, datos y todos los commits
+        run: |
+          git archive --format=zip --output=export_github/repositorio/opo-ia-codigo-y-datos.zip HEAD
+          git bundle create export_github/repositorio/opo-ia-historial-git.bundle --all
+          git rev-parse HEAD > export_github/repositorio/COMMIT_RESPALDO.txt
+          git status --short > export_github/repositorio/ESTADO_LOCAL.txt
+      - name: Obtener listado real de ejecuciones
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api "repos/${GITHUB_REPOSITORY}/actions/runs?per_page=100" > export_github/acciones/ejecuciones.json
+          python scripts/generar_respaldo_github.py
+      - name: Archivar registros y artefactos de todas las ejecuciones
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          while read -r rid; do
+            echo "Archivando run ${rid}"
+            gh run view "${rid}" --json databaseId,workflowName,displayTitle,status,conclusion,event,headSha,createdAt,updatedAt,url > "export_github/acciones/logs/${rid}.json" 2>"export_github/acciones/logs/${rid}.meta-error.txt" || true
+            gh run view "${rid}" --log > "export_github/acciones/logs/${rid}.log" 2>"export_github/acciones/logs/${rid}.log-error.txt" || true
+            mkdir -p "export_github/artefactos/${rid}"
+            gh run download "${rid}" --dir "export_github/artefactos/${rid}" > "export_github/acciones/logs/${rid}.download.txt" 2>&1 || true
+          done < export_github/acciones/run_ids.txt
+      - name: Preparar paquete único comprimido y huella de integridad
+        shell: bash
+        run: |
+          cat > export_github/LEER_PRIMERO.txt <<'TXT'
+          OPO-IA - ARCHIVO DE CONTINUIDAD
+          =================================
+          - repositorio/opo-ia-codigo-y-datos.zip: codigo, HTML original/integrado, JSON, protocolos, pruebas.
+          - repositorio/opo-ia-historial-git.bundle: historial de todos los commits (restauracion Git).
+          - acciones/ejecuciones.json y logs/: estados y registros de GitHub Actions.
+          - artefactos/: documentos y reportes disponibles de las ejecuciones anteriores.
+          - MANIFIESTO_GITHUB.json: indice de ejecuciones y fecha de corte.
+          - El proyecto esta en fase de desarrollo: ningun curriculo completamente validado.
+          - Para recuperar todos los commits: git clone opo-ia-historial-git.bundle opo-ia
+          - El ZIP complementario descargado del chat contiene las plantillas Word e imagenes originales.
+          TXT
+          zip -q -r OPO-IA_RESPALDO_GITHUB_2026-10-30.zip export_github/
+          sha256sum OPO-IA_RESPALDO_GITHUB_2026-10-30.zip > OPO-IA_RESPALDO_GITHUB_2026-10-30.zip.sha256
+          unzip -tq OPO-IA_RESPALDO_GITHUB_2026-10-30.zip
+          du -h OPO-IA_RESPALDO_GITHUB_2026-10-30.zip
+      - name: Publicar copia permanente en GitHub Releases
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          gh release create "opo-ia-respaldo-2026-10-30" \
+            "OPO-IA_RESPALDO_GITHUB_2026-10-30.zip" \
+            "OPO-IA_RESPALDO_GITHUB_2026-10-30.zip.sha256" \
+            --target main \
+            --title "OPO-IA · Respaldo integral 30-10-2026" \
+            --notes "Copia de seguridad del repositorio, historial Git, datos curriculares, diseños HTML original e integrado, ejecuciones, registros y artefactos disponibles. Complementar con el paquete local del chat que contiene las plantillas Word originales. La integridad técnica no implica validación jurídica de los currículos." \
+            --latest=false
+      - name: Duplicado temporal como artefacto de Actions
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: OPO-IA-respaldo-integral-2026-10-30
+          path: |
+            OPO-IA_RESPALDO_GITHUB_2026-10-30.zip
+            OPO-IA_RESPALDO_GITHUB_2026-10-30.zip.sha256
+          if-no-files-found: warn
+          retention-days: 30
