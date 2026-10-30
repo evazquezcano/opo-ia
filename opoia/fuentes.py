@@ -111,7 +111,7 @@ def analizar_pdf(datos: bytes, nombre: str, tipo: str) -> dict:
             for etiqueta, variantes in _TERMINOS.items()
             if any(normalizar(variante) in texto for variante in variantes)
         ]
-        if len(texto) < 120:
+        if len(texto) < max(30, 12 * len(indices)):
             registro.update(
                 estado="TEXTO_NO_EXTRAIBLE",
                 observaciones=[
