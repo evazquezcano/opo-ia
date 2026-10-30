@@ -1,0 +1,157 @@
+{
+  "id": "MD-ESO-3-LCL",
+  "etapa": "ESO",
+  "curso": "3.º",
+  "materia": "Lengua Castellana y Literatura",
+  "comunidad": "Comunidad de Madrid",
+  "fuente": "Decreto 65/2022, anexo II, pp. 548-553",
+  "competencias_especificas": [
+    {
+      "codigo": "1",
+      "texto_literal": null,
+      "descriptores": [
+        "CCL1",
+        "CCL5",
+        "CP2",
+        "CP3",
+        "CC1",
+        "CC2",
+        "CCEC1",
+        "CCEC3"
+      ],
+      "estado_texto": "PENDIENTE_COTEJO"
+    },
+    {
+      "codigo": "2",
+      "texto_literal": null,
+      "descriptores": [
+        "CCL2",
+        "CP2",
+        "STEM1",
+        "CD2",
+        "CD3",
+        "CPSAA4",
+        "CC3"
+      ],
+      "estado_texto": "PENDIENTE_COTEJO"
+    },
+    {
+      "codigo": "3",
+      "texto_literal": null,
+      "descriptores": [
+        "CCL1",
+        "CCL3",
+        "CCL5",
+        "CP2",
+        "STEM1",
+        "CD2",
+        "CD3",
+        "CC2",
+        "CE1"
+      ],
+      "estado_texto": "PENDIENTE_COTEJO"
+    },
+    {
+      "codigo": "4",
+      "texto_literal": null,
+      "descriptores": [
+        "CCL2",
+        "CCL3",
+        "CCL5",
+        "CP2",
+        "STEM4",
+        "CD1",
+        "CPSAA4",
+        "CC3"
+      ],
+      "estado_texto": "PENDIENTE_COTEJO"
+    },
+    {
+      "codigo": "5",
+      "texto_literal": null,
+      "descriptores": [
+        "CCL1",
+        "CCL3",
+        "CCL5",
+        "STEM1",
+        "CD2",
+        "CD3",
+        "CPSAA5",
+        "CC2"
+      ],
+      "estado_texto": "PENDIENTE_COTEJO"
+    },
+    {
+      "codigo": "6",
+      "texto_literal": null,
+      "descriptores": [
+        "CCL3",
+        "CD1",
+        "CD2",
+        "CD3",
+        "CD4",
+        "CPSAA4",
+        "CC2",
+        "CE3"
+      ],
+      "estado_texto": "PENDIENTE_COTEJO"
+    },
+    {
+      "codigo": "7",
+      "texto_literal": null,
+      "descriptores": [
+        "CCL1",
+        "CCL4",
+        "CD3",
+        "CPSAA1",
+        "CCEC1",
+        "CCEC2",
+        "CCEC3"
+      ],
+      "estado_texto": "PENDIENTE_COTEJO"
+    },
+    {
+      "codigo": "8",
+      "texto_literal": null,
+      "descriptores": [
+        "CCL1",
+        "CCL4",
+        "CC1",
+        "CCEC1",
+        "CCEC2",
+        "CCEC3",
+        "CCEC4"
+      ],
+      "estado_texto": "PENDIENTE_COTEJO"
+    },
+    {
+      "codigo": "9",
+      "texto_literal": null,
+      "descriptores": [
+        "CCL1",
+        "CCL2",
+        "CP2",
+        "STEM1",
+        "STEM2",
+        "CPSAA5"
+      ],
+      "estado_texto": "PENDIENTE_COTEJO"
+    },
+    {
+      "codigo": "10",
+      "texto_literal": null,
+      "descriptores": [
+        "CCL1",
+        "CCL5",
+        "CP3",
+        "CD3",
+        "CPSAA3",
+        "CC1",
+        "CC2",
+        "CC3"
+      ],
+      "estado_texto": "PENDIENTE_COTEJO"
+    }
+  ],
+  "validado": false
+}
