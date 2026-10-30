@@ -1,0 +1,246 @@
+{
+  "id": "MD-ESO-3-LCL",
+  "comunidad": "Comunidad de Madrid",
+  "etapa": "ESO",
+  "curso": "3.º",
+  "materia": "Lengua Castellana y Literatura",
+  "fuente": {
+    "norma": "Decreto 65/2022, de 20 de julio",
+    "diario": "BOCM 176, 26/07/2022",
+    "url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2022/07/26/BOCM-20220726-2.PDF",
+    "sha256": "fba12d2dd0a19cb11cd670a922213aac5acdfb82db774dea187ed481430ffb53",
+    "paginas_criterios": "565-567",
+    "paginas_contenidos": "567-571",
+    "paginas_competencias": "547-553",
+    "hora_extraccion_utc": "2026-10-30T19:31:41.498232+00:00"
+  },
+  "referencia_modificacion": {
+    "norma": "Decreto 59/2024, de 12 de junio",
+    "revision_de_impacto_por_materia": "PENDIENTE"
+  },
+  "periodos_semanales": 4,
+  "criterios_evaluacion": [
+    {
+      "codigo": "1.1",
+      "competencia_especifica": "1",
+      "texto_literal": "Reconocer y valorar las lenguas de España y las variedades di alectales del español, con atención especial a la del propio territorio, a partir de la explicación de su origen y su desarrollo histórico y soci olingüístico, contrastando aspectos lingüísticos y discursivos de las distintas lenguas, así como rasgos de los dialectos del esp añol, diferenciándolos de los rasgos sociolectales y de registro, en manifestaciones orales, escritas y multimodales.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "1.2",
+      "competencia_especifica": "1",
+      "texto_literal": "Identificar y cuestionar prejuicios y estereotipos lingüísticos adoptando una actitud de respeto y valoración de la riqueza cultural, lingüística y dialectal, a par tir del análisis de la diversidad lingüística en el entorno social próximo.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "2.1",
+      "competencia_especifica": "2",
+      "texto_literal": "Comprender el sentido globa l, la estructura, la información más relevante en función de las necesidades comunicativas y la intención del emisor en textos orales y multimodales de cierta complejidad de diferentes ámbitos.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "2.2",
+      "competencia_especifica": "2",
+      "texto_literal": "Valorar la forma y el contenido de textos orales y multimodales de cierta complejidad, evaluando su calidad, su fia bilidad y la idoneidad del canal utilizado, así como la eficacia de los procedimientos comunicativos empleados.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "3.1",
+      "competencia_especifica": "3",
+      "texto_literal": "Realizar exposiciones orales de cierta extensión y comple jidad con diferente grado de planificación, organizando el contenido y elaborando guiones previos, seleccionando la idea principal, así como las se cundarias, sobre temas de inter és personal, social, educativo y profesional ajustándose a las convenciones propias de los diversos gén eros discursivos, con fluidez, coherencia, cohesión y el registro adecuado en difere ntes soportes, utilizando de manera eficaz recursos verbales y no verbales.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "3.2",
+      "competencia_especifica": "3",
+      "texto_literal": "Participar de manera activa y adecuada en interacc iones orales informales , en el trabajo en equipo y en situaciones orale s formales de carácter dialogado, co n actitudes de escucha activa y estrategias de cooperación conversacional y cortesía lingüística.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "4.1",
+      "competencia_especifica": "4",
+      "texto_literal": "Comprender e interpretar el se ntido global, la estructura, la información más relevante y la intención del emisor de textos escritos y multimodales de cierta complejidad que respondan a diferentes propósitos de lect ura, realizando las inferencias necesarias y con diferentes propósitos de lectura.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "4.2",
+      "competencia_especifica": "4",
+      "texto_literal": "Valorar críticamente el conte nido y la forma de textos de cierta complejidad evaluando su calidad y fiabilidad, así como la eficacia de los procedimientos lingüísticos empleados.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "5.1",
+      "competencia_especifica": "5",
+      "texto_literal": "Planificar la redacción de textos escritos y multimodales de cierta extensión atendiendo a la situación comunicativa, al destinatario, al propósito y al canal; redactar borradores y revisarlos para aclarar problemas con el contenido (ideas y estruc tura) o la forma (puntuación, ortografía, gramática y presentaci ón), con ayuda del diálogo ent re iguales e instrumentos de consulta; y presentar un texto final coherente, cohesionado y con el registro adecuado.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "5.2",
+      "competencia_especifica": "5",
+      "texto_literal": "Aplicar progresivamente las estrategias neces arias para producir textos descriptivos, narrativos, prescriptivos, expositivos y argumentativos que resul ten adecuados, coherentes y cohesionados.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "5.3",
+      "competencia_especifica": "5",
+      "texto_literal": "Incorporar procedimientos para enriquecer los textos atend iendo a aspectos discursivos, lingüísticos y de estilo, con precisión léxica y corrección ortográfica y gramatical. === BOCM PÁGINA 566 / PDF 171 === BOLETÍN OFICIAL DE LA COMUNIDAD DE MADRIDBOCM",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "6.1",
+      "competencia_especifica": "6",
+      "texto_literal": "Localizar, seleccionar y contrastar de manera progre sivamente autónoma información procedente de diferentes fuentes, calibrando su fiabilidad y pertinencia en función de los objetivos de lectura; organi zarla e integrarla en es quemas propios, y reelaborarla y comunicarla de manera creativa adoptando un punto de vista críti co respetando los principios de propiedad intelectual.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "6.2",
+      "competencia_especifica": "6",
+      "texto_literal": "Elaborar trabajos de i nvestigación de manera progresi vamente autónoma en diferentes soportes sobre diversos temas de interés académico, per sonal o social a partir de la información seleccionada, adoptando un punto de vista crítico y personal.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "6.3",
+      "competencia_especifica": "6",
+      "texto_literal": "Adoptar hábitos de uso críti co, seguro, sostenible y saludable de las tecnologías digitales en relación a la búsqueda y la comunicación de la información.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "7.1",
+      "competencia_especifica": "7",
+      "texto_literal": "Leer de manera autónoma textos se leccionados de la literatura española y universal y de la literatura juvenil, en soporte papel y digital, en función de lo s propios gustos, intereses y necesidades, y dejar constanc ia del progreso del propio itinerario lector y cultural explicando los criterios de selección de las lecturas, las formas de acceso a la cultura literaria y la experiencia de lectura.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "7.2",
+      "competencia_especifica": "7",
+      "texto_literal": "Desarrollar, a través de la lect ura autónoma, el gusto y el hábito de la lectura en todos sus aspectos, como fuente de plac er, de conocimiento y de acceso a otros mundos diferentes a los nuestros, reales o fant ásticos, contribuyendo así a la formación de la propia identidad lectora.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "7.3",
+      "competencia_especifica": "7",
+      "texto_literal": "Compartir la experiencia de la lectura en soportes diversos relacionando el sentido de la obra con la propia experiencia biográfica, lectora y cultural.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "8.1",
+      "competencia_especifica": "8",
+      "texto_literal": "Explicar y argumentar la in terpretación de las obras y fragmentos leídos de la literatura de la Edad Media al Siglo de Oro a partir del aná lisis de las relaciones internas de sus elementos constitutivos con el senti do de la obra y de las relacio nes externas del texto con su contexto sociohistórico, atendiendo a la configuración y evolución de los géneros y subgéneros literarios.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "8.2",
+      "competencia_especifica": "8",
+      "texto_literal": "Establecer de manera progresivamente autónoma vínculos argumentados entre los textos leídos y otros textos esc ritos, orales o multimodales, así como con otras manifestaciones artísticas y cultural es, en función de temas, tópicos, estructuras, lenguaje y valores éticos y estéticos, mostrando la implicación y la respuesta personal del lector en la lectura.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "8.3",
+      "competencia_especifica": "8",
+      "texto_literal": "Crear textos personales o colect ivos con intención literaria y conc iencia de estilo, en distintos soportes y con ayuda de otros lengu ajes artísticos y audiovisuales, a partir de la lectura de obras o fragmentos significati vos en los que se empleen las co nvenciones formales de los diversos géneros y estilos literarios.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "9.1",
+      "competencia_especifica": "9",
+      "texto_literal": "Revisar los textos propios de manera pro gresivamente autónoma y hacer propuestas de mejora argumentando los cambios a par tir de la reflexión metalingüística e interlingüística con el metalenguaje específico.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "9.2",
+      "competencia_especifica": "9",
+      "texto_literal": "Explicar y argumentar la in terrelación entre el propósi to comunicativo y las elecciones lingüísticas del emisor, así co mo sus efectos en el recept or, utilizando el conocimiento explícito de la lengua y el metalenguaje específico.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "9.3",
+      "competencia_especifica": "9",
+      "texto_literal": "Formular generalizaciones sobre algunos aspectos del funcionamiento de la lengua a partir de la observación, la comparación y la transformación de enunciados, así como de la formulación de hipótesis y la búsque da de contraejemplos, utilizando el metalenguaje específico y consultando de manera progresivamente autónoma diccionarios, manuales y gramáticas.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "9.4",
+      "competencia_especifica": "9",
+      "texto_literal": "Profundizar en la caracteri zación y análisis de las categ orías gramaticales de las palabras variables e invariables, incidiendo en los valores expresivos que adquieren en relación con la intención comunicativa del texto donde aparecen. === BOCM PÁGINA 567 / PDF 172 === BOLETÍN OFICIAL DE LA COMUNIDAD DE MADRIDBOCM",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "9.5",
+      "competencia_especifica": "9",
+      "texto_literal": "Identificar los distintos ni veles de significado de la s palabras en funci ón de la intención comunicativa del discurso oral o escrito donde aparecen, rec onociendo las principales relaciones semánticas entre palabras y algunos fenómenos de cambio semántico.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "9.6",
+      "competencia_especifica": "9",
+      "texto_literal": "Identificar, caracterizar, y explicar los us os de los grupos nominal es, adjetivales, verbales, preposicionales y adverbiales en la oración simple.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "9.7",
+      "competencia_especifica": "9",
+      "texto_literal": "Explicar y analizar los el ementos constitutivos de la oració n simple, distinguiendo entre oraciones predicativas y copulati vas y diferenciando los dist intos tipos de oraciones predicativas.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "9.8",
+      "competencia_especifica": "9",
+      "texto_literal": "Distinguir oraciones impersonales, activas y pasivas.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "9.9",
+      "competencia_especifica": "9",
+      "texto_literal": "Identificar relaciones semánticas y mecanismos de cambio semántico.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "10.1",
+      "competencia_especifica": "10",
+      "texto_literal": "Identificar, desterrar y sust ituir los usos discriminatorios de la lengua y los usos manipuladores del lenguaje a partir de la reflexión y el análisis de los elementos lingüísticos, textuales y discursivos utili zados, así como de los elementos no verbales de la comunicación.",
+      "pagina_bocm_inicio": 565
+    },
+    {
+      "codigo": "10.2",
+      "competencia_especifica": "10",
+      "texto_literal": "Utilizar estrategias para la resolución dialogada de los conflictos y la búsqueda de consensos, tanto en el ámbito personal como educativo y social.",
+      "pagina_bocm_inicio": 565
+    }
+  ],
+  "recuento_por_competencia": {
+    "1": 2,
+    "2": 2,
+    "3": 2,
+    "4": 2,
+    "5": 3,
+    "6": 3,
+    "7": 3,
+    "8": 3,
+    "9": 9,
+    "10": 2
+  },
+  "bloques_detectados": [
+    {
+      "bloque": "B",
+      "titulo_extraido": "Comunicación."
+    },
+    {
+      "bloque": "C",
+      "titulo_extraido": "Educación literaria."
+    },
+    {
+      "bloque": "D",
+      "titulo_extraido": "Reflexión sobre la lengua."
+    }
+  ],
+  "competencias_especificas": [],
+  "descriptores_perfil_salida": [],
+  "objetivos_etapa": [],
+  "validacion": {
+    "integridad_texto_criterios": "PENDIENTE_COTEJO_VISUAL",
+    "integridad_saberes": "PENDIENTE_CODIFICACION_Y_COTEJO",
+    "vigencia_normativa": "PENDIENTE_COTEJO",
+    "curriculo_completo_verificado": false,
+    "habilitado_para_generar": false
+  }
+}
