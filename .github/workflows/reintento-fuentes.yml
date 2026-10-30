@@ -1,0 +1,32 @@
+name: OPO-IA · Reintento fuentes fallidas
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/reintentar_fuentes.py'
+      - '.github/workflows/reintento-fuentes.yml'
+permissions:
+  contents: read
+jobs:
+  reintento:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Obtener código
+        uses: actions/checkout@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar lector de PDF
+        run: python -m pip install "pypdf>=5,<9"
+      - name: Reintentar solo fuentes anteriores con error
+        run: python scripts/reintentar_fuentes.py
+      - name: Publicar documentos y registro
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: opo-ia-fuentes-reintentadas
+          path: resultados_reintento/
+          if-no-files-found: warn
+          retention-days: 30
