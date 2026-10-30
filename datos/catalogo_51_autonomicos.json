@@ -1,8 +1,8 @@
 {
   "proyecto": "OPO-IA",
-  "version": "2.0-candidatos",
+  "version": "2.1-correcciones-enlaces",
   "fecha": "2026-10-30",
-  "aviso": "Un enlace a un portal o boletín no demuestra por sí solo que contiene la disposición citada. La descarga no verifica vigencia ni integridad de anexos.",
+  "aviso": "51 registros de comunidad y etapa; enlaces de referencia no equivalen a currículos verificados. Los espejos no son boletines oficiales y deben cotejarse.",
   "registros": [
     {
       "id": "AN-primaria",
@@ -75,33 +75,38 @@
       "comunidad": "Asturias",
       "etapa": "primaria",
       "norma_de_referencia": "Decreto 57/2022",
-      "url": "https://sede.asturias.es/bopa/2022/08/12/2022-06337.pdf",
+      "url": "https://miprincipado.asturias.es/bopa/2022/08/12/2022-06337.pdf",
       "tipo_fuente": "documento_pdf",
-      "estado": "CANDIDATO_PENDIENTE_DE_AUDITORIA",
+      "estado": "CORREGIDO_PENDIENTE_DE_NUEVA_DESCARGA",
       "curriculo_materia_verificado": false,
-      "habilitado_para_generar": false
+      "habilitado_para_generar": false,
+      "url_alternativa": "https://www.educastur.es/documents/34868/907664/2022-12-LOMLOE-curriculo-educacion-primaria.pdf/0b63eb99-293e-acab-e7d9-e93453b68dc4?t=1671630251405",
+      "referencia_oficial": "https://miprincipado.asturias.es/ast/bopa/disposiciones?_pa_sede_bopa_web_portlet_SedeBopaDispositionWeb_mvcRenderCommandName=%2Fdisposition%2Fdetail&p_p_id=pa_sede_bopa_web_portlet_SedeBopaDispositionWeb&p_p_lifecycle=0&p_r_p_dispositionDate=12%2F08%2F2022&p_r_p_dispositionReference=2022-06337"
     },
     {
       "id": "AS-eso",
       "comunidad": "Asturias",
       "etapa": "eso",
       "norma_de_referencia": "Decreto 59/2022",
-      "url": "https://sede.asturias.es/bopa/2022/09/01/2022-06713.pdf",
+      "url": "https://miprincipado.asturias.es/bopa/2022/09/01/2022-06713.pdf",
       "tipo_fuente": "documento_pdf",
-      "estado": "CANDIDATO_PENDIENTE_DE_AUDITORIA",
+      "estado": "CORREGIDO_PENDIENTE_DE_NUEVA_DESCARGA",
       "curriculo_materia_verificado": false,
-      "habilitado_para_generar": false
+      "habilitado_para_generar": false,
+      "url_alternativa": "https://www.educastur.es/documents/34868/907664/2023-02-LOMLOE-curriculo-ESO-digital.pdf/0c1b8192-ccdb-d811-d24d-8706c1183e61?t=1676622787214",
+      "referencia_oficial": "https://miprincipado.asturias.es/ast/bopa/disposiciones?_pa_sede_bopa_web_portlet_SedeBopaDispositionWeb_cur=1&_pa_sede_bopa_web_portlet_SedeBopaDispositionWeb_delta=20&_pa_sede_bopa_web_portlet_SedeBopaDispositionWeb_isTextDateSearch=true&_pa_sede_bopa_web_portlet_SedeBopaDispositionWeb_mvcRenderCommandName=%2Fdisposition%2Fdetail&p_p_id=pa_sede_bopa_web_portlet_SedeBopaDispositionWeb&p_p_lifecycle=0&p_p_mode=view&p_p_state=normal&p_r_p_dispositionDate=01%2F09%2F2022&p_r_p_dispositionReference=+2022-06713"
     },
     {
       "id": "AS-bachillerato",
       "comunidad": "Asturias",
       "etapa": "bachillerato",
       "norma_de_referencia": "Decreto 60/2022",
-      "url": "https://sede.asturias.es/bopa/2022/09/01/2022-06714.pdf",
+      "url": "https://miprincipado.asturias.es/bopa/2022/09/01/2022-06714.pdf",
       "tipo_fuente": "documento_pdf",
-      "estado": "CANDIDATO_PENDIENTE_DE_AUDITORIA",
+      "estado": "CORREGIDO_PENDIENTE_DE_NUEVA_DESCARGA",
       "curriculo_materia_verificado": false,
-      "habilitado_para_generar": false
+      "habilitado_para_generar": false,
+      "referencia_oficial": "https://miprincipado.asturias.es/ast/bopa/disposiciones?_pa_sede_bopa_web_portlet_SedeBopaDispositionWeb_isTextDateSearch=false&_pa_sede_bopa_web_portlet_SedeBopaDispositionWeb_mvcRenderCommandName=%2Fdisposition%2Fdetail&p_p_id=pa_sede_bopa_web_portlet_SedeBopaDispositionWeb&p_p_lifecycle=0&p_p_mode=view&p_p_state=normal&p_r_p_dispositionDate=01%2F09%2F2022&p_r_p_dispositionReference=2022-06714"
     },
     {
       "id": "IB-primaria",
@@ -174,33 +179,39 @@
       "comunidad": "Cantabria",
       "etapa": "primaria",
       "norma_de_referencia": "Decreto 66/2022",
-      "url": "https://www.educantabria.es/documents/39930/275224/Decreto%2Bcurr%C3%ADculo%2Binfantil%2By%2Bprimaria.pdf/38e16d8c-57ae-421d-a5ed-c0dc7049b0ba?t=1659685258407",
+      "url": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=374267",
       "tipo_fuente": "pagina_institucional",
-      "estado": "CANDIDATO_PENDIENTE_DE_AUDITORIA",
+      "estado": "CORREGIDO_PENDIENTE_DE_NUEVA_DESCARGA",
       "curriculo_materia_verificado": false,
-      "habilitado_para_generar": false
+      "habilitado_para_generar": false,
+      "url_alternativa": "https://personales.unican.es/van-vaerenbe/doc/legal/BOC-2022-5545.pdf",
+      "tipo_alternativa": "copia del boletín oficial alojada en Universidad de Cantabria"
     },
     {
       "id": "CB-eso",
       "comunidad": "Cantabria",
       "etapa": "eso",
       "norma_de_referencia": "Decreto 73/2022",
-      "url": "https://aplicacionesweb.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=374886",
+      "url": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=374886",
       "tipo_fuente": "pagina_institucional",
-      "estado": "CANDIDATO_PENDIENTE_DE_AUDITORIA",
+      "estado": "CORREGIDO_PENDIENTE_DE_NUEVA_DESCARGA",
       "curriculo_materia_verificado": false,
-      "habilitado_para_generar": false
+      "habilitado_para_generar": false,
+      "url_alternativa": "https://cantabriastec.org/wp-content/uploads/2022/08/boc-05.08.22-curriculum-ESO-BACH_compressed-2-1-1-352.pdf",
+      "tipo_alternativa": "copia de boletín oficial en alojamiento tercero, pendiente cotejo"
     },
     {
       "id": "CB-bachillerato",
       "comunidad": "Cantabria",
       "etapa": "bachillerato",
       "norma_de_referencia": "Decreto 73/2022",
-      "url": "https://aplicacionesweb.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=374886",
+      "url": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=374886",
       "tipo_fuente": "pagina_institucional",
-      "estado": "CANDIDATO_PENDIENTE_DE_AUDITORIA",
+      "estado": "CORREGIDO_PENDIENTE_DE_NUEVA_DESCARGA",
       "curriculo_materia_verificado": false,
-      "habilitado_para_generar": false
+      "habilitado_para_generar": false,
+      "url_alternativa": "https://cantabriastec.org/wp-content/uploads/2022/08/boc-05.08.22-curriculum-ESO-BACH_compressed-2-1-1-352.pdf",
+      "tipo_alternativa": "copia de boletín oficial en alojamiento tercero, pendiente cotejo"
     },
     {
       "id": "CYL-primaria",
@@ -319,9 +330,11 @@
       "norma_de_referencia": "Decreto 107/2022",
       "url": "https://dogv.gva.es/datos/2022/08/11/pdf/2022_7573.pdf",
       "tipo_fuente": "documento_pdf",
-      "estado": "CANDIDATO_PENDIENTE_DE_AUDITORIA",
+      "estado": "CORREGIDO_PENDIENTE_DE_NUEVA_DESCARGA",
       "curriculo_materia_verificado": false,
-      "habilitado_para_generar": false
+      "habilitado_para_generar": false,
+      "url_alternativa": "https://anpecomunidadvalenciana.es/openFile.php?link=notices%2Fatt%2F4%2F2022_7573_curriculo_secundaria_comunidad_valencian_t1660205145_4_1.pdf",
+      "tipo_alternativa": "copia del DOGV alojada por organización profesional, pendiente cotejo"
     },
     {
       "id": "CV-bachillerato",
