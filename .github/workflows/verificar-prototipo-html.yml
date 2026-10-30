@@ -1,0 +1,20 @@
+name: OPO-IA · Identidad visual del prototipo
+on:
+  push:
+    paths:
+      - 'web/**'
+      - 'tests/test_html_original.py'
+      - '.github/workflows/verificar-prototipo-html.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  identidad-visual:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Comprobar estructura original, logos, estilo y código JS
+        run: python -m unittest discover -s tests -p test_html_original.py -v
