@@ -1,0 +1,35 @@
+name: OPO-IA · Catálogo autonómico (lotes)
+on:
+  workflow_dispatch:
+    inputs:
+      inicio:
+        description: 'Índice inicial (0, 25, 50...)'
+        required: true
+        default: '0'
+        type: string
+      max_documentos:
+        description: 'Número de direcciones a consultar (recomendado 25)'
+        required: true
+        default: '25'
+        type: string
+permissions:
+  contents: read
+jobs:
+  inventario:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Consultar lote documental
+        run: python scripts/ingesta_autonomica.py --inicio "${{ inputs.inicio }}" --max-documentos "${{ inputs.max_documentos }}"
+      - name: Guardar resultados del lote
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: opo-ia-normativa-lote-${{ inputs.inicio }}
+          path: resultados_ingesta/
+          if-no-files-found: warn
+          retention-days: 30
