@@ -1,0 +1,19 @@
+name: OPO-IA · Auditoría de catálogo
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'datos/catalogo_51_autonomicos.json'
+      - 'scripts/auditar_catalogo.py'
+      - '.github/workflows/auditoria-catalogo.yml'
+permissions:
+  contents: read
+jobs:
+  auditoria:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/auditar_catalogo.py
