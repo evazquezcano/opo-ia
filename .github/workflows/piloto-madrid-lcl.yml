@@ -1,0 +1,43 @@
+name: OPO-IA · Piloto LCL tercero ESO Madrid
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/extraer_madrid_3eso_lcl.py'
+      - '.github/workflows/piloto-madrid-lcl.yml'
+permissions:
+  contents: write
+  actions: read
+jobs:
+  extraer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install "pypdf>=5,<9"
+      - name: Recuperar BOCM original de la descarga anterior
+        uses: actions/download-artifact@v4
+        with:
+          run-id: 41109001469
+          name: opo-ia-fuentes-provisionales
+          path: fuentes_temporales/
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Extraer fragmentos identificados por etapa, materia y curso
+        run: python scripts/extraer_madrid_3eso_lcl.py
+      - name: Conservar extracción preliminar para cotejo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add datos/madrid/eso/3/lengua-castellana-literatura/
+          git diff --cached --quiet || (git commit -m "Añadir extracción preliminar LCL 3 ESO Madrid sin habilitar currículo" && git push)
+      - name: Guardar informe
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: opo-ia-piloto-lcl-3eso
+          path: datos/madrid/eso/3/lengua-castellana-literatura/
+          if-no-files-found: warn
+          retention-days: 30
