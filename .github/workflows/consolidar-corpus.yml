@@ -1,0 +1,76 @@
+name: OPO-IA · Consolidación del corpus
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/consolidar_corpus.py'
+      - '.github/workflows/consolidar-corpus.yml'
+permissions:
+  contents: write
+  actions: read
+jobs:
+  consolidar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Obtener código
+        uses: actions/checkout@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar lector PDF
+        run: python -m pip install "pypdf>=5,<9"
+      - name: Recuperar primera descarga
+        uses: actions/download-artifact@v4
+        with:
+          run-id: 41109001469
+          name: opo-ia-fuentes-provisionales
+          path: originales/inicial
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Recuperar lote autonómico 0
+        uses: actions/download-artifact@v4
+        with:
+          run-id: 41110399643
+          name: opo-ia-normativa-lote-0
+          path: originales/lote0
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Recuperar lote autonómico 25
+        uses: actions/download-artifact@v4
+        with:
+          run-id: 41112770540
+          name: opo-ia-normativa-lote-25
+          path: originales/lote25
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Recuperar primer reintento
+        uses: actions/download-artifact@v4
+        with:
+          run-id: 41114023140
+          name: opo-ia-fuentes-reintentadas
+          path: originales/reintento1
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Recuperar segundo reintento
+        uses: actions/download-artifact@v4
+        with:
+          run-id: 41114911967
+          name: opo-ia-fuentes-reintentadas
+          path: originales/reintento2
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Consolidar identidad documental y evidencias
+        run: python scripts/consolidar_corpus.py originales
+      - name: Guardar informe permanente en el repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add datos/estado_documental.json datos/ESTADO_DOCUMENTAL.md
+          git diff --cached --quiet || (git commit -m "Actualizar informe documental consolidado OPO-IA" && git push)
+      - name: Publicar informe como artefacto
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: opo-ia-informe-consolidado
+          path: |
+            datos/estado_documental.json
+            datos/ESTADO_DOCUMENTAL.md
+          if-no-files-found: warn
+          retention-days: 30
