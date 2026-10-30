@@ -1,0 +1,79 @@
+[
+  {
+    "id": "EST-primaria",
+    "norma": "Real Decreto 157/2022",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-3296",
+    "validacion_curricular": "PENDIENTE",
+    "generacion_habilitada": false
+  },
+  {
+    "id": "EST-eso",
+    "norma": "Real Decreto 217/2022",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-4975",
+    "validacion_curricular": "PENDIENTE",
+    "generacion_habilitada": false
+  },
+  {
+    "id": "EST-bachillerato",
+    "norma": "Real Decreto 243/2022",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-5521",
+    "validacion_curricular": "PENDIENTE",
+    "generacion_habilitada": false
+  },
+  {
+    "id": "EST-bach-2026",
+    "norma": "Real Decreto 535/2026, modificación de Bachillerato",
+    "url": "https://www.boe.es/eli/es/rd/2026/06/30/535/dof/spa/pdf",
+    "validacion_curricular": "PENDIENTE",
+    "generacion_habilitada": false
+  },
+  {
+    "id": "MD-primaria-2022",
+    "norma": "Decreto 61/2022, Primaria",
+    "url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2022/07/18/BOCM-20220718-1.PDF",
+    "validacion_curricular": "PENDIENTE",
+    "generacion_habilitada": false
+  },
+  {
+    "id": "MD-eso-2022",
+    "norma": "Decreto 65/2022, ESO",
+    "url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2022/07/26/BOCM-20220726-2.PDF",
+    "validacion_curricular": "PENDIENTE",
+    "generacion_habilitada": false
+  },
+  {
+    "id": "MD-bach-2022",
+    "norma": "Decreto 64/2022, Bachillerato",
+    "url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2022/07/26/BOCM-20220726-1.PDF",
+    "validacion_curricular": "PENDIENTE",
+    "generacion_habilitada": false
+  },
+  {
+    "id": "MD-2024-mod",
+    "norma": "Decreto 59/2024, modificación",
+    "url": "https://w3.bocm.es/boletin/CM_Orden_BOCM/2024/06/13/BOCM-20240613-2.PDF",
+    "validacion_curricular": "PENDIENTE",
+    "generacion_habilitada": false
+  },
+  {
+    "id": "MD-2024-fe",
+    "norma": "Corrección de errores del Decreto 59/2024",
+    "url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2024/06/19/BOCM-20240619-1.PDF",
+    "validacion_curricular": "PENDIENTE",
+    "generacion_habilitada": false
+  },
+  {
+    "id": "CB-eso-bach",
+    "norma": "Decreto 73/2022, Cantabria",
+    "url": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=374886",
+    "validacion_curricular": "PENDIENTE",
+    "generacion_habilitada": false
+  },
+  {
+    "id": "CN-eso-bach",
+    "norma": "Decreto 30/2023, Canarias",
+    "url": "https://www.gobiernodecanarias.org/boc/2023/058/001.html",
+    "validacion_curricular": "PENDIENTE",
+    "generacion_habilitada": false
+  }
+]
