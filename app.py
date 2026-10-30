@@ -133,10 +133,18 @@ with tab_curriculo:
     )
 
     modificaciones = []
-    with st.expander("2. Modificaciones y correcciones posteriores (hasta tres PDF)", expanded=False):
+    with st.expander("2. Modificaciones curriculares — opcionales (hasta tres PDF)", expanded=False):
+        st.info(
+            "**No necesitas adjuntar ningún documento adicional si no existe "
+            "una modificación oficial que afecte a la programación.** "
+            "Aporta una modificación o corrección únicamente si altera "
+            "competencias específicas, objetivos de etapa, criterios de evaluación, "
+            "descriptores operativos, bloques de contenido, saberes básicos "
+            "o elementos transversales de la etapa, curso o materia."
+        )
         st.caption(
-            "Aporta únicamente las disposiciones que alteren, corrijan o complementen "
-            "el decreto curricular. Puedes dejar espacios vacíos."
+            "Los tres espacios pueden quedar vacíos. Si hay más de tres modificaciones "
+            "aplicables, deben revisarse todas, aunque requieran ampliar las cargas."
         )
         for numero in range(1, 4):
             st.markdown(f"**Modificación o corrección {numero}**")
@@ -152,12 +160,13 @@ with tab_curriculo:
             )
             modificaciones.append((numero, archivo, enlace))
 
-    with st.expander("3. Normativa de evaluación (opcional)", expanded=False):
-        st.caption(
-            "Puedes aportar la orden o decreto que regula la evaluación de la etapa. "
-            "Se utilizará, cuando corresponda, para el diseño de instrumentos, "
-            "procedimientos o documentos de evaluación. No sustituye los criterios "
-            "curriculares de la materia."
+    with st.expander("3. Orden o decreto de evaluación — opcional", expanded=False):
+        st.info(
+            "**No es necesario aportar una orden o decreto de evaluación "
+            "para desarrollar la programación didáctica.** Puedes adjuntarlo "
+            "solo si deseas consultar aspectos específicos de evaluación "
+            "regulados en esa disposición. No sustituye ni modifica por defecto "
+            "los criterios de evaluación del currículo."
         )
         evaluacion = st.file_uploader(
             "Orden o decreto de evaluación (PDF)",
