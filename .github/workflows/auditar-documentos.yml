@@ -1,0 +1,54 @@
+name: OPO-IA · Auditoría preliminar de documentos
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/auditar_documentos.py"
+      - ".github/workflows/auditar-documentos.yml"
+permissions:
+  contents: read
+  actions: read
+jobs:
+  auditar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Obtener proyecto
+        uses: actions/checkout@v4
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar lector de PDFs
+        run: python -m pip install "pypdf>=5,<9"
+      - name: Recuperar primer lote previamente descargado
+        uses: actions/download-artifact@v4
+        with:
+          run-id: 41110399643
+          name: opo-ia-normativa-lote-0
+          path: documentos_normativos/lote0
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Recuperar segundo lote previamente descargado
+        uses: actions/download-artifact@v4
+        with:
+          run-id: 41112770540
+          name: opo-ia-normativa-lote-25
+          path: documentos_normativos/lote25
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Recuperar reintento previamente descargado
+        uses: actions/download-artifact@v4
+        with:
+          run-id: 41114023140
+          name: opo-ia-fuentes-reintentadas
+          path: documentos_normativos/reintentos
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Examinar metadatos, identidad y anexos
+        run: python scripts/auditar_documentos.py documentos_normativos
+      - name: Publicar informe
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: opo-ia-auditoria-documental-preliminar
+          path: resultados_auditoria/
+          if-no-files-found: warn
+          retention-days: 30
