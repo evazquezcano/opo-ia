@@ -1,0 +1,42 @@
+name: OPO-IA · Verificación del prototipo
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - app.py
+      - opoia/**
+      - tests/**
+      - requirements.txt
+      - .streamlit/config.toml
+      - .github/workflows/verificacion-app.yml
+permissions:
+  contents: read
+jobs:
+  probar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar dependencias
+        run: python -m pip install -r requirements.txt
+      - name: Verificar sintaxis
+        run: python -m py_compile app.py opoia/fuentes.py tests/test_fuentes.py
+      - name: Ejecutar pruebas
+        run: python -m unittest discover -s tests -v
+      - name: Verificar arranque del servidor
+        run: |
+          streamlit run app.py --server.headless true --server.port 8501 >/tmp/opoia-streamlit.log 2>&1 &
+          PID=$!
+          trap 'kill $PID 2>/dev/null || true' EXIT
+          for i in $(seq 1 20); do
+            if curl --fail --silent http://localhost:8501/_stcore/health >/dev/null; then
+              echo "Servidor Streamlit responde correctamente"
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/opoia-streamlit.log
+          exit 1
