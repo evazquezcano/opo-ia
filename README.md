@@ -2,6 +2,16 @@
 
 **Generador de unidades didácticas y situaciones de aprendizaje para programaciones docentes.** Proyecto de formación asociado a RADTE y Futuro Docente (UNED).
 
+## Interfaz HTML aprobada
+
+**El diseño que debe utilizarse es [web/index.html](web/index.html)**, una ampliación del [HTML original aprobado](web/referencia-original.html). Ambos conservan los mismos logotipos incrustados, colores y disposición institucional. La versión integrada mantiene cuatro pasos: Currículo, Planificación, Cobertura y Documentos.
+
+La pestaña Currículo permite aportar una norma curricular principal obligatoria, hasta tres modificaciones relevantes opcionales y normativa de evaluación opcional. El estudiante debe localizar las disposiciones oficiales aplicables a su etapa, curso y materia.
+
+**Estado de la extracción:** el HTML incorporado utiliza PDF.js (biblioteca cargada desde CDN al iniciar la lectura) para procesar los PDF en el navegador y localizar páginas y extractos preliminares. Esta función **no equivale** a extraer y validar literalmente todos los elementos del currículo, ni puede verificar por sí sola la vigencia o aplicar modificaciones normativas. Hasta que se completen esas fases, la generación definitiva permanece desactivada.
+
+El programa [app.py](app.py) es una prueba técnica de lectura documental con Streamlit. **No es la interfaz visual aprobada**; cualquier integración futura deberá conservar la apariencia de `web/index.html` y el archivo original de referencia.
+
 ## Estado del proyecto
 
 **Prototipo en desarrollo.** La pestaña «Currículo» permite cargar el decreto curricular oficial, hasta tres modificaciones y una norma de evaluación. Las pestañas «Planificación», «Cobertura» y «Documentos» todavía no realizan sus funciones definitivas. El análisis de PDF es técnico y preliminar: **no certifica la vigencia normativa ni autoriza generar programaciones**.
