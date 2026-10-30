@@ -13,6 +13,7 @@ from urllib.parse import urlparse
 import streamlit as st
 
 from opoia.fuentes import analizar_pdf, url_normativa_valida
+from opoia.extraccion import indexar_documento, consolidar_evidencias
 
 st.set_page_config(
     page_title="OPO-IA · Programaciones docentes",
@@ -25,7 +26,7 @@ COMUNIDADES = [
     "Canarias", "Cantabria", "Castilla-La Mancha", "Castilla y León",
     "Cataluña", "Comunitat Valenciana", "Extremadura", "Galicia",
     "Comunidad de Madrid", "Región de Murcia", "Comunidad Foral de Navarra",
-    "País Vasco", "La Rioja",
+    "País Vasco", "La Rioja", "Ceuta", "Melilla",
 ]
 CURSOS = {
     "Educación Primaria": [f"{n}.º" for n in range(1, 7)],
@@ -72,9 +73,14 @@ with tab_curriculo:
         "y aportar los documentos que correspondan. OPO-IA no presume que "
         "una norma descargada anteriormente continúe vigente."
     )
+    st.info(
+        "Solo es obligatorio el documento curricular principal. Los PDF adicionales "
+        "no son necesarios si no hay modificaciones que afecten a los elementos "
+        "curriculares utilizados en la programación."
+    )
     c1, c2, c3 = st.columns([2, 2, 1])
     with c1:
-        comunidad = st.selectbox("Comunidad autónoma", COMUNIDADES)
+        comunidad = st.selectbox("Comunidad autónoma o ciudad autónoma", COMUNIDADES)
     with c2:
         etapa = st.selectbox("Etapa", list(CURSOS))
     with c3:
@@ -88,13 +94,34 @@ with tab_curriculo:
         value=date.today(),
         help="Fecha declarada de consulta; no constituye una certificación de vigencia.",
     )
-    st.markdown("#### 1. Decreto curricular principal")
-    st.caption(
-        "Obligatorio. Aporta la publicación oficial, preferiblemente con sus anexos "
-        "curriculares completos."
-    )
+    gestion_ministerial = comunidad in ("Ceuta", "Melilla")
+    referencias_ministeriales = {
+        "Educación Primaria": ("Orden EFP/678/2022", "https://www.boe.es/eli/es/o/2022/07/15/efp678"),
+        "Educación Secundaria Obligatoria": ("Orden EFP/754/2022", "https://www.boe.es/eli/es/o/2022/07/28/efp754"),
+        "Bachillerato": ("Orden EFP/755/2022", "https://www.boe.es/eli/es/o/2022/07/31/efp755"),
+    }
+    st.markdown("#### 1. Norma curricular principal — obligatoria")
+    if gestion_ministerial:
+        nombre_orden, enlace_orden = referencias_ministeriales[etapa]
+        st.warning(
+            f"En Ceuta y Melilla el real decreto establece las enseñanzas mínimas, "
+            f"pero el currículo completo de {etapa} se regula mediante la "
+            f"{nombre_orden}. Para extraer los contenidos autonómicos o ministeriales "
+            "de la materia, aporta esta orden con sus anexos. "
+            "El real decreto estatal por sí solo podría resultar insuficiente."
+        )
+        st.markdown(f"[Consultar el currículo ministerial en el BOE]({enlace_orden})")
+        etiqueta_principal = "Real decreto u orden ministerial curricular (PDF)"
+    else:
+        st.caption(
+            "Aporta el decreto curricular de tu comunidad autónoma con sus "
+            "anexos completos. No se requieren otros documentos si no existe "
+            "una modificación curricular que afecte a la materia."
+        )
+        etiqueta_principal = "Decreto curricular autonómico (PDF)"
+
     principal = st.file_uploader(
-        "Decreto curricular oficial (PDF)",
+        etiqueta_principal,
         type=["pdf"],
         max_upload_size=35,
         key="pdf_curriculo",
@@ -150,7 +177,7 @@ with tab_curriculo:
         "La revisión jurídica y curricular completa se realizará en fases posteriores."
     )
 
-    entradas = [("Decreto curricular", principal, url_principal)] if principal else []
+    entradas = [("Currículo principal", principal, url_principal)] if principal else []
     for numero, archivo, enlace in modificaciones:
         if archivo is not None:
             entradas.append((f"Modificación {numero}", archivo, enlace))
