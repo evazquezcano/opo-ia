@@ -1,0 +1,4 @@
+[server]
+maxUploadSize = 40
+maxMessageSize = 150
+enableStaticServing = false
