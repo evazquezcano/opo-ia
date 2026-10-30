@@ -278,6 +278,85 @@ with tab_curriculo:
             mime="application/json",
             help="Solo descarga metadatos; no contiene el contenido de los PDF ni el correo del estudiante.",
         )
+        st.markdown("#### 5. Extracción preliminar y referencias para el cotejo")
+        st.caption(
+            "Se examinan todas las páginas de los PDF para localizar indicios de "
+            "competencias, criterios, saberes, objetivos, descriptores y elementos "
+            "transversales. No se sustituyen textos por modificaciones sin comprobar "
+            "expresamente su alcance normativo."
+        )
+        legibles = all(doc["estado"] == "PDF_LEGIBLE" for doc in documentos)
+        if st.button(
+            "Localizar elementos curriculares en los archivos",
+            disabled=not legibles,
+            help="Prepara un índice de páginas y extractos para su revisión.",
+        ):
+            with st.spinner("Examinando la documentación aportada…"):
+                indices = [
+                    indexar_documento(
+                        archivo.getvalue(), archivo.name, funcion, materia.strip(), curso
+                    )
+                    for funcion, archivo, enlace in entradas
+                ]
+                consolidacion = consolidar_evidencias(indices)
+                st.session_state["indice_normativo"] = {
+                    "comunidad": comunidad,
+                    "etapa": etapa,
+                    "curso": curso,
+                    "materia": materia.strip(),
+                    "fecha_consulta": fecha_consulta.isoformat(),
+                    "documentos": indices,
+                    "consolidacion": consolidacion,
+                }
+                st.session_state["firma_indice"] = firma_actual
+        if st.session_state.get("firma_indice") == firma_actual:
+            indice = st.session_state["indice_normativo"]
+            st.info(
+                "Índice preliminar disponible. Las coincidencias no certifican "
+                "literalidad, integridad ni vigencia."
+            )
+            st.table([
+                {
+                    "Documento": item["archivo"],
+                    "Función": item["funcion"],
+                    "Páginas": item["paginas_pdf"],
+                    "Con texto": item["paginas_con_texto"],
+                    "Con la materia": len(item["paginas_con_materia"]),
+                    "Estado": item["estado"],
+                }
+                for item in indice["documentos"]
+            ])
+            for item in indice["documentos"]:
+                with st.expander("Indicios documentales de " + item["archivo"]):
+                    for categoria, hallazgos in item["indicios_por_elemento"].items():
+                        st.markdown(
+                            f"**{categoria.replace('_', ' ').capitalize()}**: "
+                            f"{len(hallazgos)} coincidencias (máximo 12 por categoría)"
+                        )
+                        for hallazgo in hallazgos[:5]:
+                            st.caption(
+                                f"Página PDF {hallazgo['pagina_pdf']}: "
+                                f"{hallazgo['extracto']}"
+                            )
+                    for advertencia in item["advertencias"]:
+                        st.caption(advertencia)
+            if indice["consolidacion"]["modificaciones"]:
+                st.warning(
+                    "Se han localizado posibles elementos modificados, "
+                    "pero todavía no se ha determinado qué artículos o anexos "
+                    "sustituyen, añaden o suprimen. No se han aplicado cambios."
+                )
+            st.download_button(
+                "Descargar índice preliminar (JSON)",
+                data=json.dumps(indice, ensure_ascii=False, indent=2),
+                file_name="opo-ia-indice-documental.json",
+                mime="application/json",
+                help="Incluye fragmentos breves y páginas, no los PDF originales.",
+            )
+            st.warning(
+                "La generación definitiva permanece bloqueada hasta extraer "
+                "y contrastar íntegramente los elementos curriculares aplicables."
+            )
     elif "ficha_fuentes" in st.session_state:
         st.info("Los documentos o datos han cambiado. Examínalos de nuevo para actualizar el resultado.")
 
