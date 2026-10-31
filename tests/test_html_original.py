@@ -45,12 +45,12 @@ class AparienciaOriginal(unittest.TestCase):
         codigo = script(CURRENT)
         for ancla in (
             "normFileBlock('curriculum'",
-            "Modificaciones o correcciones curriculares",
-            "Orden o decreto de evaluación",
-            "No aportes archivos adicionales",
+            "Convocatoria y criterios del proceso selectivo",
+            "normFileBlock('call'",
+            "normFileBlock('rubric'",
             "normReadPdf",
             "normAnalyze",
-            "INDICE_PRELIMINAR",
+            "EXTRACCION_PRELIMINAR",
             "completeCurriculumVerified:false",
         ):
             with self.subTest(ancla=ancla):
@@ -62,6 +62,14 @@ class AparienciaOriginal(unittest.TestCase):
         self.assertIn('type="password"', codigo)
         self.assertNotIn("usuario@alumno.uned.es", CURRENT)
         self.assertNotIn("demoBtn", codigo)
+        self.assertIn('id="toggleSecret"', codigo)
+        self.assertIn('Mostrar contraseña', codigo)
+        self.assertIn('Ocultar contraseña', codigo)
+        self.assertNotIn('id="norm-modifications"', codigo)
+        self.assertNotIn('id="norm-evaluation"', codigo)
+        self.assertIn('id="normAnalyze"', codigo)
+        self.assertIn('normStructuredFromPages', codigo)
+        self.assertIn('const bullet=line.match', codigo)
         self.assertIn("Contraseña no válida.", codigo)
         # La comprobación del dominio subsiste en el código, NO es autenticación segura.
         self.assertIn("@alumno\\.uned\\.es", codigo)
