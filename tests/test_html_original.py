@@ -56,6 +56,43 @@ class AparienciaOriginal(unittest.TestCase):
             with self.subTest(ancla=ancla):
                 self.assertIn(ancla, codigo)
 
+    def test_acceso_sin_pista_del_correo(self):
+        codigo = script(CURRENT)
+        self.assertIn("Accede con tu contraseña", codigo)
+        self.assertIn('type="password"', codigo)
+        self.assertNotIn("usuario@alumno.uned.es", CURRENT)
+        self.assertNotIn("demoBtn", codigo)
+        self.assertIn("Contraseña no válida.", codigo)
+        # La comprobación del dominio subsiste en el código, NO es autenticación segura.
+        self.assertIn("@alumno\\.uned\\.es", codigo)
+
+    def test_convocatoria_y_rubricas_opcionales(self):
+        codigo = script(CURRENT)
+        for ancla in (
+            "Normativa · Futuro Docente (UNED)",
+            "Convocatoria y criterios del proceso selectivo",
+            "normFileBlock('call'",
+            "normFileBlock('rubric'",
+            "No es necesario aportar estos documentos",
+        ):
+            self.assertIn(ancla, codigo)
+
+    def test_cobertura_y_documentos_sin_datos_inventados(self):
+        codigo = script(CURRENT)
+        for ancla in (
+            "No se ha identificado automáticamente",
+            "Indicio localizado · sin verificar",
+            "Cobertura conjunta de la programación",
+            "Informe final de cobertura curricular",
+            "input[name=exportScope]",
+            "Primera tabla de prueba",
+            "Todas las tablas de la programación",
+            "Descargar",
+        ):
+            self.assertIn(ancla, codigo)
+        self.assertNotIn("exportConfig", codigo)
+        self.assertIn("No calculable todavía", codigo)
+
     def test_sintaxis_javascript(self):
         with tempfile.TemporaryDirectory() as carpeta:
             archivo = Path(carpeta) / "prototipo.js"
