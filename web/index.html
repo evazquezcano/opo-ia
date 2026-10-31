@@ -104,7 +104,7 @@ function normSetDoc(code,file){if(code==='call'||code==='rubric')s.opoDocs[code]
 function normSetLink(code,url){if(code==='call'||code==='rubric')s.opoLinks[code]=url;else s.normLinks[code]=url;}
 function normListDocs(){const entries=[];if(s.normDocs.curriculum)entries.push({type:'curriculum',file:s.normDocs.curriculum,label:'Norma curricular principal',url:s.normLinks.curriculum});if(s.opoDocs.call)entries.push({type:'opposition',file:s.opoDocs.call,label:'Convocatoria de oposiciones',url:s.opoLinks.call});if(s.opoDocs.rubric)entries.push({type:'rubric',file:s.opoDocs.rubric,label:'Rúbricas y listas de cotejo',url:s.opoLinks.rubric});return entries;}
 function normUploadPanel(){const ministerial=normIsMinisterial();const ministerialRefs={Primaria:['Orden EFP/678/2022','https://www.boe.es/eli/es/o/2022/07/15/efp678'],ESO:['Orden EFP/754/2022','https://www.boe.es/eli/es/o/2022/07/28/efp754'],Bachillerato:['Orden EFP/755/2022','https://www.boe.es/eli/es/o/2022/07/31/efp755']};const ref=ministerialRefs[s.stage];const docLabel=ministerial?'Norma curricular ministerial completa':'Decreto curricular autonómico';return `<div class="norm-section-title"><h3>Documentación curricular</h3><span class="chip">1 documento obligatorio</span></div><div class="helper-note"><span aria-hidden="true">ⓘ</span><div><strong>Para comenzar, adjunta únicamente el decreto curricular de la comunidad autónoma o, en Ceuta y Melilla, la norma ministerial correspondiente</strong>, con los anexos de la etapa para iniciar la extracción.</div></div><p class="status-line">Localiza el currículo de tu comunidad y etapa en <a href="https://blogs.uned.es/futurodocente/normativa/" target="_blank" rel="noopener noreferrer">Normativa · Futuro Docente (UNED)</a>.</p>${ministerial?`<div class="helper-note warning norm-warn"><span aria-hidden="true">!</span><div><strong>Ceuta y Melilla.</strong> El real decreto estatal establece las enseñanzas mínimas; el currículo ministerial completo de ${esc(s.stage)} se desarrolla en la <strong>${esc(ref[0])}</strong>. Para extraer todos los elementos de la materia aporta la orden con sus anexos. <a href="${ref[1]}" target="_blank" rel="noopener noreferrer">Consultar BOE</a>.</div></div>`:''}${normFileBlock('curriculum',docLabel,s.normDocs.curriculum,true)}<div class="norm-section-title"><h3>Convocatoria y criterios del proceso selectivo</h3><span class="chip">Opcional</span></div><div class="helper-note"><span aria-hidden="true">ⓘ</span><div><strong>No es necesario aportar estos documentos para generar una UD o SA.</strong> Si tu comunidad ha publicado la convocatoria, rúbricas o listas de cotejo, puedes adjuntarlas para revisar más adelante los requisitos de presentación, estructura y criterios de calificación de las pruebas. Estos últimos no sustituyen los criterios de evaluación del currículo.</div></div><details id="norm-opposition" class="norm-optional" ${s.normPanels.opposition?'open':''}><summary>Subir convocatoria y rúbricas de oposiciones · Opcional</summary>${normFileBlock('call','Resolución de convocatoria de oposiciones (PDF)',s.opoDocs.call)}${normFileBlock('rubric','Rúbricas o listas de cotejo publicadas (PDF)',s.opoDocs.rubric)}</details><div class="norm-tools"><button class="btn primary" id="normAnalyze" ${!s.normDocs.curriculum||s.normBusy?'disabled':''}>${s.normBusy?'Analizando documentos…':'Examinar PDF y localizar elementos curriculares →'}</button><span class="status-line">Lectura preliminar en el navegador. No se suben los PDF a OPO-IA.</span></div><div id="normProgress" class="norm-progress" role="status" aria-live="polite">${esc(s.normError||s.normProgress)}</div>${s.normReport?normResultPanel(s.normReport):''}`;}
-function normResultPanel(report){const errs=report.documents.filter(d=>d.error);const main=report.documents[0];return `<div class="norm-results"><h3>Resultado de la lectura documental</h3><p>Los indicadores señalan <strong>páginas candidatas</strong>, no elementos curriculares definitivamente extraídos ni una acreditación de vigencia o integridad.</p><div class="norm-table-scroll"><table class="norm-table"><thead><tr><th>Documento</th><th>Páginas</th><th>Con texto</th><th>Estado</th></tr></thead><tbody>${report.documents.map(d=>`<tr><td>${esc(d.label)}</td><td>${d.pages||'—'}</td><td>${d.pagesWithText??'—'}</td><td>${d.error?`<span class="norm-error">${esc(d.error)}</span>`:'Lectura preliminar'}</td></tr>`).join('')}</tbody></table></div>${main&&!main.error?`<h4>Elementos localizados en la norma principal</h4><div class="norm-evidence">${Object.keys(NORM_LABELS).map(k=>`<div class="norm-evidence-row"><b>${esc(NORM_LABELS[k])}</b><span>${main.evidence[k].length?`PDF: ${main.evidence[k].map(z=>z.page).join(', ')}`:'Sin localización automática'}</span></div>`).join('')}</div><details class="norm-optional"><summary>Ver extractos y páginas de origen</summary>${Object.keys(NORM_LABELS).map(k=>`<div class="norm-excerpts"><b>${esc(NORM_LABELS[k])}</b>${main.evidence[k].length?main.evidence[k].slice(0,3).map(x=>`<p><small>PDF p. ${x.page} · ${esc(x.excerpt)}</small></p>`).join(''):'<p><small>No localizado automáticamente; no implica ausencia de este elemento en la norma.</small></p>'}</div>`).join('')}</details>`:''}${main?.structured?`<h4>Extracción literal preliminar para revisión</h4><p class="status-line">Estos textos proceden del PDF seleccionado. Son <strong>candidatos</strong>, no una relación definitiva: comprueba que pertenecen a ${esc(report.subject)} (${esc(report.grade)} de ${esc(report.stage)}). Se muestran hasta 100 por categoría.</p><div class="norm-evidence">${Object.entries(main.structured.candidatos).map(([key,items])=>`<div class="norm-evidence-row"><b>${esc(NORM_LABELS[key]||key)}</b><span>${items.length} fragmentos candidatos</span></div>`).join('')}</div>${Object.entries(main.structured.candidatos).filter(([k,items])=>items.length).map(([key,items])=>`<details class="norm-optional"><summary>${esc(NORM_LABELS[key]||key)} · ${items.length} candidatos literales</summary>${items.map(v=>`<div class="norm-excerpts"><strong>${esc(v.codigo)}</strong> · PDF p. ${v.pagina_pdf}<p style="white-space:pre-wrap;font-size:12px;line-height:1.5">${esc(v.texto)}</p><small>${esc(v.contexto)} · pendiente de cotejo</small></div>`).join('')}</details>`).join('')}<div class="helper-note warning norm-warn"><span>!</span><div>Antes de utilizar estos elementos se debe revisar su correspondencia con la materia y el curso, los códigos, la integridad y la vigencia del documento. La coincidencia textual no implica validación curricular.</div></div>`:''}<div class="helper-note warning norm-warn"><span>!</span><div><strong>Extracción y verificación todavía incompletas.</strong> Los PDF pueden contener anexos no reconocidos, páginas escaneadas o elementos distribuidos de forma diferente. No se han validado literalmente todas las competencias, criterios ni saberes. La generación definitiva de UD y SA continúa desactivada.</div></div></div>`;}
+function normResultPanel(report){const errs=report.documents.filter(d=>d.error);const main=report.documents[0];return `<div class="norm-results"><h3>Resultado de la lectura documental</h3><p>Los indicadores señalan <strong>páginas candidatas</strong>, no elementos curriculares definitivamente extraídos ni una acreditación de vigencia o integridad.</p><div class="norm-table-scroll"><table class="norm-table"><thead><tr><th>Documento</th><th>Páginas</th><th>Con texto</th><th>Estado</th></tr></thead><tbody>${report.documents.map(d=>`<tr><td>${esc(d.label)}</td><td>${d.pages||'—'}</td><td>${d.pagesWithText??'—'}</td><td>${d.error?`<span class="norm-error">${esc(d.error)}</span>`:'Lectura preliminar'}</td></tr>`).join('')}</tbody></table></div>${main&&!main.error?`<h4>Coincidencias generales en el PDF (sin filtrar por materia)</h4><div class="norm-evidence">${Object.keys(NORM_LABELS).map(k=>`<div class="norm-evidence-row"><b>${esc(NORM_LABELS[k])}</b><span>${main.evidence[k].length?`PDF: ${main.evidence[k].map(z=>z.page).join(', ')}`:'Sin localización automática'}</span></div>`).join('')}</div><details class="norm-optional"><summary>Ver extractos y páginas de origen</summary>${Object.keys(NORM_LABELS).map(k=>`<div class="norm-excerpts"><b>${esc(NORM_LABELS[k])}</b>${main.evidence[k].length?main.evidence[k].slice(0,3).map(x=>`<p><small>PDF p. ${x.page} · ${esc(x.excerpt)}</small></p>`).join(''):'<p><small>No localizado automáticamente; no implica ausencia de este elemento en la norma.</small></p>'}</div>`).join('')}</details>`:''}${main?.structured?`<h4>Extracción literal preliminar para revisión</h4>${main.structured.ambito_pdf?`<p class="status-line">Sección de ${esc(report.subject)}: PDF páginas ${main.structured.ambito_pdf.pagina_inicio}–${main.structured.ambito_pdf.pagina_fin}; curso ${esc(report.grade)}: PDF página ${main.structured.ambito_pdf.pagina_curso||'no localizado'}.</p>`:''}${main.structured.advertencias?.length?`<div class="helper-note warning norm-warn"><span>!</span><div>${main.structured.advertencias.map(esc).join('<br>')}</div></div>`:''}<p class="status-line">Estos textos proceden del PDF seleccionado. Son <strong>candidatos</strong>, no una relación definitiva: comprueba que pertenecen a ${esc(report.subject)} (${esc(report.grade)} de ${esc(report.stage)}). Solo se incluyen los elementos candidatos del curso y de la materia localizados en el documento.</p><div class="norm-evidence">${Object.entries(main.structured.candidatos).map(([key,items])=>`<div class="norm-evidence-row"><b>${esc(NORM_LABELS[key]||key)}</b><span>${items.length} fragmentos candidatos</span></div>`).join('')}</div>${Object.entries(main.structured.candidatos).filter(([k,items])=>items.length).map(([key,items])=>`<details class="norm-optional"><summary>${esc(NORM_LABELS[key]||key)} · ${items.length} candidatos literales</summary>${items.map(v=>`<div class="norm-excerpts"><strong>${esc(v.codigo)}</strong> · PDF p. ${v.pagina_pdf}<p style="white-space:pre-wrap;font-size:12px;line-height:1.5">${esc(v.texto)}</p><small>${esc(v.contexto)} · pendiente de cotejo</small></div>`).join('')}</details>`).join('')}<div class="helper-note warning norm-warn"><span>!</span><div>Antes de utilizar estos elementos se debe revisar su correspondencia con la materia y el curso, los códigos, la integridad y la vigencia del documento. La coincidencia textual no implica validación curricular.</div></div>`:''}<div class="helper-note warning norm-warn"><span>!</span><div><strong>Extracción y verificación todavía incompletas.</strong> Los PDF pueden contener anexos no reconocidos, páginas escaneadas o elementos distribuidos de forma diferente. No se han validado literalmente todas las competencias, criterios ni saberes. La generación definitiva de UD y SA continúa desactivada.</div></div></div>`;}
 function normLoadScript(url,timeoutMs=11000){return new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=url;script.async=true;let settled=false;const t=setTimeout(()=>{if(settled)return;settled=true;script.remove();reject(new Error('Tiempo de carga excedido'));},timeoutMs);script.onload=()=>{if(settled)return;settled=true;clearTimeout(t);resolve();};script.onerror=()=>{if(settled)return;settled=true;clearTimeout(t);script.remove();reject(new Error('Biblioteca no disponible'));};document.head.appendChild(script);});}
 async function normLoadPdfLib(){if(window.pdfjsLib&&window.pdfjsLib.getDocument)return window.pdfjsLib;if(normLoadingLibrary)return normLoadingLibrary;normLoadingLibrary=(async()=>{let last;for(const cdn of NORM_PDFJS){try{await normLoadScript(cdn.script);if(window.pdfjsLib?.getDocument){window.pdfjsLib.GlobalWorkerOptions.workerSrc=cdn.worker;return window.pdfjsLib;}}catch(e){last=e;}}throw new Error('No se ha podido cargar el lector PDF.js. Comprueba la conexión a Internet e inténtalo de nuevo; ningún PDF se ha enviado.');})();try{return await normLoadingLibrary;}finally{normLoadingLibrary=null;}}
 function normPdfText(textContent){let str='',lastY=null;for(const item of textContent.items){if(typeof item.str!=='string')continue;const y=Math.round(item.transform?.[5]||0);if(lastY!==null&&Math.abs(y-lastY)>3)str+='\n';else if(str&&!/\s$/.test(str))str+=' ';str+=item.str;if(item.hasEOL)str+='\n';lastY=y;}return str;}
@@ -113,76 +113,153 @@ function normExtractSnip(text,keyword){const normalized=normFold(text);const idx
 // El texto de cada candidato procede exclusivamente del PDF subido; las páginas son físicas del PDF.
 const normGradeTerms=()=>{const n=parseInt(s.grade,10);return [new RegExp('(?:^|\\n)\\s*'+n+'\\s*(?:º|°|\\.º|er|do|o)?\\s*(?:curso|de\\s+eso|de\\s+bachillerato|de\\s+primaria)','i'),new RegExp('(?:^|\\n)\\s*(?:curso\\s*)?'+n+'\\s*(?:º|°|\\.º|er|do)\\b','i')];};
 function normCourseMention(t){return normGradeTerms().some(re=>re.test(t));}
+// Piloto de extracción curricular: delimita la materia y el curso antes de reconocer códigos.
+// No valida la vigencia ni transcribe anexos que estén en imágenes o tablas inaccesibles.
 function normStructuredFromPages(pages){
-  const byType={competencias:[],criterios:[],saberes:[],objetivos:[],descriptores:[],bloques:[],transversales:[]};
-  const seen=Object.fromEntries(Object.keys(byType).map(k=>[k,new Set()]));
-  const subject=normFold(s.subject),tokens=subject.split(' ').filter(x=>x.length>3);
-  const subjectPages=pages.filter(p=>tokens.length&&tokens.every(t=>normFold(p.text).includes(t))).map(p=>p.page);
-  const isNearSubject=p=>subjectPages.some(n=>Math.abs(p-n)<=24);
-  const coursePages=pages.filter(p=>normCourseMention(p.text)&&isNearSubject(p.page)).map(p=>p.page);
-  // Los bloques y saberes pueden extenderse varias páginas tras el encabezado de materia.
-  const include=p=>isNearSubject(p.page)||coursePages.some(n=>Math.abs(p.page-n)<=8);
-  const push=(type,code,text,page,confidence)=>{
-    const cleaned=text.replace(/[ \t]+/g,' ').replace(/\n{3,}/g,'\n\n').trim();
-    if(!cleaned||cleaned.length<12)return;
-    const ident=[type,code||'',normFold(cleaned.slice(0,90))].join('|');
-    if(seen[type].has(ident)||byType[type].length>=100)return;
-    seen[type].add(ident);
-    byType[type].push({codigo:code||'Sin código individual identificado',texto:cleaned.slice(0,3500),pagina_pdf:page,revision:'Candidato por cotejar con la materia, curso y disposición',contexto:confidence});
-  };
-  let context='';
+  const keys=['competencias','criterios','saberes','objetivos','descriptores','bloques','transversales'];
+  const byType=Object.fromEntries(keys.map(k=>[k,[]]));
+  const warnings=[];
+  const clean=x=>String(x||'').replace(/[ \t]+/g,' ').trim();
+  const lines=[];
   for(const p of pages){
-    if(!include(p))continue;
-    const lines=p.text.split('\n').map(t=>t.trim()).filter(Boolean);
-    for(let i=0;i<lines.length;i++){
-      const line=lines[i],fold=normFold(line);
-      if(/competencias? espec[ií]ficas?/.test(fold))context='competencias';
-      else if(/criterios? de evaluacion/.test(fold))context='criterios';
-      else if(/(?:saberes basicos|contenidos del curso|bloques de contenido)/.test(fold))context='saberes';
-      else if(/objetivos (?:de (?:la )?etapa|generales)/.test(fold))context='objetivos';
-      // Código inequívoco de criterio 1.1., 2.3. ... ; solo si hay indicio de criterio en página/zona.
-      const criteria=line.match(/^\s*(\d{1,2}\.\d{1,2})\.?\s+(.+)/);
-      const criterionZone=context==='criterios'||normFold(p.text).includes('criterios de evaluacion');
-      if(criteria&&criterionZone){
-        let piece=criteria[2];for(let k=i+1;k<Math.min(i+12,lines.length);k++){
-          if(/^\s*\d{1,2}\.\d{1,2}\.?\s+/.test(lines[k])||/^(?:competencias especificas|saberes basicos|criterios de evaluacion)$/i.test(normFold(lines[k])))break;
-          piece+='\n'+lines[k];
-        }
-        push('criterios',criteria[1],piece,p.page,coursePages.includes(p.page)?'Página con referencia al curso':'Página próxima a materia/curso');
-      }
-      // Competencias numeradas. No considerar automáticamente otros apartados enumerados.
-      const comp=line.match(/^\s*(\d{1,2})\.\s+(.+)/);
-      if(comp&&context==='competencias'&&!criteria){
-        let piece=comp[2];for(let k=i+1;k<Math.min(i+14,lines.length);k++){
-          if(/^\s*\d{1,2}\.\s+/.test(lines[k])||/^\s*\d{1,2}\.\d{1,2}/.test(lines[k]))break;
-          piece+='\n'+lines[k];
-        }
-        push('competencias',comp[1],piece,p.page,'Zona candidata de competencias');
-      }
-      // Contenidos jerarquizados A./B. o A.1., B.2.1...
-      const content=line.match(/^\s*([A-Z](?:\.\d{1,2}){0,3})\.\s+(.+)/);
-      if(content&&(context==='saberes'||normFold(p.text).includes('saberes basicos')||normFold(p.text).includes('contenidos'))){
-        push(content[1].length===1?'bloques':'saberes',content[1],content[2],p.page,'Bloque o contenido codificado en el documento');
-      }
-      // En los currículos de Madrid pueden aparecer saberes enumerados sin códigos oficiales.
-      const bullet=line.match(/^[–—•-]\s+(.+)/);
-      if(bullet&&context==='saberes'){
-        let piece=bullet[1];
-        for(let k=i+1;k<Math.min(i+8,lines.length);k++){
-          if(/^[–—•-]\s+/.test(lines[k])||/^[A-D]\.\s+/.test(lines[k])||/^\s*\d{1,2}\.\d{1,2}\.?\s+/.test(lines[k]))break;
-          piece+='\n'+lines[k];
-        }
-        push('saberes','Sin código oficial',piece,p.page,'Contenido enumerado sin código oficial; requiere revisar el bloque');
-      }
-      // Los descriptores de competencia clave se registran solo cuando aparecen literalmente.
-      const descriptor=line.match(/\b(CCL|CP|STEM|CD|CPSAA|CC|CE|CCEC)\s*([1-5])\b/);
-      if(descriptor){push('descriptores',descriptor[1]+descriptor[2],line,p.page,'Descriptor mencionado en la fuente');}
-      if(context==='objetivos'&&/^\s*[a-zñ]\)\s+/.test(line)){push('objetivos',line.slice(0,2),line.slice(2),p.page,'Objetivo enumerado candidato');}
-      if(/elementos transversales/.test(fold)){push('transversales','',line,p.page,'Mención del elemento transversal');}
+    for(const l of p.text.split('\n')){
+      const raw=clean(l);
+      if(/^(?:BOLET[IÍ]N OFICIAL DE LA COMUNIDAD DE MADRID|B\.O\.C\.M\.|P[aá]g\.\s*\d+|BOCM-\d+)/i.test(raw))continue;
+      lines.push({raw,page:p.page,fold:normFold(raw)});
     }
   }
-  return {candidatos:byType,paginas_materia:subjectPages,paginas_con_indicios_curso:coursePages,limite_por_categoria:100,revision_completa:false,correspondencia_materia_curso_verificada:false,nota:'Extracción automática de candidatos literales. Requiere verificar pertenencia a la materia, curso, integridad, códigos y vigencia; no se deduce cobertura curricular de las coincidencias.'};
+  const subject=normFold(s.subject);
+  const subjectHeaders=[];
+  const isUpperHeading=x=>{
+    const v=x.raw;
+    if(v.length<7||v.length>95||!/\p{L}/u.test(v)||!/[ÁÉÍÓÚÜÑA-Z]{3}/u.test(v))return false;
+    if(v!==v.toLocaleUpperCase('es-ES')||/\d/.test(v))return false;
+    return !/^(?:BOLET[IÍ]N|BOCM|ANEXO|CRITERIOS|COMPETENCIAS|CONTENIDOS|EDUCACI[OÓ]N SECUNDARIA|DISPOSICI[OÓ]N|CAP[IÍ]TULO|SECCI[OÓ]N)/.test(v);
+  };
+  for(let i=0;i<lines.length;i++)if(lines[i].fold===subject&&isUpperHeading(lines[i]))subjectHeaders.push(i);
+  if(!subjectHeaders.length){
+    warnings.push(`No se ha podido delimitar el encabezado de la materia «${s.subject}». No se extraen criterios de otras materias.`);
+    return {candidatos:byType,paginas_materia:[],paginas_con_indicios_curso:[],revision_completa:false,correspondencia_materia_curso_verificada:false,advertencias:warnings,ambito_pdf:null};
+  }
+  const subjectStart=subjectHeaders[0];
+  let subjectEnd=lines.length;
+  for(let i=subjectStart+1;i<lines.length;i++)if(isUpperHeading(lines[i])&&lines[i].fold!==subject){subjectEnd=i;break;}
+  const area=lines.slice(subjectStart+1,subjectEnd);
+  const number=Number.parseInt(s.grade,10);
+  const courseHead=x=>{
+    const m=x.raw.match(/^([1-6])\s*(?:º|°|\.º|o)?\s*(ESO|curso|primaria|bachillerato)\s*\.?$/i);
+    return m?Number(m[1]):null;
+  };
+  const headings=[];
+  area.forEach((x,i)=>{const n=courseHead(x);if(n!==null)headings.push({i,n,page:x.page});});
+  const chosen=headings.find(x=>x.n===number);
+  let course=[];
+  if(chosen){
+    const later=headings.find(x=>x.i>chosen.i);
+    course=area.slice(chosen.i+1,later?later.i:area.length);
+  }else warnings.push(`No se ha identificado el encabezado de ${s.grade} en el apartado de «${s.subject}». No se atribuyen criterios ni contenidos de otros cursos.`);
+  const firstCourse=headings.length?headings[0].i:area.length;
+  const shared=area.slice(0,firstCourse);
+  const headingIndex=shared.findIndex(x=>x.fold==='competencias especificas');
+  const compLines=headingIndex>=0?shared.slice(headingIndex+1):[];
+  if(headingIndex<0)warnings.push('No se identificó el encabezado de competencias específicas dentro de la materia.');
+  const add=(kind,code,parts,start,context)=>{
+    const texto=parts.map(x=>x.raw).filter(Boolean).join(' ').replace(/\s+/g,' ').trim();
+    if(!texto)return;
+    const entry={codigo:code||'Sin código oficial',texto,pagina_pdf:start.page,revision:'Pendiente de cotejo literal y jurídico',contexto:context};
+    if(!byType[kind].some(x=>x.codigo===entry.codigo&&x.texto===entry.texto))byType[kind].push(entry);
+  };
+  // Competencia específica: solo el primer párrafo que sigue a cada número, sin glosa explicativa.
+  for(let i=0;i<compLines.length;i++){
+    const m=compLines[i].raw.match(/^(\d{1,2})\.\s+(.+)/);
+    if(!m)continue;
+    const first={...compLines[i],raw:m[2]};const block=[first];
+    let j=i+1;
+    for(;j<compLines.length;j++){
+      if(!compLines[j].raw||/^\d{1,2}\.\s+/.test(compLines[j].raw))break;
+      block.push(compLines[j]);
+    }
+    add('competencias',m[1],block,compLines[i],'Enunciado de competencia específica de la materia');
+  }
+  // Descriptores: menciones oficiales dentro de la explicación de estas competencias.
+  const descRegex=/\b(CCL|CP|STEM|CD|CPSAA|CCEC|CC|CE)\s*([1-5])\b/g;
+  const descSet=new Set();
+  for(const l of compLines){
+    const matches=l.raw.matchAll(descRegex);
+    for(const m of matches){
+      const code=m[1]+m[2];
+      if(!descSet.has(code)){descSet.add(code);add('descriptores',code,[{raw:code}],l,'Mención del descriptor en la competencia específica');}
+    }
+  }
+  // Criterios solo desde el apartado de ese curso hasta la sección de contenidos.
+  const critStart=course.findIndex(x=>x.fold==='criterios de evaluacion');
+  const contentStart=course.findIndex((x,i)=>i>critStart&&x.fold==='contenidos');
+  const critLines=critStart>=0?course.slice(critStart+1,contentStart>=0?contentStart:course.length):[];
+  if(chosen&&critStart<0)warnings.push('No se encontró el encabezado de criterios de evaluación del curso.');
+  if(chosen&&contentStart<0)warnings.push('No se encontró el encabezado de contenidos del curso.');
+  const critRegex=/^(\d{1,2}\.\d{1,2})\.?\s+(.+)/;
+  for(let i=0;i<critLines.length;i++){
+    const m=critLines[i].raw.match(critRegex);
+    if(!m)continue;
+    const parts=[{raw:m[2]}];
+    let j=i+1;
+    for(;j<critLines.length;j++){
+      const raw=critLines[j].raw;
+      if(!raw||critRegex.test(raw)||/^competencia espec[ií]fica\s*\d/i.test(raw))break;
+      parts.push({raw});
+    }
+    add('criterios',m[1],parts,critLines[i],`Criterio de evaluación de ${s.grade} de ${s.subject}`);
+  }
+  const contents=contentStart>=0?course.slice(contentStart+1):[];
+  let activeBlock=null;
+  const blockRegex=/^([A-Z])\.\s+(.+)/;
+  const bulletRegex=/^[–—−•-]\s*(.+)/;
+  const subdivisionRegex=/^\d{1,2}\.\s+(.+)/;
+  for(let i=0;i<contents.length;i++){
+    const line=contents[i];
+    const b=line.raw.match(blockRegex);
+    if(b){activeBlock=b[1];add('bloques',b[1],[{raw:b[2]}],line,'Bloque de contenidos del curso');continue;}
+    const bullet=line.raw.match(bulletRegex);
+    const subsection=line.raw.match(subdivisionRegex);
+    if(!activeBlock||(!bullet&&!subsection))continue;
+    const parts=[{raw:bullet?bullet[1]:subsection[1]}];
+    for(let j=i+1;j<contents.length;j++){
+      const next=contents[j].raw;
+      if(!next||blockRegex.test(next)||bulletRegex.test(next)||subdivisionRegex.test(next))break;
+      parts.push({raw:next});
+    }
+    const label=bullet?'Sin código oficial (bloque '+activeBlock+')':'Epígrafe '+(line.raw.match(/^\d+/)||[''])[0]+' (bloque '+activeBlock+')';
+    add('saberes',label,parts,line,`Contenido sin código de criterio; bloque ${activeBlock}`);
+  }
+  // Objetivos generales de etapa: art. 13 del decreto, anteriores al anexo II.
+  const before=lines.slice(0,subjectStart);
+  const art13=before.findIndex(x=>/^art[ií]culo\s+13$/i.test(x.raw));
+  const art14=before.findIndex((x,i)=>i>art13&&/^art[ií]culo\s+14$/i.test(x.raw));
+  if(art13>=0&&art14>art13){
+    const section=before.slice(art13+1,art14);
+    for(let i=0;i<section.length;i++){
+      const m=section[i].raw.match(/^([a-l])\)\s+(.+)/i);
+      if(!m)continue;
+      const parts=[{raw:m[2]}];
+      for(let j=i+1;j<section.length;j++){
+        if(!section[j].raw||/^[a-l]\)\s+/i.test(section[j].raw))break;
+        parts.push({raw:section[j].raw});
+      }
+      add('objetivos',m[1]+')',parts,section[i],'Objetivo de etapa del artículo 13');
+    }
+  }
+  // Contenidos transversales del art. 12, apartado 3; no confundir con bloques específicos.
+  const art12=before.findIndex(x=>/^art[ií]culo\s+12$/i.test(x.raw));
+  if(art12>=0&&art13>art12){
+    for(let i=art12+1;i<art13;i++)if(/transversal/i.test(before[i].raw)){
+      add('transversales','art. 12.3',[{raw:before[i].raw}],before[i],'Referencia curricular general a contenidos transversales');break;
+    }
+  }
+  const uniqueCriteria=new Set(byType.criterios.map(x=>x.codigo));
+  if(uniqueCriteria.size!==byType.criterios.length)warnings.push('Hay códigos repetidos de criterios en el mismo curso; revisar manualmente.');
+  return {candidatos:byType,paginas_materia:[...new Set(area.map(x=>x.page))],paginas_con_indicios_curso:chosen?[chosen.page]:[],limite_por_categoria:null,revision_completa:false,correspondencia_materia_curso_verificada:Boolean(chosen),advertencias:warnings,ambito_pdf:{materia:s.subject,pagina_inicio:lines[subjectStart].page,pagina_fin:lines[subjectEnd]?.page||pages.length,curso:s.grade,pagina_curso:chosen?.page??null},nota:'Extracción preliminar acotada por encabezados de materia y curso. Los textos corresponden al PDF aportado, pero todavía requieren cotejo humano, validación de integridad y comprobación de vigencia.'};
 }
+
 async function normReadPdf(doc,pdfjs){
   const data=doc.file;
   if(!data||data.size===0)throw new Error('PDF vacío');
@@ -235,10 +312,10 @@ function stepCoverage(){
     ['Descriptores operativos / perfil de salida','descriptores'],
     ['Elementos transversales','transversales']
   ];
-  const evidence=key=>sources.flatMap(doc=>(doc.evidence?.[key]||[]).map(hit=>({page:hit.page,name:doc.name,type:doc.type})));
-  const missing=main&&!main.error?checks.filter(x=>!evidence(x[1]).length).map(x=>x[0]):[];
+  const evidence=key=>sources.flatMap(doc=>(doc.structured?.candidatos?.[key]||[]).map(hit=>({page:hit.pagina_pdf,name:doc.name,type:doc.type})));
+  const missing=main?.structured?checks.filter(x=>!evidence(x[1]).length).map(x=>x[0]):[];
   const status=main?.error?'PDF principal no legible':main?'Lectura preliminar':'Sin analizar';
-  return `${heading(3,'Verificación curricular','Comprueba la documentación aportada','Se distinguen los elementos localizados en los PDF y su posterior cobertura conjunta en las unidades y situaciones de aprendizaje.',status)}<div class="summary-strip"><span><b>${s.total}</b> tablas previstas</span><span><b>${s.total-s.sa}</b> UD</span><span><b>${s.sa}</b> SA</span><span>${esc(s.stage)} · ${esc(s.grade)} · ${esc(s.subject)}</span></div><h3 style="font-size:16px;margin:21px 0 8px">1. Identificación de elementos en los PDF</h3><p class="status-line">Se examina la norma curricular principal aportada por el estudiante. El check de integridad solo aparecerá cuando se hayan extraído y cotejado todos los elementos aplicables al curso y a la materia.</p>${checks.map(([name,key])=>{const hits=evidence(key);const count=main?.structured?.candidatos?.[key]?.length||0;const state=main?.error?'Pendiente: error en currículo principal':!main?'Pendiente de analizar':count?`${count} candidatos · sin verificar`:hits.length?'Indicio localizado · sin verificar':'No identificado';return `<div class="coverage-card"><div class="coverage-icon">${hits.length?'⌕':'!'}</div><div><b>${name}</b><p>${hits.length?`Referencias PDF: ${hits.slice(0,7).map(z=>`${esc(z.name)} (p. ${z.page})`).join('; ')}. Falta comprobar la transcripción literal y la integridad.`:'No se dispone de evidencia suficiente de este elemento en los documentos curriculares analizados.'}</p></div><span class="chip orange">${state}</span></div>`;}).join('')}${missing.length?`<div class="helper-note warning"><span aria-hidden="true">!</span><div><strong>No se ha identificado automáticamente en la documentación curricular aportada:</strong> ${missing.map(esc).join('; ')}. Comprueba si aparece en los anexos o aporta el documento que falta. La ausencia de coincidencias no demuestra que el elemento no exista.</div></div>`:''}${main?.error?`<div class="helper-note warning"><span>!</span><div>El currículo principal no ha podido leerse: ${esc(main.error)}. Aporta un PDF accesible o revisa el archivo.</div></div>`:''}<h3 style="font-size:16px;margin:25px 0 7px">2. Cobertura conjunta de la programación</h3><div class="helper-note warning"><span>!</span><div><strong>Pendiente de cálculo.</strong> Para evaluar la cobertura global deben extraerse y comprobarse literalmente todos los elementos curriculares, y después relacionarlos con las ${s.total} UD y SA. No se presenta ningún porcentaje sin esa información.</div></div>${actions(1,3)}`;
+  return `${heading(3,'Verificación curricular','Comprueba la documentación aportada','Se distinguen los elementos localizados en los PDF y su posterior cobertura conjunta en las unidades y situaciones de aprendizaje.',status)}<div class="summary-strip"><span><b>${s.total}</b> tablas previstas</span><span><b>${s.total-s.sa}</b> UD</span><span><b>${s.sa}</b> SA</span><span>${esc(s.stage)} · ${esc(s.grade)} · ${esc(s.subject)}</span></div><h3 style="font-size:16px;margin:21px 0 8px">1. Identificación de elementos en los PDF</h3><p class="status-line">Se examina la norma curricular principal aportada por el estudiante. El check de integridad solo aparecerá cuando se hayan extraído y cotejado todos los elementos aplicables al curso y a la materia.</p>${checks.map(([name,key])=>{const hits=evidence(key);const count=main?.structured?.candidatos?.[key]?.length||0;const state=main?.error?'Pendiente: error en currículo principal':!main?'Pendiente de analizar':count?`${count} candidatos · sin verificar`:hits.length?'Indicio localizado · sin verificar':'No identificado';return `<div class="coverage-card"><div class="coverage-icon">${hits.length?'⌕':'!'}</div><div><b>${name}</b><p>${hits.length?`Referencias PDF: ${[...new Set(hits.map(z=>z.page))].slice(0,7).map(z=>`${esc(main.name)} (p. ${z})`).join('; ')}. Falta comprobar la transcripción literal y la integridad.`:'No se dispone de evidencia suficiente de este elemento en los documentos curriculares analizados.'}</p></div><span class="chip orange">${state}</span></div>`;}).join('')}${missing.length?`<div class="helper-note warning"><span aria-hidden="true">!</span><div><strong>No se ha identificado automáticamente en la documentación curricular aportada:</strong> ${missing.map(esc).join('; ')}. Comprueba si aparece en los anexos o aporta el documento que falta. La ausencia de coincidencias no demuestra que el elemento no exista.</div></div>`:''}${main?.error?`<div class="helper-note warning"><span>!</span><div>El currículo principal no ha podido leerse: ${esc(main.error)}. Aporta un PDF accesible o revisa el archivo.</div></div>`:''}<h3 style="font-size:16px;margin:25px 0 7px">2. Cobertura conjunta de la programación</h3><div class="helper-note warning"><span>!</span><div><strong>Pendiente de cálculo.</strong> Para evaluar la cobertura global deben extraerse y comprobarse literalmente todos los elementos curriculares, y después relacionarlos con las ${s.total} UD y SA. No se presenta ningún porcentaje sin esa información.</div></div>${actions(1,3)}`;
 }
 function paper(label,rows){return `<article class="paper"><h3>${label}</h3><small>Maquetación ilustrativa · tabla A4</small><div class="paper-figure"><div style="font-size:11px;font-weight:800;color:#315b45;text-align:center;margin-bottom:9px">${label.toUpperCase()}</div>${rows.map(x=>`<div class="fake-row"><span>${x}</span><i aria-hidden="true"></i></div>`).join('')}</div><span class="chip">Plantilla original pendiente</span></article>`}
 function stepDocuments(){
