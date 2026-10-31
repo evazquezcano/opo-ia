@@ -69,7 +69,7 @@ class AparienciaOriginal(unittest.TestCase):
         self.assertNotIn('id="norm-evaluation"', codigo)
         self.assertIn('id="normAnalyze"', codigo)
         self.assertIn('normStructuredFromPages', codigo)
-        self.assertIn('const bullet=line.match', codigo)
+        self.assertIn('const bullet=line.raw.match', codigo)
         self.assertIn("Contraseña no válida.", codigo)
         # La comprobación del dominio subsiste en el código, NO es autenticación segura.
         self.assertIn("@alumno\\.uned\\.es", codigo)
