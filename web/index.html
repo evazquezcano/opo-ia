@@ -32,6 +32,16 @@
 .norm-excerpts{padding:12px 6px;border-top:1px solid var(--line)}.norm-excerpts b{font-size:12px}.norm-excerpts small{overflow-wrap:anywhere}.norm-error{color:#a43f30}
 @media(max-width:760px){.norm-section-title,.norm-file-top{align-items:flex-start;flex-direction:column}.norm-evidence-row{display:block}.norm-evidence-row span{display:block;text-align:left;margin-top:3px}}
 </style>
+<style id="opoia-block-options">
+.block-policy{margin-top:18px;padding:15px 17px;border:1px solid var(--line);border-radius:12px;background:var(--soft)}
+.block-policy .field{max-width:580px}.block-policy .status-line{margin:10px 0 0}
+.block-policy select{width:100%;max-width:440px}
+.unit-title-block{min-width:0;display:flex;flex-direction:column;gap:5px}
+.unit-title-block .unit-title{width:100%;min-width:0}
+.unit-blockline{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:11px;color:var(--muted)}
+.unit-blockline select{font-size:11px;max-width:188px;min-height:26px;padding:2px 3px;border:1px solid var(--line);border-radius:5px;background:var(--white);color:var(--text)}
+.block-assigned{color:var(--green);font-weight:650}
+</style>
 </head>
 <body>
 <div class="topline"></div>
@@ -58,11 +68,19 @@ const SUBJECTS={
  'ESO':['Geografía e Historia','Lengua Castellana y Literatura','Matemáticas','Biología y Geología','Física y Química','Lengua Extranjera','Tecnología y Digitalización'],
  'Bachillerato':['Lengua Castellana y Literatura','Matemáticas I / II','Historia de España','Filosofía','Biología','Física','Química','Lengua Extranjera']
 };
-const s={authorized:false,step:0,autonomy:'Comunidad de Madrid',stage:'ESO',grade:'3.º',subject:'Geografía e Historia',exam:'No aportada',total:12,sa:4,units:[],exportScope:'first'};
+const s={authorized:false,step:0,autonomy:'Comunidad de Madrid',stage:'ESO',grade:'3.º',subject:'Geografía e Historia',exam:'No aportada',total:12,sa:4,units:[],blockPolicy:'auto',exportScope:'first'};
 const app=document.getElementById('app');
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const opts=(values,value)=>values.map(v=>`<option value="${esc(v)}" ${v===value?'selected':''}>${esc(v)}</option>`).join('');
-function initUnits(){s.units=Array.from({length:s.total},(_,i)=>({id:i+1,type:(Math.floor((i+1)*s.sa/s.total)>Math.floor(i*s.sa/s.total))?'SA':'UD',title:''}));}
+function initUnits(){
+ const previous=s.units||[];
+ s.units=Array.from({length:s.total},(_,i)=>({
+  id:previous[i]?.id??(i+1),
+  type:(Math.floor((i+1)*s.sa/s.total)>Math.floor(i*s.sa/s.total))?'SA':'UD',
+  title:previous[i]?.title||'',
+  blockMode:previous[i]?.blockMode||'inherit'
+ }));
+}
 initUnits();
 function gate(){return `<div class="gate-wrap"><section class="panel gate-intro"><span class="section-mini">Acceso a la herramienta</span><h2>Diseña tu programación con criterios curriculares verificables.</h2><p>Selecciona el currículo oficial, organiza las unidades de tu programación anual y prepara las tablas de unidades didácticas y situaciones de aprendizaje.</p><div class="feature"><span class="checkmark">✓</span><span>Documentación normativa aportada por el estudiante durante su sesión.</span></div><div class="feature"><span class="checkmark">✓</span><span>Tablas de unidades didácticas y situaciones de aprendizaje según los modelos del curso.</span></div><div class="feature"><span class="checkmark">✓</span><span>Comprobación conjunta del currículo en todas las unidades y situaciones de aprendizaje.</span></div></section><section class="panel gate-form"><span class="section-mini">Entrada de estudiantes</span><h2>Accede con tu contraseña</h2><p>Introduce tu contraseña de acceso para continuar.</p><form id="gateForm"><div class="field"><label for="email">Contraseña</label><div style="position:relative"><input type="password" id="email" placeholder="Contraseña" autocomplete="off" spellcheck="false" required aria-describedby="emailHelp" style="padding-right:49px"/><button id="toggleSecret" type="button" aria-label="Mostrar contraseña" title="Mostrar contraseña" aria-pressed="false" style="position:absolute;right:5px;top:50%;transform:translateY(-50%);width:39px;height:36px;border:0;background:transparent;color:var(--green);cursor:pointer;display:flex;align-items:center;justify-content:center"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button></div></div><div class="form-error" id="emailError" role="alert"></div><button class="btn primary full large" type="submit">Acceder al planificador <span aria-hidden="true">→</span></button></form><div class="divider"></div><p class="status-line" id="emailHelp">Acceso reservado a estudiantes del curso.</p></section></div>`}
 
@@ -298,7 +316,73 @@ function normDownloadReport(){if(!s.normReport)return;const json=JSON.stringify(
 
 function stepCurriculum(){let grades=s.stage==='Primaria'?['1.º','2.º','3.º','4.º','5.º','6.º']:s.stage==='ESO'?['1.º','2.º','3.º','4.º']:['1.º','2.º'];return `${heading(1,'Selección curricular','Identifica el currículo','Selecciona el territorio, la etapa, el curso y la materia. Aporta el decreto curricular o la norma ministerial correspondiente.','Selección inicial')}<div class="form-grid"><div class="field"><label for="autonomy">Comunidad autónoma / ámbito</label><select id="autonomy">${opts(AUTONOMIES,s.autonomy)}</select></div><div class="field"><label for="stage">Etapa educativa</label><select id="stage">${opts(['Primaria','ESO','Bachillerato'],s.stage)}</select></div><div class="field"><label for="grade">Curso</label><select id="grade">${opts(grades,s.grade)}</select></div><div class="field"><label for="subject">Materia / área</label><select id="subject">${opts(SUBJECTS[s.stage],s.subject)}</select><small class="field-note">Listado orientativo. La identificación curricular se realizará a partir de los documentos oficiales aportados.</small></div></div>${normUploadPanel()}${actions(null,1)}`}
 
-function stepPlanning(){return `${heading(2,'Organización anual','Distribuye las unidades','El número total corresponde a la programación. Elige cuántas piezas adoptarán el modelo de unidad didáctica y cuántas el de situación de aprendizaje.','Distribución editable')}<div class="count-row"><div class="field"><label for="totalRange">Número total de unidades de la programación</label><div class="range-group"><input id="totalRange" type="range" class="range" min="1" max="30" value="${s.total}"/><input id="totalNumber" type="number" min="1" max="30" value="${s.total}" aria-label="Número total de unidades"/></div><small class="field-note">Introduce el número correspondiente a la convocatoria aplicable.</small></div><div class="field"><label for="saRange">¿Cuántas serán situaciones de aprendizaje?</label><div class="range-group"><input id="saRange" type="range" class="range" min="0" max="${s.total}" value="${s.sa}"/><input id="saNumber" type="number" min="0" max="${s.total}" value="${s.sa}" aria-label="Número de situaciones de aprendizaje"/></div><small class="field-note">El resto serán unidades didácticas.</small></div></div><div class="stats"><div class="stat"><strong>${s.total-s.sa}</strong><label>Unidades didácticas</label></div><div class="stat sa"><strong>${s.sa}</strong><label>Situaciones de aprendizaje</label></div><div class="stat total"><strong>${s.total}</strong><label>Total de la programación</label></div></div><div class="helper-note"><span aria-hidden="true">ⓘ</span><div>Ejemplo orientativo: 12 unidades en total pueden distribuirse en 8 UD y 4 SA. <strong>El currículo completo se comprobará sobre las 12 conjuntamente</strong>, sin duplicar la exigencia para cada modalidad.</div></div><div style="display:flex;justify-content:space-between;align-items:end;gap:10px;margin-top:23px"><div><h3 style="font-size:16px;margin:0">Secuencia de unidades</h3><p style="font-size:12px;color:#6b8275;margin:2px 0 0">Cambia el tipo, introduce títulos provisionales o mueve su orden.</p></div><button class="btn ghost small" id="redistribute">↻ Repartir automáticamente</button></div><div class="unit-table"><div class="unit-heading"><span>N.º</span><span>Modelo</span><span>Título / eje temático</span><span>Orden</span></div>${s.units.map((u,i)=>`<div class="unit-row"><span class="unit-number">${String(i+1).padStart(2,'0')}</span><button class="kind ${u.type==='SA'?'sa':''}" data-toggle="${i}" title="Cambiar entre UD y SA">${u.type==='SA'?'SA':'UD'} ⇄</button><input class="unit-title" data-title="${i}" value="${esc(u.title)}" maxlength="130" placeholder="Pendiente de propuesta temática" aria-label="Título de la unidad ${i+1}"/><div class="reorder"><button class="arrow-btn" data-move="${i}" data-dir="-1" ${i===0?'disabled':''} title="Mover arriba" aria-label="Subir unidad ${i+1}">↑</button><button class="arrow-btn" data-move="${i}" data-dir="1" ${i===s.units.length-1?'disabled':''} title="Mover abajo" aria-label="Bajar unidad ${i+1}">↓</button></div></div>`).join('')}</div><p class="status-line">Los títulos son provisionales: la progresión temática automática se activará al incorporar el currículo y el motor de generación.</p>${actions(0,2)}`}
+// Sólo se distribuyen las etiquetas de bloques A, B, etc. extraídas del PDF.
+// Esto es planificación preliminar, no distribución completa de cada saber básico.
+function bloquesDelCurriculo(){
+ const principal=s.normReport?.documents?.find(d=>d.type==='curriculum'&&!d.error);
+ const items=principal?.structured?.candidatos?.bloques||[];
+ const found=new Map();
+ for(const b of items){
+  const key=String(b.codigo||'').trim().toUpperCase();
+  if(/^[A-Z]$/.test(key)&&!found.has(key))found.set(key,{codigo:key,texto:b.texto||'',pagina_pdf:b.pagina_pdf});
+ }
+ return [...found.values()];
+}
+function cardinalidadBloques(modo,disponibles){
+ if(!disponibles)return 0;
+ if(modo==='all')return disponibles;
+ if(modo==='auto')return Math.min(disponibles,disponibles>=3?3:disponibles);
+ const n=Number.parseInt(modo,10);
+ return Number.isFinite(n)?Math.min(Math.max(n,1),disponibles):Math.min(3,disponibles);
+}
+function propuestaBloques(){
+ const bloques=bloquesDelCurriculo();
+ let cursor=0;
+ const filas=s.units.map((unidad,index)=>{
+  const modo=unidad.blockMode&&unidad.blockMode!=='inherit'?unidad.blockMode:s.blockPolicy;
+  const n=cardinalidadBloques(modo,bloques.length);
+  let seleccion=[];
+  if(modo==='all'){seleccion=bloques.slice();}
+  else{
+   // Reparto cíclico estable con cobertura de bloques cuando las plazas lo permiten.
+   seleccion=Array.from({length:n},(_,j)=>bloques[(cursor+j)%bloques.length]);
+   cursor+=n;
+  }
+  return {orden:index+1,modelo:unidad.type,modo,codigos:seleccion.map(x=>x.codigo),bloques:seleccion};
+ });
+ const incluidos=new Set(filas.flatMap(x=>x.codigos));
+ return {bloques,filas,pendientes:bloques.filter(x=>!incluidos.has(x.codigo)),
+  advertenciaLimite:filas.some((x,i)=>{
+   const modo=s.units[i].blockMode==='inherit'?s.blockPolicy:s.units[i].blockMode;
+   return /^\d+$/.test(modo)&&Number(modo)>bloques.length;
+  })};
+}
+function selectorBloques(modo,clase,idx){
+ const optsBloques=[['auto','Automático (orientativo)'],['all','Todos los bloques'],
+  ...[1,2,3,4,5].map(n=>[String(n),n+' bloque'+(n===1?'':'s')])];
+ if(clase==='unit')optsBloques.unshift(['inherit','Usar criterio general']);
+ return `<select class="${clase==='unit'?'unit-block-choice':'field-block-choice'}" ${clase==='unit'?`data-block-unit="${idx}"`:'id="blockPolicy"'} aria-label="${clase==='unit'?`Número de bloques en la tabla ${idx+1}`:'Enfoque de los bloques por unidad'}">${optsBloques.map(([v,t])=>`<option value="${v}" ${modo===v?'selected':''}>${t}</option>`).join('')}</select>`;
+}
+function stepPlanning(){
+ const preview=propuestaBloques();
+ const disponibles=preview.bloques.length;
+ const bloqueMsg=disponibles
+ ?`${disponibles} bloques localizados en el PDF: ${preview.bloques.map(x=>`${x.codigo}. ${esc(x.texto)}`).join(' · ')}.`
+ :'Todavía no se han identificado los bloques del curso y materia seleccionados. Analiza antes el decreto en «Currículo».';
+ const warning=!disponibles?'':preview.pendientes.length
+ ?`La selección actual deja sin asignar los bloques ${preview.pendientes.map(x=>x.codigo).join(', ')}. Ajusta el número de bloques o de tablas.`
+ :`Se incluyen los ${disponibles} bloques al menos una vez en la propuesta de distribución. No garantiza todavía la cobertura de todos sus contenidos.`;
+ return `${heading(2,'Organización anual','Distribuye las unidades','Elige el total de tablas y su modalidad, así como cuántos bloques curriculares integrará cada unidad o situación de aprendizaje.','Distribución editable')}
+ <div class="count-row"><div class="field"><label for="totalRange">Número total de unidades de la programación</label><div class="range-group"><input id="totalRange" type="range" class="range" min="1" max="30" value="${s.total}"/><input id="totalNumber" type="number" min="1" max="30" value="${s.total}" aria-label="Número total de unidades"/></div><small class="field-note">Introduce el número correspondiente a la convocatoria aplicable.</small></div><div class="field"><label for="saRange">¿Cuántas serán situaciones de aprendizaje?</label><div class="range-group"><input id="saRange" type="range" class="range" min="0" max="${s.total}" value="${s.sa}"/><input id="saNumber" type="number" min="0" max="${s.total}" value="${s.sa}" aria-label="Número de situaciones de aprendizaje"/></div><small class="field-note">El resto serán unidades didácticas.</small></div></div>
+ <div class="stats"><div class="stat"><strong>${s.total-s.sa}</strong><label>Unidades didácticas</label></div><div class="stat sa"><strong>${s.sa}</strong><label>Situaciones de aprendizaje</label></div><div class="stat total"><strong>${s.total}</strong><label>Total de la programación</label></div></div>
+ <div class="helper-note"><span aria-hidden="true">ⓘ</span><div>El currículo se comprobará sobre todas las UD y SA conjuntamente. En Lengua Castellana y Literatura puedes combinar bloques en una misma unidad, o priorizar solo algunos de ellos.</div></div>
+ <div class="block-policy"><div class="field"><label for="blockPolicy">¿Cuántos bloques de contenido quieres trabajar en cada unidad?</label>${selectorBloques(s.blockPolicy,'general')}<small class="field-note">Puedes elegir entre 1 y 5 bloques, todos los disponibles o una propuesta automática orientativa. La selección individual de cada unidad tiene prioridad sobre la general.</small></div><div class="status-line">${bloqueMsg}</div>${disponibles?`<div class="helper-note ${preview.pendientes.length?'warning':''}"><span aria-hidden="true">${preview.pendientes.length?'!':'ⓘ'}</span><div>${warning}</div></div>`:''}</div>
+ <div style="display:flex;justify-content:space-between;align-items:end;gap:10px;margin-top:23px"><div><h3 style="font-size:16px;margin:0">Secuencia de unidades y enfoque de bloques</h3><p style="font-size:12px;color:#6b8275;margin:2px 0 0">Define el título y, si lo deseas, un número de bloques distinto para cada UD o SA. El reparto temático podrá ajustarse después.</p></div><button class="btn ghost small" id="redistribute">↻ Repartir automáticamente</button></div>
+ <div class="unit-table"><div class="unit-heading"><span>N.º</span><span>Modelo</span><span>Título / enfoque de contenido</span><span>Orden</span></div>
+ ${s.units.map((u,i)=>`<div class="unit-row"><span class="unit-number">${String(i+1).padStart(2,'0')}</span><button class="kind ${u.type==='SA'?'sa':''}" data-toggle="${i}" title="Cambiar entre UD y SA">${u.type==='SA'?'SA':'UD'} ⇄</button><div class="unit-title-block"><input class="unit-title" data-title="${i}" value="${esc(u.title)}" maxlength="130" placeholder="Título / eje temático de la tabla" aria-label="Título de la unidad ${i+1}"/><div class="unit-blockline"><span>Bloques:</span>${selectorBloques(u.blockMode||'inherit','unit',i)} <span class="block-assigned">${disponibles?(preview.filas[i].codigos.join(', ')||'Pendiente'):'Pendiente de PDF'}</span></div></div><div class="reorder"><button class="arrow-btn" data-move="${i}" data-dir="-1" ${i===0?'disabled':''} title="Mover arriba" aria-label="Subir unidad ${i+1}">↑</button><button class="arrow-btn" data-move="${i}" data-dir="1" ${i===s.units.length-1?'disabled':''} title="Mover abajo" aria-label="Bajar unidad ${i+1}">↓</button></div></div>`).join('')}</div>
+ <p class="status-line">La distribución muestra una propuesta de bloques, no una adjudicación de todos los saberes ni una progresión temática validada. Esa comprobación se efectuará antes de generar las tablas.</p>${actions(0,2)}`;
+}
+
 function stepCoverage(){
   const report=s.normReport;
   const main=report?.documents?.find(d=>d.type==='curriculum');
@@ -346,7 +430,12 @@ if(s.step===0){
   const analyze=document.getElementById('normAnalyze');if(analyze)analyze.onclick=normAnalyze;
   const download=document.getElementById('normDownload');if(download)download.onclick=normDownloadReport;
 }
-if(s.step===1){const totalChange=v=>{let val=Number(v);if(!Number.isFinite(val))return;s.total=Math.max(1,Math.min(30,Math.round(val)));s.sa=Math.min(s.sa,s.total);initUnits();setTimeout(render,0);};const saChange=v=>{let val=Number(v);if(!Number.isFinite(val))return;s.sa=Math.max(0,Math.min(s.total,Math.round(val)));initUnits();setTimeout(render,0);};document.getElementById('totalRange').onchange=e=>totalChange(e.target.value);document.getElementById('saRange').onchange=e=>saChange(e.target.value);document.getElementById('totalNumber').onchange=e=>totalChange(e.target.value);document.getElementById('saNumber').onchange=e=>saChange(e.target.value);document.getElementById('redistribute').onclick=()=>{initUnits();render();};app.querySelectorAll('[data-toggle]').forEach(e=>e.onclick=()=>{const u=s.units[+e.dataset.toggle];u.type=u.type==='UD'?'SA':'UD';s.sa=s.units.filter(u=>u.type==='SA').length;render();});app.querySelectorAll('[data-move]').forEach(e=>e.onclick=()=>{const i=+e.dataset.move,j=i+(+e.dataset.dir);if(j>=0&&j<s.units.length){[s.units[i],s.units[j]]=[s.units[j],s.units[i]];render();}});app.querySelectorAll('[data-title]').forEach(e=>e.onchange=()=>s.units[+e.dataset.title].title=e.value);}
+if(s.step===1){
+ const policy=document.getElementById('blockPolicy');if(policy)policy.onchange=e=>{s.blockPolicy=e.target.value;render();};
+ app.querySelectorAll('[data-block-unit]').forEach(element=>element.onchange=e=>{
+   s.units[Number(element.dataset.blockUnit)].blockMode=e.target.value;render();
+ });
+ const totalChange=v=>{let val=Number(v);if(!Number.isFinite(val))return;s.total=Math.max(1,Math.min(30,Math.round(val)));s.sa=Math.min(s.sa,s.total);initUnits();setTimeout(render,0);};const saChange=v=>{let val=Number(v);if(!Number.isFinite(val))return;s.sa=Math.max(0,Math.min(s.total,Math.round(val)));initUnits();setTimeout(render,0);};document.getElementById('totalRange').onchange=e=>totalChange(e.target.value);document.getElementById('saRange').onchange=e=>saChange(e.target.value);document.getElementById('totalNumber').onchange=e=>totalChange(e.target.value);document.getElementById('saNumber').onchange=e=>saChange(e.target.value);document.getElementById('redistribute').onclick=()=>{initUnits();render();};app.querySelectorAll('[data-toggle]').forEach(e=>e.onclick=()=>{const u=s.units[+e.dataset.toggle];u.type=u.type==='UD'?'SA':'UD';s.sa=s.units.filter(u=>u.type==='SA').length;render();});app.querySelectorAll('[data-move]').forEach(e=>e.onclick=()=>{const i=+e.dataset.move,j=i+(+e.dataset.dir);if(j>=0&&j<s.units.length){[s.units[i],s.units[j]]=[s.units[j],s.units[i]];render();}});app.querySelectorAll('[data-title]').forEach(e=>e.onchange=()=>s.units[+e.dataset.title].title=e.value);}
 if(s.step===3){app.querySelectorAll('input[name=exportScope]').forEach(el=>el.onchange=e=>{s.exportScope=e.target.value;render();});}}
 render();
 </script>
