@@ -1,4 +1,5 @@
 name: Publicar OPO-IA y NORMA-IA en GitHub Pages
+run-name: Publicación verificada de OPO-IA y NORMA-IA
 
 on:
   push:
