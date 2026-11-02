@@ -1,0 +1,2282 @@
+{
+  "date": "2026-11-02",
+  "cutoff": "2026-11-02",
+  "project": "NORMA-IA / GENERADORES OPO_IA",
+  "source": "Rama main del repositorio evazquezcano/opo-ia; código web/norma-ia/index.html",
+  "audit_warning": "Este archivo es un inventario técnico, NO una certificación de vigencia, de exhaustividad o de aplicabilidad. Los enlaces no han pasado comprobación HTTP individual ni análisis jurídico integral.",
+  "counts": {
+    "source_entries": 129,
+    "publication_identity_checked": 22,
+    "not_individually_verified": 107,
+    "stage_combinations": 60,
+    "regional_combinations": 51
+  },
+  "rules": {
+    "included_lomloe": true,
+    "excluded_loe_as_separate": true,
+    "excluded_state_minimums_autonomies": true,
+    "removed_1994_order": true,
+    "rd83_conditional_where_no_territorial_roc": true
+  },
+  "sources": [
+    {
+      "n": 1,
+      "identifier": "LOE",
+      "title": "Ley Orgánica 2/2006, de 3 de mayo, de Educación",
+      "year": 2006,
+      "official_url": "https://www.boe.es/eli/es/lo/2006/05/03/2/con",
+      "publication": "Boletín Oficial del Estado, núm. 106, de 4 de mayo de 2006",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 2,
+      "identifier": "LOMLOE",
+      "title": "Ley Orgánica 3/2020, de 29 de diciembre, por la que se modifica la Ley Orgánica 2/2006, de 3 de mayo, de Educación",
+      "year": 2020,
+      "official_url": "https://www.boe.es/eli/es/lo/2020/12/29/3/con",
+      "publication": "Boletín Oficial del Estado, núm. 340, de 30 de diciembre de 2020",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "BOE consolidado revisado",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 3,
+      "identifier": "RD157",
+      "title": "Real Decreto 157/2022, de 1 de marzo, por el que se establecen la ordenación y las enseñanzas mínimas de la Educación Primaria",
+      "year": 2022,
+      "official_url": "https://www.boe.es/eli/es/rd/2022/03/01/157/con",
+      "publication": "",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 4,
+      "identifier": "RD217",
+      "title": "Real Decreto 217/2022, de 29 de marzo, por el que se establece la ordenación y las enseñanzas mínimas de la Educación Secundaria Obligatoria",
+      "year": 2022,
+      "official_url": "https://www.boe.es/eli/es/rd/2022/03/29/217/con",
+      "publication": "",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 5,
+      "identifier": "RD243",
+      "title": "Real Decreto 243/2022, de 5 de abril, por el que se establecen la ordenación y las enseñanzas mínimas del Bachillerato",
+      "year": 2022,
+      "official_url": "https://www.boe.es/eli/es/rd/2022/04/05/243/con",
+      "publication": "",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 6,
+      "identifier": "RD82",
+      "title": "Real Decreto 82/1996, de 26 de enero, por el que se aprueba el Reglamento Orgánico de las Escuelas de Educación Infantil y de los Colegios de Educación Primaria",
+      "year": 1996,
+      "official_url": "https://www.boe.es/eli/es/rd/1996/01/26/82/con",
+      "publication": "Boletín Oficial del Estado, núm. 44, de 20 de febrero de 1996",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 7,
+      "identifier": "RD83",
+      "title": "Real Decreto 83/1996, de 26 de enero, por el que se aprueba el Reglamento Orgánico de los Institutos de Educación Secundaria",
+      "year": 1996,
+      "official_url": "https://www.boe.es/eli/es/rd/1996/01/26/83/con",
+      "publication": "Boletín Oficial del Estado, núm. 45, de 21 de febrero de 1996",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "BOE disposición adicional primera revisada",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 8,
+      "identifier": "O1994P",
+      "title": "Orden de 29 de junio de 1994 por la que se aprueban las instrucciones que regulan la organización y funcionamiento de las escuelas de educación infantil y de los colegios de educación primaria",
+      "year": 1994,
+      "official_url": "https://www.boe.es/eli/es/o/1994/06/29/%282%29/con",
+      "publication": "",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 9,
+      "identifier": "O1994S",
+      "title": "Orden de 29 de junio de 1994 por la que se aprueban las instrucciones que regulan la organización y funcionamiento de los institutos de Educación Secundaria",
+      "year": 1994,
+      "official_url": "https://www.boe.es/eli/es/o/1994/06/29/%281%29/con",
+      "publication": "",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 10,
+      "identifier": "D23",
+      "title": "Decreto 23/2023, de 22 de marzo, del Consejo de Gobierno, por el que se regula la atención educativa a las diferencias individuales del alumnado en la Comunidad de Madrid",
+      "year": 2023,
+      "official_url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2023/03/24/BOCM-20230324-1.PDF",
+      "publication": "Boletín Oficial de la Comunidad de Madrid, núm. 71, de 24 de marzo de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 11,
+      "identifier": "I2026",
+      "title": "Instrucciones de la Viceconsejería de Política y Organización Educativa, de 30 de junio de 2026, sobre comienzo del curso escolar 2026-2027 en centros docentes públicos no universitarios de la Comunidad de Madrid",
+      "year": 2026,
+      "official_url": "https://www.comunidad.madrid/docs/2026-07/instrucciones-inicio-de-curso-2026-2027.pdf?VersionId=_c5Q9Tfeyrrw4858fl2O5svnHcAVLidV",
+      "publication": "Instrucciones oficiales de la Comunidad de Madrid, 30 de junio de 2026",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 12,
+      "identifier": "D61",
+      "title": "Decreto 61/2022, de 13 de julio, del Consejo de Gobierno, por el que se establece para la Comunidad de Madrid la ordenación y el currículo de la etapa de Educación Primaria",
+      "year": 2022,
+      "official_url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2022/07/18/BOCM-20220718-1.PDF",
+      "publication": "Boletín Oficial de la Comunidad de Madrid, núm. 169, de 18 de julio de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 13,
+      "identifier": "O130",
+      "title": "Orden 130/2023, de 23 de enero, de la Vicepresidencia, Consejería de Educación y Universidades, por la que se regulan aspectos de organización y funcionamiento, evaluación y autonomía pedagógica en la etapa de Educación Primaria en la Comunidad de Madrid",
+      "year": 2023,
+      "official_url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2023/01/30/BOCM-20230130-23.PDF",
+      "publication": "Boletín Oficial de la Comunidad de Madrid, núm. 25, de 30 de enero de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 14,
+      "identifier": "D32",
+      "title": "Decreto 32/2019, de 9 de abril, del Consejo de Gobierno, por el que se establece el marco regulador de la convivencia en los centros docentes de la Comunidad de Madrid",
+      "year": 2019,
+      "official_url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2019/04/15/BOCM-20190415-1.PDF",
+      "publication": "Boletín Oficial de la Comunidad de Madrid, núm. 89, de 15 de abril de 2019",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 15,
+      "identifier": "D94",
+      "title": "Decreto 94/2025, de 23 de diciembre, del Consejo de Gobierno, por el que se regula la jornada escolar en los centros docentes que imparten segundo ciclo de Educación Infantil y Educación Primaria y en centros de Educación Especial en la Comunidad de Madrid",
+      "year": 2025,
+      "official_url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2025/12/26/BOCM-20251226-1.PDF",
+      "publication": "BOCM núm. 307, de 26 de diciembre de 2025",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "BOCM documento corroborado por portal",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 16,
+      "identifier": "D65",
+      "title": "Decreto 65/2022, de 20 de julio, del Consejo de Gobierno, por el que se establecen para la Comunidad de Madrid la ordenación y el currículo de la Educación Secundaria Obligatoria",
+      "year": 2022,
+      "official_url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2022/07/26/BOCM-20220726-2.PDF",
+      "publication": "Boletín Oficial de la Comunidad de Madrid",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 17,
+      "identifier": "O1712",
+      "title": "Orden 1712/2023, de 19 de mayo, de la Vicepresidencia, Consejería de Educación y Universidades, por la que se regulan determinados aspectos de organización, funcionamiento y evaluación en la Educación Secundaria Obligatoria",
+      "year": 2023,
+      "official_url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2023/05/31/BOCM-20230531-17.PDF",
+      "publication": "Boletín Oficial de la Comunidad de Madrid, núm. 128, de 31 de mayo de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 18,
+      "identifier": "D32",
+      "title": "Decreto 32/2019, de 9 de abril, del Consejo de Gobierno, por el que se establece el marco regulador de la convivencia en los centros docentes de la Comunidad de Madrid",
+      "year": 2019,
+      "official_url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2019/04/15/BOCM-20190415-1.PDF",
+      "publication": "Boletín Oficial de la Comunidad de Madrid, núm. 89, de 15 de abril de 2019",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 19,
+      "identifier": "O457",
+      "title": "Orden 457/2023, de 17 de febrero, de la Vicepresidencia, Consejería de Educación y Universidades, por la que se concreta el procedimiento para el ejercicio de la autonomía de los centros docentes que impartan la Educación Secundaria Obligatoria y el Bachillerato en la Comunidad de Madrid",
+      "year": 2023,
+      "official_url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2023/02/27/BOCM-20230227-18.PDF",
+      "publication": "BOCM núm. 49, de 27 de febrero de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 20,
+      "identifier": "O1736",
+      "title": "Orden 1736/2023, de 19 de mayo, de la Vicepresidencia, Consejería de Educación y Universidades, por la que se establecen los catálogos de materias optativas que los centros podrán incorporar a su oferta educativa en la Educación Secundaria Obligatoria y en el Bachillerato en la Comunidad de Madrid",
+      "year": 2023,
+      "official_url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2023/05/31/BOCM-20230531-18.PDF",
+      "publication": "BOCM núm. 128, de 31 de mayo de 2023",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "BOCM documento oficial identificado",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 21,
+      "identifier": "O190",
+      "title": "Orden 190/2023, de 30 de enero, de la Vicepresidencia, Consejería de Educación y Universidades, por la que se desarrolla la organización y el currículo del programa de diversificación curricular de la Educación Secundaria Obligatoria en la Comunidad de Madrid",
+      "year": 2023,
+      "official_url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2023/02/07/BOCM-20230207-7.PDF",
+      "publication": "BOCM núm. 32, de 7 de febrero de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 22,
+      "identifier": "D64",
+      "title": "Decreto 64/2022, de 20 de julio, del Consejo de Gobierno, por el que se establecen para la Comunidad de Madrid la ordenación y el currículo del Bachillerato",
+      "year": 2022,
+      "official_url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2022/07/26/BOCM-20220726-1.PDF",
+      "publication": "Boletín Oficial de la Comunidad de Madrid, núm. 176, de 26 de julio de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 23,
+      "identifier": "O2067",
+      "title": "Orden 2067/2023, de 11 de junio, de la Vicepresidencia, Consejería de Educación y Universidades, por la que se regulan determinados aspectos de organización, funcionamiento y evaluación en el Bachillerato",
+      "year": 2023,
+      "official_url": "https://www.comunidad.madrid/docs/assets/2023/06/23/orden2067_2023_bachillerato.pdf",
+      "publication": "Boletín Oficial de la Comunidad de Madrid, núm. 146, de 21 de junio de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 24,
+      "identifier": "D32",
+      "title": "Decreto 32/2019, de 9 de abril, del Consejo de Gobierno, por el que se establece el marco regulador de la convivencia en los centros docentes de la Comunidad de Madrid",
+      "year": 2019,
+      "official_url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2019/04/15/BOCM-20190415-1.PDF",
+      "publication": "Boletín Oficial de la Comunidad de Madrid, núm. 89, de 15 de abril de 2019",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 25,
+      "identifier": "O457",
+      "title": "Orden 457/2023, de 17 de febrero, de la Vicepresidencia, Consejería de Educación y Universidades, por la que se concreta el procedimiento para el ejercicio de la autonomía de los centros docentes que impartan la Educación Secundaria Obligatoria y el Bachillerato en la Comunidad de Madrid",
+      "year": 2023,
+      "official_url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2023/02/27/BOCM-20230227-18.PDF",
+      "publication": "BOCM núm. 49, de 27 de febrero de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 26,
+      "identifier": "O1736",
+      "title": "Orden 1736/2023, de 19 de mayo, de la Vicepresidencia, Consejería de Educación y Universidades, por la que se establecen los catálogos de materias optativas que los centros podrán incorporar a su oferta educativa en la Educación Secundaria Obligatoria y en el Bachillerato en la Comunidad de Madrid",
+      "year": 2023,
+      "official_url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2023/05/31/BOCM-20230531-18.PDF",
+      "publication": "BOCM núm. 128, de 31 de mayo de 2023",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "BOCM documento oficial identificado",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 27,
+      "identifier": "Decreto 101/2023",
+      "title": "Decreto 101/2023, de 9 de mayo, por el que se establece la ordenación y el currículo de la etapa de Educación Primaria en la Comunidad Autónoma de Andalucía",
+      "year": 2023,
+      "official_url": "https://www.juntadeandalucia.es/boja/2023/90/2",
+      "publication": "BOJA núm. 90, de 15 de mayo de 2023",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "BOJA individual",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 28,
+      "identifier": "Decreto 328/2010",
+      "title": "Decreto 328/2010, de 13 de julio, por el que se aprueba el Reglamento Orgánico de las escuelas infantiles de segundo ciclo, de los colegios de Educación Primaria, de los colegios de Educación Infantil y Primaria y de los centros públicos específicos de Educación Especial",
+      "year": 2010,
+      "official_url": "https://ws040.juntadeandalucia.es/sedeboja/lconsolidada/eli/es-an/d/2010/07/13/328/con/20260831/spa/html/LE0000422785_20260831.html",
+      "publication": "BOJA, versión consolidada de 31 de agosto de 2026",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 29,
+      "identifier": "Decreto 102/2023",
+      "title": "Decreto 102/2023, de 9 de mayo, por el que se establece la ordenación y el currículo de la etapa de Educación Secundaria Obligatoria en la Comunidad Autónoma de Andalucía",
+      "year": 2023,
+      "official_url": "https://www.juntadeandalucia.es/boja/2023/90/3",
+      "publication": "BOJA núm. 90, de 15 de mayo de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 30,
+      "identifier": "Decreto 327/2010",
+      "title": "Decreto 327/2010, de 13 de julio, por el que se aprueba el Reglamento Orgánico de los Institutos de Educación Secundaria",
+      "year": 2010,
+      "official_url": "https://ws040.juntadeandalucia.es/sedeboja/lconsolidada/eli/es-an/d/2010/07/13/327/con/20260831/spa/html/LE0000422784_20260831.html",
+      "publication": "BOJA, versión consolidada de 31 de agosto de 2026",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 31,
+      "identifier": "Decreto 103/2023",
+      "title": "Decreto 103/2023, de 9 de mayo, por el que se establece la ordenación y el currículo de la etapa de Bachillerato en la Comunidad Autónoma de Andalucía",
+      "year": 2023,
+      "official_url": "https://www.juntadeandalucia.es/boja/2023/90/4",
+      "publication": "BOJA núm. 90, de 15 de mayo de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 32,
+      "identifier": "Decreto 327/2010",
+      "title": "Decreto 327/2010, de 13 de julio, por el que se aprueba el Reglamento Orgánico de los Institutos de Educación Secundaria",
+      "year": 2010,
+      "official_url": "https://ws040.juntadeandalucia.es/sedeboja/lconsolidada/eli/es-an/d/2010/07/13/327/con/20260831/spa/html/LE0000422784_20260831.html",
+      "publication": "BOJA, versión consolidada de 31 de agosto de 2026",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 33,
+      "identifier": "Orden ECD/1112/2022",
+      "title": "Orden ECD/1112/2022, de 18 de julio, por la que se aprueban el currículo y las características de la evaluación de la Educación Primaria y se autoriza su aplicación en los centros docentes de la Comunidad Autónoma de Aragón",
+      "year": 2022,
+      "official_url": "https://www.boa.aragon.es/cgi-bin/EBOA/BRSCGI?BASE=BOLE&CMD=VERDOC&DOCN=007926319&SEC=BUSQUEDA_AVANZADA",
+      "publication": "BOA núm. 145, de 27 de julio de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 34,
+      "identifier": "Orden ECD/1172/2022",
+      "title": "Orden ECD/1172/2022, de 2 de agosto, por la que se aprueban el currículo y las características de la evaluación de la Educación Secundaria Obligatoria y se autoriza su aplicación en los centros docentes de la Comunidad Autónoma de Aragón",
+      "year": 2022,
+      "official_url": "https://www.boa.aragon.es/cgi-bin/EBOA/BRSCGI?BASE=BOLE&CMD=VERDOC&DOCN=007926624&SEC=BUSQUEDA_AVANZADA",
+      "publication": "BOA núm. 156, de 11 de agosto de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 35,
+      "identifier": "Orden ECD/1173/2022",
+      "title": "Orden ECD/1173/2022, de 3 de agosto, por la que se aprueban el currículo y las características de la evaluación del Bachillerato y se autoriza su aplicación en los centros docentes de la Comunidad Autónoma de Aragón",
+      "year": 2022,
+      "official_url": "https://www.boa.aragon.es/cgi-bin/EBOA/BRSCGI?BASE=BOLE&CMD=VERDOC&DOCN=007926626&SEC=BUSQUEDA_AVANZADA",
+      "publication": "BOA núm. 157, de 12 de agosto de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 36,
+      "identifier": "Decreto 57/2022",
+      "title": "Decreto 57/2022, de 5 de agosto, por el que se regula la ordenación y se establece el currículo de la Educación Primaria en el Principado de Asturias",
+      "year": 2022,
+      "official_url": "https://miprincipado.asturias.es/ast/bopa/disposiciones?_pa_sede_bopa_web_portlet_SedeBopaDispositionWeb_mvcRenderCommandName=%2Fdisposition%2Fdetail&p_p_id=pa_sede_bopa_web_portlet_SedeBopaDispositionWeb&p_p_lifecycle=0&p_r_p_dispositionDate=12%2F08%2F2022&p_r_p_dispositionReference=2022-06337&p_r_p_dispositionText=2022-06337",
+      "publication": "BOPA núm. 156, de 12 de agosto de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 37,
+      "identifier": "Decreto 59/2022",
+      "title": "Decreto 59/2022, de 30 de agosto, por el que se regula la ordenación y se establece el currículo de la Educación Secundaria Obligatoria en el Principado de Asturias",
+      "year": 2022,
+      "official_url": "https://miprincipado.asturias.es/ast/bopa/disposiciones?_pa_sede_bopa_web_portlet_SedeBopaDispositionWeb_mvcRenderCommandName=%2Fdisposition%2Fdetail&p_p_id=pa_sede_bopa_web_portlet_SedeBopaDispositionWeb&p_p_lifecycle=0&p_r_p_dispositionDate=01%2F09%2F2022&p_r_p_dispositionReference=2022-06713",
+      "publication": "BOPA núm. 169, de 1 de septiembre de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 38,
+      "identifier": "Decreto 60/2022",
+      "title": "Decreto 60/2022, de 30 de agosto, por el que se regula la ordenación y se establece el currículo del Bachillerato en el Principado de Asturias",
+      "year": 2022,
+      "official_url": "https://miprincipado.asturias.es/ast/bopa/disposiciones?_pa_sede_bopa_web_portlet_SedeBopaDispositionWeb_mvcRenderCommandName=%2Fdisposition%2Fdetail&p_p_id=pa_sede_bopa_web_portlet_SedeBopaDispositionWeb&p_p_lifecycle=0&p_r_p_dispositionDate=01%2F09%2F2022&p_r_p_dispositionReference=2022-06714&p_r_p_dispositionText=secundaria+curr%C3%ADculo",
+      "publication": "BOPA núm. 169, de 1 de septiembre de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 39,
+      "identifier": "Decreto 41/2025",
+      "title": "Decreto 41/2025, de 1 de agosto, por el que se establecen la ordenación y el currículo de la Educación Primaria de las Illes Balears",
+      "year": 2025,
+      "official_url": "https://www.caib.es/webgoib/documents/81190/1409116/Decreto%2Bordenaci%C3%B3n%2By%2Bcurr%C3%ADculo%2BEP.pdf/9989862f-19d4-c959-34f5-023d1c8f7f18",
+      "publication": "BOIB núm. 103, de 4 de agosto de 2025",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 40,
+      "identifier": "Decreto 42/2025",
+      "title": "Decreto 42/2025, de 1 de agosto, por el que se establecen la ordenación y el currículo de la Educación Secundaria Obligatoria en las Illes Balears y se modifica el Decreto 4/2023, de 13 de febrero",
+      "year": 2025,
+      "official_url": "https://www.caib.es/webgoib/documents/81190/1409116/Decreto%2Bordenaci%C3%B3n%2By%2Bcurr%C3%ADculo%2BESO.pdf/aba88383-4d89-b5f2-2d4e-ddd17bfc4270?t=1755672993070",
+      "publication": "BOIB núm. 103, de 4 de agosto de 2025",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 41,
+      "identifier": "Decreto 43/2025",
+      "title": "Decreto 43/2025, de 1 de agosto, por el que se establecen la ordenación y el currículo del Bachillerato en las Illes Balears",
+      "year": 2025,
+      "official_url": "https://www.caib.es/webgoib/documents/81190/1409116/Decreto%2Bordenaci%C3%B3n%2By%2Bcurr%C3%ADculo%2BBACHILLERATO.pdf/fdb87dae-ef7f-1592-7dc9-892f252b8cdf",
+      "publication": "BOIB núm. 103, de 4 de agosto de 2025",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 42,
+      "identifier": "Decreto 211/2022",
+      "title": "Decreto 211/2022, de 10 de noviembre, por el que se establece la ordenación y el currículo de la Educación Primaria en la Comunidad Autónoma de Canarias",
+      "year": 2022,
+      "official_url": "https://www.gobiernodecanarias.org/boc/2022/231/001.html",
+      "publication": "BOC núm. 231, de 23 de noviembre de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 43,
+      "identifier": "Decreto 30/2023",
+      "title": "Decreto 30/2023, de 16 de marzo, por el que se establece la ordenación y el currículo de la Educación Secundaria Obligatoria y del Bachillerato en la Comunidad Autónoma de Canarias",
+      "year": 2023,
+      "official_url": "https://www.gobiernodecanarias.org/boc/2023/058/001.html",
+      "publication": "BOC núm. 58, de 23 de marzo de 2023",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "BOC individual",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 44,
+      "identifier": "Decreto 30/2023",
+      "title": "Decreto 30/2023, de 16 de marzo, por el que se establece la ordenación y el currículo de la Educación Secundaria Obligatoria y del Bachillerato en la Comunidad Autónoma de Canarias",
+      "year": 2023,
+      "official_url": "https://www.gobiernodecanarias.org/boc/2023/058/001.html",
+      "publication": "BOC núm. 58, de 23 de marzo de 2023",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "BOC individual",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 45,
+      "identifier": "Decreto 66/2022",
+      "title": "Decreto 66/2022, de 7 de julio, por el que se establece el currículo de la Educación Infantil y de la Educación Primaria en la Comunidad Autónoma de Cantabria",
+      "year": 2022,
+      "official_url": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=374267",
+      "publication": "BOC núm. 135, de 13 de julio de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 46,
+      "identifier": "Decreto 73/2022",
+      "title": "Decreto 73/2022, de 27 de julio, por el que se establece el currículo de la Educación Secundaria Obligatoria y del Bachillerato en la Comunidad Autónoma de Cantabria",
+      "year": 2022,
+      "official_url": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=374886",
+      "publication": "BOC núm. 151, de 5 de agosto de 2022",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "BOC PDF página inicial",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 47,
+      "identifier": "Decreto 73/2022",
+      "title": "Decreto 73/2022, de 27 de julio, por el que se establece el currículo de la Educación Secundaria Obligatoria y del Bachillerato en la Comunidad Autónoma de Cantabria",
+      "year": 2022,
+      "official_url": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=374886",
+      "publication": "BOC núm. 151, de 5 de agosto de 2022",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "BOC PDF página inicial",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 48,
+      "identifier": "Decreto 81/2022",
+      "title": "Decreto 81/2022, de 12 de julio, por el que se establece la ordenación y el currículo de Educación Primaria en la comunidad autónoma de Castilla-La Mancha",
+      "year": 2022,
+      "official_url": "https://educacion.castillalamancha.es/biblioteca-normativa/educacion-primaria/educacion-primaria/normativa/decreto-812022-de-12-de-julio",
+      "publication": "DOCM; ficha individual del Decreto 81/2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 49,
+      "identifier": "Decreto 82/2022",
+      "title": "Decreto 82/2022, de 12 de julio, por el que se establece la ordenación y el currículo de Educación Secundaria Obligatoria en la comunidad autónoma de Castilla-La Mancha",
+      "year": 2022,
+      "official_url": "https://educacion.castillalamancha.es/biblioteca-normativa/educacion-secundaria-obligatoria/educacion-secundaria-obligatoria/normativa/decreto-822022-de-12-de-julio",
+      "publication": "DOCM; ficha individual, modificado por Decreto 31/2024",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 50,
+      "identifier": "Decreto 83/2022",
+      "title": "Decreto 83/2022, de 12 de julio, por el que se establece la ordenación y el currículo de Bachillerato en la comunidad autónoma de Castilla-La Mancha",
+      "year": 2022,
+      "official_url": "https://educacion.castillalamancha.es/biblioteca-normativa/bachillerato/bachillerato/curriculo/decreto-832022-de-12-de-julio",
+      "publication": "DOCM; ficha individual, modificado por Decreto 19/2024",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 51,
+      "identifier": "Decreto 38/2022",
+      "title": "Decreto 38/2022, de 29 de septiembre, por el que se establece la ordenación y el currículo de la educación primaria en la Comunidad de Castilla y León",
+      "year": 2022,
+      "official_url": "https://bocyl.jcyl.es/boletines/2022/09/30/pdf/BOCYL-D-30092022-2.pdf",
+      "publication": "BOCyL núm. 190, de 30 de septiembre de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 52,
+      "identifier": "Decreto 39/2022",
+      "title": "Decreto 39/2022, de 29 de septiembre, por el que se establece la ordenación y el currículo de la educación secundaria obligatoria en la Comunidad de Castilla y León",
+      "year": 2022,
+      "official_url": "https://bocyl.jcyl.es/boletines/2022/09/30/pdf/BOCYL-D-30092022-3.pdf",
+      "publication": "BOCyL núm. 190, de 30 de septiembre de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 53,
+      "identifier": "Decreto 40/2022",
+      "title": "Decreto 40/2022, de 29 de septiembre, por el que se establece la ordenación y el currículo del bachillerato en la Comunidad de Castilla y León",
+      "year": 2022,
+      "official_url": "https://bocyl.jcyl.es/boletines/2022/09/30/pdf/BOCYL-D-30092022-4.pdf",
+      "publication": "BOCyL núm. 190, de 30 de septiembre de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 54,
+      "identifier": "Decret 175/2022",
+      "title": "Decret 175/2022, de 27 de setembre, d'ordenació dels ensenyaments de l'educació bàsica",
+      "year": 2022,
+      "official_url": "https://dogc.gencat.cat/ca/document-del-dogc/?documentId=938401",
+      "publication": "DOGC núm. 8762, de 29 de septiembre de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 55,
+      "identifier": "Decret 480/2024",
+      "title": "Decret 480/2024, de 17 de desembre, de modificació del Decret 175/2022, de 27 de setembre, d'ordenació dels ensenyaments de l'educació bàsica",
+      "year": 2024,
+      "official_url": "https://dogc.gencat.cat/ca/document-del-dogc/?documentId=1002337",
+      "publication": "DOGC núm. 9314, de 19 de diciembre de 2024",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 56,
+      "identifier": "Decret 175/2022",
+      "title": "Decret 175/2022, de 27 de setembre, d'ordenació dels ensenyaments de l'educació bàsica",
+      "year": 2022,
+      "official_url": "https://dogc.gencat.cat/ca/document-del-dogc/?documentId=938401",
+      "publication": "DOGC núm. 8762, de 29 de septiembre de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 57,
+      "identifier": "Decret 480/2024",
+      "title": "Decret 480/2024, de 17 de desembre, de modificació del Decret 175/2022, de 27 de setembre, d'ordenació dels ensenyaments de l'educació bàsica",
+      "year": 2024,
+      "official_url": "https://dogc.gencat.cat/ca/document-del-dogc/?documentId=1002337",
+      "publication": "DOGC núm. 9314, de 19 de diciembre de 2024",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 58,
+      "identifier": "Decret 171/2022",
+      "title": "Decret 171/2022, de 20 de setembre, d'ordenació dels ensenyaments de batxillerat",
+      "year": 2022,
+      "official_url": "https://dogc.gencat.cat/ca/document-del-dogc/?documentId=938056",
+      "publication": "DOGC núm. 8758, de 22 de septiembre de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 59,
+      "identifier": "Decreto 106/2022",
+      "title": "Decreto 106/2022, de 5 de agosto, del Consell, de ordenación y currículo de la etapa de Educación Primaria",
+      "year": 2022,
+      "official_url": "https://dogv.gva.es/datos/2022/08/10/pdf/2022_7572.pdf",
+      "publication": "DOGV núm. 9402, de 10 de agosto de 2022; modificado por Decreto 96/2026",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 60,
+      "identifier": "Decreto 107/2022",
+      "title": "Decreto 107/2022, de 5 de agosto, del Consell, por el que se establece la ordenación y el currículo de Educación Secundaria Obligatoria",
+      "year": 2022,
+      "official_url": "https://dogv.gva.es/datos/2022/08/11/pdf/2022_7573.pdf",
+      "publication": "DOGV núm. 9403, de 11 de agosto de 2022; afectado por anulación parcial y Decreto 66/2024",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 61,
+      "identifier": "Decreto 108/2022",
+      "title": "Decreto 108/2022, de 5 de agosto, del Consell, por el que se establecen la ordenación y el currículo de Bachillerato",
+      "year": 2022,
+      "official_url": "https://dogv.gva.es/datos/2022/08/12/pdf/2022_7578.pdf",
+      "publication": "DOGV núm. 9404, de 12 de agosto de 2022; modificado por Decreto 103/2026",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 62,
+      "identifier": "Decreto 107/2022",
+      "title": "Decreto 107/2022, de 28 de julio, por el que se establecen la ordenación y el currículo de la Educación Primaria para la Comunidad Autónoma de Extremadura",
+      "year": 2022,
+      "official_url": "https://doe.juntaex.es/eli/es-ex/d/2022/07/28/107/con/20230919/spa/pdf",
+      "publication": "DOE, versión consolidada de 19 de septiembre de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 63,
+      "identifier": "Decreto 110/2022",
+      "title": "Decreto 110/2022, de 22 de agosto, por el que se establecen la ordenación y el currículo de la Educación Secundaria Obligatoria para la Comunidad Autónoma de Extremadura",
+      "year": 2022,
+      "official_url": "https://doe.juntaex.es/eli/es-ex/d/2022/08/22/110/con/20260803/spa/pdf",
+      "publication": "DOE, versión consolidada de 3 de agosto de 2026",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 64,
+      "identifier": "Decreto 109/2022",
+      "title": "Decreto 109/2022, de 22 de agosto, por el que se establecen la ordenación y el currículo del Bachillerato para la Comunidad Autónoma de Extremadura",
+      "year": 2022,
+      "official_url": "https://doe.juntaex.es/eli/es-ex/d/2022/08/22/109/con/20250715/spa/pdf",
+      "publication": "DOE, versión consolidada de 15 de julio de 2025",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 65,
+      "identifier": "Decreto 155/2022",
+      "title": "Decreto 155/2022, de 15 de septiembre, por el que se establecen la ordenación y el currículo de la educación primaria en la Comunidad Autónoma de Galicia",
+      "year": 2022,
+      "official_url": "https://www.xunta.gal/dog/Publicados/2022/20220926/AnuncioG0655-190922-0001_es.html",
+      "publication": "DOG núm. 183, de 26 de septiembre de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 66,
+      "identifier": "Decreto 156/2022",
+      "title": "Decreto 156/2022, de 15 de septiembre, por el que se establecen la ordenación y el currículo de la educación secundaria obligatoria en la Comunidad Autónoma de Galicia",
+      "year": 2022,
+      "official_url": "https://www.xunta.gal/dog/Publicados/2022/20220926/AnuncioG0655-190922-0002_gl.html",
+      "publication": "DOG núm. 183, de 26 de septiembre de 2022",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "DOG individual",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 67,
+      "identifier": "Orden de 26 de mayo de 2023",
+      "title": "Orden de 26 de mayo de 2023 por la que se desarrolla el Decreto 156/2022, de 15 de septiembre, y se regula la evaluación en Educación Secundaria Obligatoria en Galicia",
+      "year": 2023,
+      "official_url": "https://www.xunta.gal/dog/Publicados/2023/20230613/AnuncioG0655-290523-0001_gl.html",
+      "publication": "DOG núm. 111, de 13 de junio de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 68,
+      "identifier": "Decreto 157/2022",
+      "title": "Decreto 157/2022, de 15 de septiembre, por el que se establecen la ordenación y el currículo del Bachillerato en la Comunidad Autónoma de Galicia",
+      "year": 2022,
+      "official_url": "https://www.xunta.gal/dog/Publicados/2022/20220926/AnuncioG0655-190922-0003_gl.html",
+      "publication": "DOG núm. 183, de 26 de septiembre de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 69,
+      "identifier": "Orden de 26 de mayo de 2023",
+      "title": "Orden de 26 de mayo de 2023 por la que se desarrolla el Decreto 157/2022, de 15 de septiembre, y se regula la evaluación del Bachillerato en Galicia",
+      "year": 2023,
+      "official_url": "https://www.xunta.gal/dog/Publicados/2023/20230613/AnuncioG0655-290523-0004_gl.html",
+      "publication": "DOG núm. 111, de 13 de junio de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 70,
+      "identifier": "Decreto 41/2022",
+      "title": "Decreto 41/2022, de 13 de julio, por el que se establece el currículo de Educación Primaria y se regulan determinados aspectos sobre su organización y evaluación en la Comunidad Autónoma de La Rioja",
+      "year": 2022,
+      "official_url": "https://web.larioja.org/normativa?n=3219",
+      "publication": "Repertorio de Normativa Autonómica de La Rioja, disposición individual",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 71,
+      "identifier": "Decreto 42/2022",
+      "title": "Decreto 42/2022, de 13 de julio, por el que se establece el currículo de la Educación Secundaria Obligatoria y se regulan determinados aspectos sobre su organización y evaluación en la Comunidad Autónoma de La Rioja",
+      "year": 2022,
+      "official_url": "https://web.larioja.org/normativa?n=dyn-na03220",
+      "publication": "Repertorio de Normativa Autonómica de La Rioja; modificado por Decreto 30/2025",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 72,
+      "identifier": "Decreto 43/2022",
+      "title": "Decreto 43/2022, de 21 de julio, por el que se establece el currículo del Bachillerato y se regulan determinados aspectos sobre su organización y evaluación en la Comunidad Autónoma de La Rioja",
+      "year": 2022,
+      "official_url": "https://web.larioja.org/bor-portada/boranuncio?n=21524884-9-HTML-547622-X",
+      "publication": "Boletín Oficial de La Rioja, disposición individual; modificado por Decreto 30/2025",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 73,
+      "identifier": "Decreto 209/2022",
+      "title": "Decreto 209/2022, de 17 de noviembre, por el que se establece la ordenación y el currículo de la Educación Primaria en la Comunidad Autónoma de la Región de Murcia",
+      "year": 2022,
+      "official_url": "https://www.borm.es/eli/es-mc/d/2022/11/17/209/dof/spa/html",
+      "publication": "BORM núm. 267, de 18 de noviembre de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 74,
+      "identifier": "Decreto 235/2022",
+      "title": "Decreto 235/2022, de 7 de diciembre, por el que se establece la ordenación y el currículo de la Educación Secundaria Obligatoria en la Comunidad Autónoma de la Región de Murcia",
+      "year": 2022,
+      "official_url": "https://www.borm.es/eli/es-mc/d/2022/12/7/235/dof/spa/pdf",
+      "publication": "Boletín Oficial de la Región de Murcia, disposición individual",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "BORM PDF página inicial",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 75,
+      "identifier": "Decreto 251/2022",
+      "title": "Decreto 251/2022, de 22 de diciembre, por el que se establece la ordenación y el currículo del Bachillerato en la Comunidad Autónoma de la Región de Murcia",
+      "year": 2022,
+      "official_url": "https://www.borm.es/services/anuncio/ano/2022/numero/6755/pdf?id=814198",
+      "publication": "BORM núm. 296, de 24 de diciembre de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 76,
+      "identifier": "Decreto Foral 67/2022",
+      "title": "Decreto Foral 67/2022, de 22 de junio, por el que se establece el currículo de las enseñanzas de la etapa de Educación Primaria en la Comunidad Foral de Navarra",
+      "year": 2022,
+      "official_url": "https://www.lexnavarra.navarra.es/detalle.asp?r=54950",
+      "publication": "BON, ficha de legislación consolidada de Lexnavarra",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 77,
+      "identifier": "Decreto Foral 71/2022",
+      "title": "Decreto Foral 71/2022, de 29 de junio, por el que se establece el currículo de las enseñanzas de la etapa de Educación Secundaria Obligatoria en la Comunidad Foral de Navarra",
+      "year": 2022,
+      "official_url": "https://www.lexnavarra.navarra.es/detalle.asp?r=54997",
+      "publication": "BON, ficha de legislación consolidada de Lexnavarra",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "Lexnavarra individual",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 78,
+      "identifier": "Decreto Foral 72/2022",
+      "title": "Decreto Foral 72/2022, de 29 de junio, por el que se establece el currículo de las enseñanzas de la etapa de Bachillerato en la Comunidad Foral de Navarra",
+      "year": 2022,
+      "official_url": "https://www.lexnavarra.navarra.es/detalle.asp?r=55074",
+      "publication": "BON núm. 170, de 26 de agosto de 2022; Lexnavarra",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 79,
+      "identifier": "Decreto 77/2023",
+      "title": "Decreto 77/2023, de 30 de mayo, de establecimiento del currículo de Educación Básica e implantación del mismo en la Comunidad Autónoma de Euskadi",
+      "year": 2023,
+      "official_url": "https://www.euskadi.eus/bopv2/datos/2023/06/2302729a.pdf",
+      "publication": "BOPV núm. 109, de 9 de junio de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 80,
+      "identifier": "Decreto 77/2023",
+      "title": "Decreto 77/2023, de 30 de mayo, de establecimiento del currículo de Educación Básica e implantación del mismo en la Comunidad Autónoma de Euskadi",
+      "year": 2023,
+      "official_url": "https://www.euskadi.eus/bopv2/datos/2023/06/2302729a.pdf",
+      "publication": "BOPV núm. 109, de 9 de junio de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 81,
+      "identifier": "Decreto 76/2023",
+      "title": "Decreto 76/2023, de 30 de mayo, de establecimiento del currículo de Bachillerato e implantación del mismo en la Comunidad Autónoma de Euskadi",
+      "year": 2023,
+      "official_url": "https://www.euskadi.eus/bopv2/datos/2023/06/2302728a.pdf",
+      "publication": "BOPV núm. 109, de 9 de junio de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 82,
+      "identifier": "Decreto 81/2010",
+      "title": "Decreto 81/2010, de 8 de julio, por el que se aprueba el Reglamento Orgánico de los centros docentes públicos no universitarios de la Comunidad Autónoma de Canarias",
+      "year": 2010,
+      "official_url": "https://www.gobiernodecanarias.org/boc/2010/143/001.html",
+      "publication": "Boletín Oficial de Canarias núm. 143, de 22 de julio de 2010",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 83,
+      "identifier": "Orden 121/2022",
+      "title": "Orden 121/2022, de 14 de junio, de regulación de la organización y el funcionamiento de los centros públicos que imparten enseñanzas de Educación Infantil y Primaria en Castilla-La Mancha",
+      "year": 2022,
+      "official_url": "https://educacion.castillalamancha.es/sites/default/files/normativas/2025-09/ORDEN%20121_2022%20Organizacion%20y%20funcionamiento%20CEIP%20.pdf",
+      "publication": "DOCM núm. 118, de 22 de junio de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 84,
+      "identifier": "Orden 118/2022",
+      "title": "Orden 118/2022, de 14 de junio, de regulación de la organización y el funcionamiento de los centros públicos que imparten enseñanzas de Educación Secundaria Obligatoria, Bachillerato y Formación Profesional en Castilla-La Mancha",
+      "year": 2022,
+      "official_url": "https://educacion.castillalamancha.es/biblioteca-normativa/organizacion-y-funcionamiento-de-centros/organizacion-y-funcionamiento-de-centros/ies/orden-1182022-de-14-de-junio-organizacion-y-funcionamiento-ies",
+      "publication": "DOCM núm. 118, de 22 de junio de 2022; ficha individual",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 85,
+      "identifier": "Orden 185/2022",
+      "title": "Orden 185/2022, de 27 de septiembre, por la que se regula la evaluación en la etapa de Educación Primaria en Castilla-La Mancha",
+      "year": 2022,
+      "official_url": "https://educacion.castillalamancha.es/sites/default/files/normativas/2025-09/ORDEN%20185-2022%20evaluaci%C3%B3n%20etapa%20Educaci%C3%B3n%20primaria.pdf",
+      "publication": "DOCM núm. 189, de 30 de septiembre de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 86,
+      "identifier": "Orden 186/2022",
+      "title": "Orden 186/2022, de 27 de septiembre, por la que se regula la evaluación en la etapa de Educación Secundaria Obligatoria en Castilla-La Mancha",
+      "year": 2022,
+      "official_url": "https://educacion.castillalamancha.es/sites/default/files/normativas/2025-09/ORDEN%20186-2022%20evaluaci%C3%B3n%20etapa%20ESO.pdf",
+      "publication": "DOCM núm. 189, de 30 de septiembre de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 87,
+      "identifier": "Orden 187/2022",
+      "title": "Orden 187/2022, de 27 de septiembre, por la que se regula la evaluación en la etapa de Bachillerato en Castilla-La Mancha",
+      "year": 2022,
+      "official_url": "https://educacion.castillalamancha.es/sites/default/files/normativas/2025-09/ORDEN%20187-2022%20evaluaci%C3%B3n%20Bachillerato.pdf",
+      "publication": "DOCM núm. 189, de 30 de septiembre de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 88,
+      "identifier": "Orden EDU/424/2024",
+      "title": "Orden EDU/424/2024, de 9 de mayo, por la que se desarrolla la evaluación, la promoción y la titulación en la Educación Secundaria Obligatoria en la Comunidad de Castilla y León",
+      "year": 2024,
+      "official_url": "https://bocyl.jcyl.es/boletines/2024/05/17/pdf/BOCYL-D-17052024-3.pdf",
+      "publication": "BOCyL núm. 95, 17 de mayo de 2024",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 89,
+      "identifier": "Orden EDU/425/2024",
+      "title": "Orden EDU/425/2024, de 9 de mayo, por la que se desarrolla la evaluación, la promoción y la titulación en el Bachillerato en la Comunidad de Castilla y León",
+      "year": 2024,
+      "official_url": "https://bocyl.jcyl.es/boletines/2024/05/17/pdf/BOCYL-D-17052024-4.pdf",
+      "publication": "BOCyL núm. 95, 17 de mayo de 2024",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 90,
+      "identifier": "Orden de 9 de diciembre de 2022",
+      "title": "Orden de 9 de diciembre de 2022 por la que se regula la evaluación del alumnado en la Educación Infantil, Educación Primaria, Educación Secundaria Obligatoria y Bachillerato en la Comunidad Autónoma de Extremadura",
+      "year": 2022,
+      "official_url": "https://doe.juntaex.es/otrosFormatos/html.php?anio=2022&doe=2390o&xml=2022050223",
+      "publication": "DOE núm. 239, de 15 de diciembre de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 91,
+      "identifier": "Orden de 22 de enero de 2024",
+      "title": "Orden de 22 de enero de 2024, del Consejero de Educación, por la que se regula la evaluación en Educación Infantil y la evaluación, la promoción y la titulación, en su caso, en Educación Básica y en Bachillerato",
+      "year": 2024,
+      "official_url": "https://www.euskadi.eus/contenidos/informacion/hezkuntza_ikuskaritza_dok_dbh/es_def/adjuntos/2400509ca.pdf",
+      "publication": "BOPV núm. 23, de 31 de enero de 2024",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 92,
+      "identifier": "Orden de 30 de mayo de 2023 (Primaria)",
+      "title": "Orden de 30 de mayo de 2023, por la que se desarrolla el currículo correspondiente a la etapa de Educación Primaria en la Comunidad Autónoma de Andalucía, se regulan determinados aspectos de la atención a la diversidad y a las diferencias individuales, se establece la ordenación de la evaluación del proceso de aprendizaje del alumnado y se determina el proceso de tránsito entre las diferentes etapas educativas",
+      "year": 2023,
+      "official_url": "https://www.juntadeandalucia.es/boja/2023/104/39",
+      "publication": "BOJA núm. 104, de 2 de junio de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 93,
+      "identifier": "Orden de 30 de mayo de 2023 (ESO)",
+      "title": "Orden de 30 de mayo de 2023, por la que se desarrolla el currículo correspondiente a la etapa de Educación Secundaria Obligatoria en la Comunidad Autónoma de Andalucía, se regulan determinados aspectos de la atención a la diversidad y a las diferencias individuales, se establece la ordenación de la evaluación del proceso de aprendizaje del alumnado y se determina el proceso de tránsito entre las diferentes etapas educativas",
+      "year": 2023,
+      "official_url": "https://ws040.juntadeandalucia.es/sedeboja/lconsolidada/eli/es-an/o/2023/05/30/%28911285642%29/con/20260901/spa/html/LE0000755237_20260901.html",
+      "publication": "BOJA, texto consolidado vigente de 1 de septiembre de 2026",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 94,
+      "identifier": "Orden de 30 de mayo de 2023 (Bachillerato)",
+      "title": "Orden de 30 de mayo de 2023, por la que se desarrolla el currículo correspondiente a la etapa de Bachillerato en la Comunidad Autónoma de Andalucía, se regulan determinados aspectos de la atención a la diversidad y a las diferencias individuales y se establece la ordenación de la evaluación del proceso de aprendizaje del alumnado",
+      "year": 2023,
+      "official_url": "https://www.juntadeandalucia.es/boja/2023/104/37",
+      "publication": "BOJA núm. 104, de 2 de junio de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 95,
+      "identifier": "Decreto Foral 14/2026",
+      "title": "Decreto Foral 14/2026, de 25 de febrero, por el que se regula el Reglamento de Organización y Funcionamiento de los centros públicos que imparten enseñanzas de Educación Infantil, Educación Primaria, Educación Secundaria Obligatoria, Bachillerato, Formación Profesional, Artísticas, Idiomas, Deportivas, Educación de Personas Adultas o Educación Especial de la Comunidad Foral de Navarra",
+      "year": 2026,
+      "official_url": "https://www.lexnavarra.navarra.es/detalle.asp?r=58575",
+      "publication": "BON núm. 74, de 17 de abril de 2026; Lexnavarra",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "Lexnavarra individual",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 96,
+      "identifier": "Orden Foral 36/2026",
+      "title": "Orden Foral 36/2026, de 30 de junio, del consejero de Educación, por la que se desarrolla el Reglamento de Organización y Funcionamiento de los centros públicos que imparten enseñanzas de Educación Infantil o de Educación Primaria en la Comunidad Foral de Navarra",
+      "year": 2026,
+      "official_url": "https://www.lexnavarra.navarra.es/detalle.asp?r=58914",
+      "publication": "BON núm. 159, de 13 de agosto de 2026; Lexnavarra",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "Lexnavarra individual",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 97,
+      "identifier": "Orden Foral 40/2026",
+      "title": "Orden Foral 40/2026, de 1 de julio, del consejero de Educación, por la que se desarrolla el Reglamento de Organización y Funcionamiento de los centros públicos que imparten enseñanzas de Educación Secundaria Obligatoria o de Bachillerato en la Comunidad Foral de Navarra",
+      "year": 2026,
+      "official_url": "https://www.lexnavarra.navarra.es/detalle.asp?r=58915",
+      "publication": "BON núm. 159, de 13 de agosto de 2026; Lexnavarra",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "Lexnavarra individual",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 98,
+      "identifier": "Orden Foral 52/2023",
+      "title": "Orden Foral 52/2023, de 12 de junio, del consejero de Educación, por la que se regula la evaluación y promoción del alumnado que cursa las enseñanzas de Educación Primaria en la Comunidad Foral de Navarra",
+      "year": 2023,
+      "official_url": "https://www.lexnavarra.navarra.es/detalle.asp?r=56129",
+      "publication": "BON núm. 136, de 29 de junio de 2023; modificada por Orden Foral 40/2026",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 99,
+      "identifier": "Orden Foral 53/2023",
+      "title": "Orden Foral 53/2023, de 12 de junio, del consejero de Educación, por la que se regula la evaluación, promoción y titulación del alumnado que cursa las enseñanzas de Educación Secundaria Obligatoria en la Comunidad Foral de Navarra",
+      "year": 2023,
+      "official_url": "https://www.lexnavarra.navarra.es/detalle.asp?r=56130",
+      "publication": "BON núm. 136, de 29 de junio de 2023; modificada por Orden Foral 40/2026",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 100,
+      "identifier": "Orden Foral 45/2023",
+      "title": "Orden Foral 45/2023, de 10 de mayo, del consejero de Educación, por la que se regula la evaluación, promoción y titulación del alumnado que cursa las enseñanzas de Bachillerato en la Comunidad Foral de Navarra",
+      "year": 2023,
+      "official_url": "https://www.lexnavarra.navarra.es/detalle.asp?r=56051",
+      "publication": "BON núm. 115, de 2 de junio de 2023; modificada por Orden Foral 40/2026",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 101,
+      "identifier": "Orden EDU/7/2023",
+      "title": "Orden EDU/7/2023, de 23 de marzo, por la que se regula el derecho del alumnado a una evaluación objetiva y se establece el procedimiento de revisión de calificaciones y de reclamación contra las decisiones de promoción y titulación, en la Comunidad Autónoma de Cantabria",
+      "year": 2023,
+      "official_url": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=387300",
+      "publication": "BOC núm. 65, de 3 de abril de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 102,
+      "identifier": "Decreto 374/1996",
+      "title": "Decreto 374/1996, do 17 de outubro, polo que se aproba o Regulamento orgánico das escolas de educación infantil e dos colexios de educación primaria",
+      "year": 1996,
+      "official_url": "https://www.xunta.gal/dog/Publicados/1996/19961021/AnuncioAD36_gl.html",
+      "publication": "DOG núm. 206, de 21 de outubro de 1996; modificado posteriormente",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 103,
+      "identifier": "Decreto 324/1996",
+      "title": "Decreto 324/1996, do 26 de xullo, polo que se aproba o Regulamento orgánico dos institutos de educación secundaria",
+      "year": 1996,
+      "official_url": "https://www.xunta.gal/dog/Publicados/1996/19960809/Anuncio9002_gl.html",
+      "publication": "DOG núm. 156, de 9 de agosto de 1996; determinados artigos derrogados polo Decreto 29/2007",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 104,
+      "identifier": "Decret 4/2023",
+      "title": "Decret 4/2023, de 13 de febrer, pel qual s'aprova el Reglament orgànic de les escoles infantils públiques, els col·legis d'educació primària, els col·legis d'educació infantil i primària, els col·legis d'educació infantil i primària integrats amb ensenyaments elementals de música, els col·legis d'educació infantil i primària integrats amb educació secundària i els instituts d'educació secundària de la Comunitat Autònoma de les Illes Balears",
+      "year": 2023,
+      "official_url": "https://www.caib.es/sites/institutestudisautonomics/ca/n/decret_42023_de_13_de_febrer_pel_qual_saaprova_el_reglament_organic_de_les_escoles_infantils_pabliques_els_colalegis_daeducacia_primaria_els_colalegis_daeducacia_infantil_i_primaria_els_colalegis_daeducacia_infantil_i_primaria_integrats_amb_ensenyaments_elementals_de_masica_els_colalegis_daeducacia_infantil_i_primaria_integrats_amb_educacia_secundaria_i_els_instituts_daeducacia_secundaria_de_la_comunitat_autanoma_de_les_illes_balears/",
+      "publication": "BOIB núm. 21, de 16 de febrero de 2023. Modificado por Decret 42/2025 (BOIB núm. 103, de 4 de agosto de 2025)",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 105,
+      "identifier": "Decret 39/2011",
+      "title": "Decret 39/2011, de 29 d'abril, pel qual es regula l'atenció a la diversitat i l'orientació educativa als centres educatius no universitaris sostinguts amb fons públics",
+      "year": 2011,
+      "official_url": "https://www.caib.es/sites/institutestudisautonomics/ca/n/decret_392011_de_29_dabril_pel_qual_es_regula_latencio_a_la_diversitat_i_lorientacio_educativa_als_centres_educatius_no_universitaris_sostinguts_amb_fons_publics-59795/",
+      "publication": "BOIB núm. 67, de 5 de mayo de 2011; texto afectado por correcciones y reformas curriculares posteriores",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 106,
+      "identifier": "Decreto 359/2009",
+      "title": "Decreto n.º 359/2009, de 30 de octubre, por el que se establece y regula la respuesta educativa a la diversidad del alumnado en la Comunidad Autónoma de la Región de Murcia",
+      "year": 2009,
+      "official_url": "https://www.carm.es/web/pagina/pagina?IDCONTENIDO=161769&IDTIPO=60&RASTRO=c575%24m5806%2C5808%2C5827",
+      "publication": "BORM núm. 254, de 3 de noviembre de 2009; ficha individual de la CARM con vigencia y modificaciones",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 107,
+      "identifier": "Decreto 229/2011",
+      "title": "Decreto 229/2011, do 7 de decembro, polo que se regula a atención á diversidade do alumnado dos centros docentes da Comunidade Autónoma de Galicia en que se imparten as ensinanzas establecidas na Lei orgánica 2/2006, do 3 de maio, de educación",
+      "year": 2011,
+      "official_url": "https://politicasocial.xunta.gal/es/conselleria/normativa/decreto-2292011-del-7-de-diciembre-por-el-que-se-regula-la-atencion-la",
+      "publication": "DOG núm. 242, de 21 de diciembre de 2011; ficha oficial con estado vigente",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 108,
+      "identifier": "Orden ECD/866/2024",
+      "title": "Orden ECD/866/2024, de 25 de julio, por la que se modifica la Orden ECD/1112/2022, de 18 de julio, por la que se aprueba el currículo y las características de la evaluación de la Educación Primaria y se autoriza su aplicación en los centros docentes de la Comunidad Autónoma de Aragón",
+      "year": 2024,
+      "official_url": "https://www.boa.aragon.es/cgi-bin/EBOA/BRSCGI?BASE=BOLE&CMD=VERDOC&DOCN=007942919&SEC=BUSQUEDA_AVANZADA",
+      "publication": "BOA núm. 153, de 7 de agosto de 2024",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 109,
+      "identifier": "Orden ECD/867/2024",
+      "title": "Orden ECD/867/2024, de 25 de julio, por la que se modifica la Orden ECD/1172/2022, de 2 de agosto, por la que se aprueba el currículo y las características de la evaluación de la Educación Secundaria Obligatoria y se autoriza su aplicación en los centros docentes de la Comunidad Autónoma de Aragón",
+      "year": 2024,
+      "official_url": "https://www.boa.aragon.es/cgi-bin/EBOA/BRSCGI?BASE=BOLE&CMD=VERDOC&DOCN=007942920&SEC=BUSQUEDA_AVANZADA",
+      "publication": "BOA núm. 153, de 7 de agosto de 2024",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 110,
+      "identifier": "Orden ECD/886/2024",
+      "title": "Orden ECD/886/2024, de 25 de julio, por la que se modifica la Orden ECD/1173/2022, de 3 de agosto, por la que se aprueban el currículo y las características de la evaluación de Bachillerato y se autoriza su aplicación en los centros docentes de la Comunidad Autónoma de Aragón",
+      "year": 2024,
+      "official_url": "https://www.boa.aragon.es/cgi-bin/EBOA/BRSCGI?BASE=BOLE&CMD=VERDOC&DOCN=007942966&SEC=BUSQUEDA_AVANZADA",
+      "publication": "BOA núm. 154, de 8 de agosto de 2024",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 111,
+      "identifier": "Orden ECD/739/2025",
+      "title": "Orden ECD/739/2025, de 24 de junio, por la que se modifica la Orden ECD/1173/2022, de 3 de agosto, por la que se aprueban el currículo y las características de la evaluación de Bachillerato y se autoriza su aplicación en los centros docentes de la Comunidad Autónoma de Aragón",
+      "year": 2025,
+      "official_url": "https://educa.aragon.es/documents/20126/0/Orden%2BBOA.pdf/6b820ed7-0eaf-bd20-d4dc-1ff23d801cfe?t=1752217046794",
+      "publication": "BOA núm. 127, de 4 de julio de 2025; copia oficial de la disposición",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 112,
+      "identifier": "Orden de 31 de mayo de 2023",
+      "title": "Orden de 31 de mayo de 2023, por la que se regulan la evaluación y la promoción del alumnado que cursa las etapas de la Educación Infantil, la Educación Primaria, la Educación Secundaria Obligatoria y el Bachillerato, y se establecen los requisitos para la obtención de los títulos correspondientes, en la Comunidad Autónoma de Canarias",
+      "year": 2023,
+      "official_url": "https://www.gobiernodecanarias.org/boc/2023/110/001.html",
+      "publication": "BOC núm. 110, de 8 de junio de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 113,
+      "identifier": "Resolución de 26 de junio de 2023",
+      "title": "Resolución de 26 de junio de 2023, de la Consejería de Educación, por la que se regulan aspectos de la ordenación académica de las enseñanzas de la Educación Primaria y de la evaluación del aprendizaje del alumnado",
+      "year": 2023,
+      "official_url": "https://miprincipado.asturias.es/ast/bopa/disposiciones?_pa_sede_bopa_web_portlet_SedeBopaDispositionWeb_mvcRenderCommandName=%2Fdisposition%2Fdetail&p_p_id=pa_sede_bopa_web_portlet_SedeBopaDispositionWeb&p_p_lifecycle=0&p_r_p_dispositionDate=04%2F07%2F2023&p_r_p_dispositionReference=2023-05857&p_r_p_dispositionText=2023-05857",
+      "publication": "BOPA núm. 127, de 4 de julio de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 114,
+      "identifier": "Resolución de 11 de mayo de 2023",
+      "title": "Resolución de 11 de mayo de 2023, de la Consejería de Educación, por la que se regulan aspectos de la ordenación académica de las enseñanzas de la Educación Secundaria Obligatoria y de la evaluación del aprendizaje del alumnado",
+      "year": 2023,
+      "official_url": "https://miprincipado.asturias.es/ast/bopa/disposiciones?_pa_sede_bopa_web_portlet_SedeBopaDispositionWeb_mvcRenderCommandName=%2Fdisposition%2Fdetail&p_p_id=pa_sede_bopa_web_portlet_SedeBopaDispositionWeb&p_p_lifecycle=0&p_r_p_dispositionDate=18%2F05%2F2023&p_r_p_dispositionReference=2023-04236&p_r_p_dispositionText=2023-04236",
+      "publication": "BOPA núm. 94, de 18 de mayo de 2023; corrección de errores BOPA 7 de junio de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 115,
+      "identifier": "Resolución de 28 de abril de 2023",
+      "title": "Resolución de 28 de abril de 2023, de la Consejería de Educación, por la que se regulan aspectos de la ordenación académica de las enseñanzas del Bachillerato y de la evaluación del aprendizaje del alumnado",
+      "year": 2023,
+      "official_url": "https://miprincipado.asturias.es/ast/bopa/disposiciones?_pa_sede_bopa_web_portlet_SedeBopaDispositionWeb_mvcRenderCommandName=%2Fdisposition%2Fdetail&p_p_id=pa_sede_bopa_web_portlet_SedeBopaDispositionWeb&p_p_lifecycle=0&p_r_p_dispositionDate=09%2F05%2F2023&p_r_p_dispositionReference=2023-03825&p_r_p_dispositionText=2023-03825",
+      "publication": "BOPA núm. 87, de 9 de mayo de 2023",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 116,
+      "identifier": "Orden EDU/423/2024",
+      "title": "Orden EDU/423/2024, de 9 de mayo, por la que se desarrolla la evaluación y la promoción en la Educación Primaria en la Comunidad de Castilla y León",
+      "year": 2024,
+      "official_url": "https://bocyl.jcyl.es/boletines/2024/05/17/pdf/BOCYL-D-17052024-2.pdf",
+      "publication": "BOCyL núm. 95, de 17 de mayo de 2024",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 117,
+      "identifier": "Decreto 43/2025",
+      "title": "Decreto 43/2025, de 29 de octubre, por el que se regula la inclusión educativa en la Comunidad Autónoma de La Rioja",
+      "year": 2025,
+      "official_url": "https://web.larioja.org/bor-portada/boranuncio?n=anu-572838",
+      "publication": "Boletín Oficial de La Rioja núm. 212, de 31 de octubre de 2025; vigente desde 1 de noviembre de 2025",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "BOR individual",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 118,
+      "identifier": "Orden EDE/75/2025",
+      "title": "Orden EDE/75/2025, de 27 de noviembre, por la que se regula el Plan de Atención a las Diferencias Individuales en los centros docentes sostenidos con fondos públicos de la Comunidad Autónoma de La Rioja",
+      "year": 2025,
+      "official_url": "https://web.larioja.org/bor-portada/boranuncio?n=anu-573494",
+      "publication": "Boletín Oficial de La Rioja núm. 233, de 1 de diciembre de 2025; deroga la Orden 6/2014",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 119,
+      "identifier": "Decreto 39/2025",
+      "title": "Decreto 39/2025, de 26 de agosto, por el que se regula la convivencia escolar en los centros docentes no universitarios de la Comunidad Autónoma de La Rioja",
+      "year": 2025,
+      "official_url": "https://web.larioja.org/normativa?n=3658",
+      "publication": "Boletín Oficial de La Rioja núm. 166, de 28 de agosto de 2025; ficha individual de norma vigente",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 120,
+      "identifier": "Decret 150/2017",
+      "title": "Decret 150/2017, de 17 d'octubre, de l'atenció educativa a l'alumnat en el marc d'un sistema educatiu inclusiu",
+      "year": 2017,
+      "official_url": "https://portaldogc.gencat.cat/utilsEADOP/PDF/7477/1639866.pdf",
+      "publication": "DOGC núm. 7477, de 19 de octubre de 2017; disposición individual enlazada desde XTEC",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 121,
+      "identifier": "Decreto 104/2018",
+      "title": "Decreto 104/2018, de 27 de julio, del Consell, por el que se desarrollan los principios de equidad y de inclusión en el sistema educativo valenciano",
+      "year": 2018,
+      "official_url": "https://dogv.gva.es/datos/2018/08/07/pdf/2018_7822.pdf",
+      "publication": "DOGV núm. 8356, de 7 de agosto de 2018; artículos 23 y 32 afectados por disposiciones posteriores",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 122,
+      "identifier": "Decreto 31/2024",
+      "title": "Decreto 31/2024, de 25 de junio, por el que se modifica el Decreto 82/2022, de 12 de julio, de ordenación y currículo de Educación Secundaria Obligatoria, y el Decreto 220/2023, de 29 de agosto, relativo a la asignación de optativas a especialidades docentes",
+      "year": 2024,
+      "official_url": "https://educacion.castillalamancha.es/biblioteca-normativa/educacion-secundaria-obligatoria/educacion-secundaria-obligatoria/normativa/decreto-312024-de-25-de-junio",
+      "publication": "Diario Oficial de Castilla-La Mancha, 2 de julio de 2024; ficha individual de la disposición",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "Portal oficial individual",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 123,
+      "identifier": "Decreto 19/2024",
+      "title": "Decreto 19/2024, de 9 de abril, por el que se modifica el Decreto 83/2022, de 12 de julio, de ordenación y currículo de Bachillerato en Castilla-La Mancha",
+      "year": 2024,
+      "official_url": "https://docm.jccm.es/docm/verArchivoHtml.do?ruta=2024%2F04%2F16%2Fhtml%2F2024_2817.html&tipo=rutaDocm",
+      "publication": "Diario Oficial de Castilla-La Mancha, núm. 74, de 16 de abril de 2024",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "DOCM individual",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 124,
+      "identifier": "Decreto 30/2025",
+      "title": "Decreto 30/2025, de 1 de julio, por el que se modifican el Decreto 42/2022, de 13 de julio, de Educación Secundaria Obligatoria, y el Decreto 43/2022, de 21 de julio, de Bachillerato, en la Comunidad Autónoma de La Rioja",
+      "year": 2025,
+      "official_url": "https://ias1.larioja.org/boletin/Bor_Boletin_visor_Servlet?referencia=35427809-1-PDF-570623-X",
+      "publication": "Boletín Oficial de La Rioja, núm. 126, de 3 de julio de 2025",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "BOR PDF página inicial",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 125,
+      "identifier": "Decret 103/2026",
+      "title": "Decret 103/2026, de 7 de juliol, de modificació del Decret 171/2022, de 20 de setembre, d'ordenació dels ensenyaments de batxillerat",
+      "year": 2026,
+      "official_url": "https://dogc.gencat.cat/ca/document-del-dogc/?documentId=1049336",
+      "publication": "Diari Oficial de la Generalitat de Catalunya, núm. 9704, de 9 de juliol de 2026",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "DOGC vínculo oficial",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 126,
+      "identifier": "EFP678",
+      "title": "Orden EFP/678/2022, de 15 de julio, por la que se establece el currículo y se regula la ordenación de la Educación Primaria en el ámbito de gestión del Ministerio de Educación y Formación Profesional",
+      "year": 2022,
+      "official_url": "https://www.boe.es/eli/es/o/2022/07/15/efp678/con",
+      "publication": "Boletín Oficial del Estado, núm. 174, de 21 de julio de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 127,
+      "identifier": "EFP754",
+      "title": "Orden EFP/754/2022, de 28 de julio, por la que se establece el currículo y se regula la ordenación de la Educación Secundaria Obligatoria en el ámbito de gestión del Ministerio de Educación y Formación Profesional",
+      "year": 2022,
+      "official_url": "https://www.boe.es/eli/es/o/2022/07/28/efp754/con",
+      "publication": "Boletín Oficial del Estado, núm. 187, de 5 de agosto de 2022",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    },
+    {
+      "n": 128,
+      "identifier": "EFP755",
+      "title": "Orden EFP/755/2022, de 31 de julio, por la que se establece el currículo y se regula la ordenación del Bachillerato en el ámbito de gestión del Ministerio de Educación y Formación Profesional",
+      "year": 2022,
+      "official_url": "https://www.boe.es/eli/es/o/2022/07/31/efp755/con",
+      "publication": "Boletín Oficial del Estado, núm. 187, de 5 de agosto de 2022",
+      "audit_status": "publicación/identidad corroborada; vigencia integral pendiente",
+      "evidence": "BOE individual",
+      "audit_date": "2026-11-02"
+    },
+    {
+      "n": 129,
+      "identifier": "RD132",
+      "title": "Real Decreto 132/2010, de 12 de febrero, por el que se establecen los requisitos mínimos de los centros que impartan las enseñanzas del segundo ciclo de la educación infantil, la educación primaria y la educación secundaria",
+      "year": 2010,
+      "official_url": "https://www.boe.es/eli/es/rd/2010/02/12/132/con",
+      "publication": "Boletín Oficial del Estado, núm. 62, de 12 de marzo de 2010",
+      "audit_status": "sin auditoría jurídica integral de la disposición"
+    }
+  ],
+  "stage_matrix": [
+    {
+      "region": "andalucia",
+      "stage": "primaria",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 328/2010",
+        "Decreto 101/2023"
+      ],
+      "complementary_ids": [
+        "Orden de 30 de mayo de 2023 (Primaria)"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "andalucia",
+      "stage": "eso",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 327/2010",
+        "Decreto 102/2023"
+      ],
+      "complementary_ids": [
+        "Orden de 30 de mayo de 2023 (ESO)"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "andalucia",
+      "stage": "bach",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 327/2010",
+        "Decreto 103/2023"
+      ],
+      "complementary_ids": [
+        "Orden de 30 de mayo de 2023 (Bachillerato)"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "aragon",
+      "stage": "primaria",
+      "basic_ids": [
+        "LOMLOE",
+        "Orden ECD/1112/2022"
+      ],
+      "complementary_ids": [
+        "Orden ECD/866/2024"
+      ],
+      "basic_count": 2,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "aragon",
+      "stage": "eso",
+      "basic_ids": [
+        "LOMLOE",
+        "Orden ECD/1172/2022",
+        "RD83"
+      ],
+      "complementary_ids": [
+        "Orden ECD/867/2024"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": true,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "aragon",
+      "stage": "bach",
+      "basic_ids": [
+        "LOMLOE",
+        "Orden ECD/1173/2022",
+        "RD83"
+      ],
+      "complementary_ids": [
+        "Orden ECD/886/2024",
+        "Orden ECD/739/2025"
+      ],
+      "basic_count": 3,
+      "complementary_count": 2,
+      "conditional_organic": true,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "asturias",
+      "stage": "primaria",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 57/2022"
+      ],
+      "complementary_ids": [
+        "Resolución de 26 de junio de 2023"
+      ],
+      "basic_count": 2,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "asturias",
+      "stage": "eso",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 59/2022",
+        "RD83"
+      ],
+      "complementary_ids": [
+        "Resolución de 11 de mayo de 2023"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": true,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "asturias",
+      "stage": "bach",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 60/2022",
+        "RD83"
+      ],
+      "complementary_ids": [
+        "Resolución de 28 de abril de 2023"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": true,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "baleares",
+      "stage": "primaria",
+      "basic_ids": [
+        "LOMLOE",
+        "Decret 4/2023",
+        "Decreto 41/2025"
+      ],
+      "complementary_ids": [
+        "Decret 39/2011"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "baleares",
+      "stage": "eso",
+      "basic_ids": [
+        "LOMLOE",
+        "Decret 4/2023",
+        "Decreto 42/2025"
+      ],
+      "complementary_ids": [
+        "Decret 39/2011"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "baleares",
+      "stage": "bach",
+      "basic_ids": [
+        "LOMLOE",
+        "Decret 4/2023",
+        "Decreto 43/2025"
+      ],
+      "complementary_ids": [
+        "Decret 39/2011"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "canarias",
+      "stage": "primaria",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 81/2010",
+        "Decreto 211/2022"
+      ],
+      "complementary_ids": [
+        "Orden de 31 de mayo de 2023"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "canarias",
+      "stage": "eso",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 81/2010",
+        "Decreto 30/2023"
+      ],
+      "complementary_ids": [
+        "Orden de 31 de mayo de 2023"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "canarias",
+      "stage": "bach",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 81/2010",
+        "Decreto 30/2023"
+      ],
+      "complementary_ids": [
+        "Orden de 31 de mayo de 2023"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "cantabria",
+      "stage": "primaria",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 66/2022"
+      ],
+      "complementary_ids": [
+        "Orden EDU/7/2023"
+      ],
+      "basic_count": 2,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "cantabria",
+      "stage": "eso",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 73/2022",
+        "RD83"
+      ],
+      "complementary_ids": [
+        "Orden EDU/7/2023"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": true,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "cantabria",
+      "stage": "bach",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 73/2022",
+        "RD83"
+      ],
+      "complementary_ids": [
+        "Orden EDU/7/2023"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": true,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "clm",
+      "stage": "primaria",
+      "basic_ids": [
+        "LOMLOE",
+        "Orden 121/2022",
+        "Decreto 81/2022"
+      ],
+      "complementary_ids": [
+        "Orden 185/2022"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "clm",
+      "stage": "eso",
+      "basic_ids": [
+        "LOMLOE",
+        "Orden 118/2022",
+        "Decreto 82/2022"
+      ],
+      "complementary_ids": [
+        "Orden 186/2022",
+        "Decreto 31/2024"
+      ],
+      "basic_count": 3,
+      "complementary_count": 2,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "clm",
+      "stage": "bach",
+      "basic_ids": [
+        "LOMLOE",
+        "Orden 118/2022",
+        "Decreto 83/2022"
+      ],
+      "complementary_ids": [
+        "Orden 187/2022",
+        "Decreto 19/2024"
+      ],
+      "basic_count": 3,
+      "complementary_count": 2,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "cyl",
+      "stage": "primaria",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 38/2022"
+      ],
+      "complementary_ids": [
+        "Orden EDU/423/2024"
+      ],
+      "basic_count": 2,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "cyl",
+      "stage": "eso",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 39/2022",
+        "RD83"
+      ],
+      "complementary_ids": [
+        "Orden EDU/424/2024"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": true,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "cyl",
+      "stage": "bach",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 40/2022",
+        "RD83"
+      ],
+      "complementary_ids": [
+        "Orden EDU/425/2024"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": true,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "cataluna",
+      "stage": "primaria",
+      "basic_ids": [
+        "LOMLOE",
+        "Decret 175/2022"
+      ],
+      "complementary_ids": [
+        "Decret 480/2024",
+        "Decret 150/2017"
+      ],
+      "basic_count": 2,
+      "complementary_count": 2,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "cataluna",
+      "stage": "eso",
+      "basic_ids": [
+        "LOMLOE",
+        "Decret 175/2022",
+        "RD83"
+      ],
+      "complementary_ids": [
+        "Decret 480/2024",
+        "Decret 150/2017"
+      ],
+      "basic_count": 3,
+      "complementary_count": 2,
+      "conditional_organic": true,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "cataluna",
+      "stage": "bach",
+      "basic_ids": [
+        "LOMLOE",
+        "Decret 171/2022",
+        "RD83"
+      ],
+      "complementary_ids": [
+        "Decret 150/2017",
+        "Decret 103/2026"
+      ],
+      "basic_count": 3,
+      "complementary_count": 2,
+      "conditional_organic": true,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "valencia",
+      "stage": "primaria",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 106/2022"
+      ],
+      "complementary_ids": [
+        "Decreto 104/2018"
+      ],
+      "basic_count": 2,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "valencia",
+      "stage": "eso",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 107/2022",
+        "RD83"
+      ],
+      "complementary_ids": [
+        "Decreto 104/2018"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": true,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "valencia",
+      "stage": "bach",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 108/2022",
+        "RD83"
+      ],
+      "complementary_ids": [
+        "Decreto 104/2018"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": true,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "extremadura",
+      "stage": "primaria",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 107/2022"
+      ],
+      "complementary_ids": [
+        "Orden de 9 de diciembre de 2022"
+      ],
+      "basic_count": 2,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "extremadura",
+      "stage": "eso",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 110/2022",
+        "RD83"
+      ],
+      "complementary_ids": [
+        "Orden de 9 de diciembre de 2022"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": true,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "extremadura",
+      "stage": "bach",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 109/2022",
+        "RD83"
+      ],
+      "complementary_ids": [
+        "Orden de 9 de diciembre de 2022"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": true,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "galicia",
+      "stage": "primaria",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 374/1996",
+        "Decreto 155/2022"
+      ],
+      "complementary_ids": [
+        "Decreto 229/2011"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "galicia",
+      "stage": "eso",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 324/1996",
+        "Decreto 156/2022"
+      ],
+      "complementary_ids": [
+        "Orden de 26 de mayo de 2023",
+        "Decreto 229/2011"
+      ],
+      "basic_count": 3,
+      "complementary_count": 2,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "galicia",
+      "stage": "bach",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 324/1996",
+        "Decreto 157/2022"
+      ],
+      "complementary_ids": [
+        "Orden de 26 de mayo de 2023",
+        "Decreto 229/2011"
+      ],
+      "basic_count": 3,
+      "complementary_count": 2,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "rioja",
+      "stage": "primaria",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 41/2022"
+      ],
+      "complementary_ids": [
+        "Decreto 43/2025",
+        "Orden EDE/75/2025",
+        "Decreto 39/2025"
+      ],
+      "basic_count": 2,
+      "complementary_count": 3,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "rioja",
+      "stage": "eso",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 42/2022",
+        "RD83"
+      ],
+      "complementary_ids": [
+        "Decreto 43/2025",
+        "Orden EDE/75/2025",
+        "Decreto 39/2025",
+        "Decreto 30/2025"
+      ],
+      "basic_count": 3,
+      "complementary_count": 4,
+      "conditional_organic": true,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "rioja",
+      "stage": "bach",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 43/2022",
+        "RD83"
+      ],
+      "complementary_ids": [
+        "Decreto 43/2025",
+        "Orden EDE/75/2025",
+        "Decreto 39/2025",
+        "Decreto 30/2025"
+      ],
+      "basic_count": 3,
+      "complementary_count": 4,
+      "conditional_organic": true,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "madrid",
+      "stage": "primaria",
+      "basic_ids": [
+        "LOMLOE",
+        "D61",
+        "O130",
+        "D23",
+        "I2026"
+      ],
+      "complementary_ids": [
+        "D32",
+        "D94"
+      ],
+      "basic_count": 5,
+      "complementary_count": 2,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "madrid",
+      "stage": "eso",
+      "basic_ids": [
+        "LOMLOE",
+        "RD83",
+        "D65",
+        "O1712",
+        "D23",
+        "I2026"
+      ],
+      "complementary_ids": [
+        "D32",
+        "O457",
+        "O1736",
+        "O190"
+      ],
+      "basic_count": 6,
+      "complementary_count": 4,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "madrid",
+      "stage": "bach",
+      "basic_ids": [
+        "LOMLOE",
+        "RD83",
+        "D64",
+        "O2067",
+        "D23",
+        "I2026"
+      ],
+      "complementary_ids": [
+        "D32",
+        "O457",
+        "O1736"
+      ],
+      "basic_count": 6,
+      "complementary_count": 3,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "murcia",
+      "stage": "primaria",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 209/2022"
+      ],
+      "complementary_ids": [
+        "Decreto 359/2009"
+      ],
+      "basic_count": 2,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "murcia",
+      "stage": "eso",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 235/2022",
+        "RD83"
+      ],
+      "complementary_ids": [
+        "Decreto 359/2009"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": true,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "murcia",
+      "stage": "bach",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 251/2022",
+        "RD83"
+      ],
+      "complementary_ids": [
+        "Decreto 359/2009"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": true,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "navarra",
+      "stage": "primaria",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto Foral 14/2026",
+        "Orden Foral 36/2026",
+        "Decreto Foral 67/2022"
+      ],
+      "complementary_ids": [
+        "Orden Foral 52/2023"
+      ],
+      "basic_count": 4,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "navarra",
+      "stage": "eso",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto Foral 14/2026",
+        "Orden Foral 40/2026",
+        "Decreto Foral 71/2022"
+      ],
+      "complementary_ids": [
+        "Orden Foral 53/2023"
+      ],
+      "basic_count": 4,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "navarra",
+      "stage": "bach",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto Foral 14/2026",
+        "Orden Foral 40/2026",
+        "Decreto Foral 72/2022"
+      ],
+      "complementary_ids": [
+        "Orden Foral 45/2023"
+      ],
+      "basic_count": 4,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "euskadi",
+      "stage": "primaria",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 77/2023"
+      ],
+      "complementary_ids": [
+        "Orden de 22 de enero de 2024"
+      ],
+      "basic_count": 2,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "euskadi",
+      "stage": "eso",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 77/2023",
+        "RD83"
+      ],
+      "complementary_ids": [
+        "Orden de 22 de enero de 2024"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": true,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "euskadi",
+      "stage": "bach",
+      "basic_ids": [
+        "LOMLOE",
+        "Decreto 76/2023",
+        "RD83"
+      ],
+      "complementary_ids": [
+        "Orden de 22 de enero de 2024"
+      ],
+      "basic_count": 3,
+      "complementary_count": 1,
+      "conditional_organic": true,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "ministerio",
+      "stage": "primaria",
+      "basic_ids": [
+        "LOMLOE",
+        "RD157",
+        "RD82",
+        "EFP678"
+      ],
+      "complementary_ids": [
+        "RD132"
+      ],
+      "basic_count": 4,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "ministerio",
+      "stage": "eso",
+      "basic_ids": [
+        "LOMLOE",
+        "RD217",
+        "RD83",
+        "EFP754"
+      ],
+      "complementary_ids": [
+        "RD132"
+      ],
+      "basic_count": 4,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "ministerio",
+      "stage": "bach",
+      "basic_ids": [
+        "LOMLOE",
+        "RD243",
+        "RD83",
+        "EFP755"
+      ],
+      "complementary_ids": [
+        "RD132"
+      ],
+      "basic_count": 4,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "ceuta",
+      "stage": "primaria",
+      "basic_ids": [
+        "LOMLOE",
+        "RD157",
+        "RD82",
+        "EFP678"
+      ],
+      "complementary_ids": [
+        "RD132"
+      ],
+      "basic_count": 4,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "ceuta",
+      "stage": "eso",
+      "basic_ids": [
+        "LOMLOE",
+        "RD217",
+        "RD83",
+        "EFP754"
+      ],
+      "complementary_ids": [
+        "RD132"
+      ],
+      "basic_count": 4,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "ceuta",
+      "stage": "bach",
+      "basic_ids": [
+        "LOMLOE",
+        "RD243",
+        "RD83",
+        "EFP755"
+      ],
+      "complementary_ids": [
+        "RD132"
+      ],
+      "basic_count": 4,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "melilla",
+      "stage": "primaria",
+      "basic_ids": [
+        "LOMLOE",
+        "RD157",
+        "RD82",
+        "EFP678"
+      ],
+      "complementary_ids": [
+        "RD132"
+      ],
+      "basic_count": 4,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "melilla",
+      "stage": "eso",
+      "basic_ids": [
+        "LOMLOE",
+        "RD217",
+        "RD83",
+        "EFP754"
+      ],
+      "complementary_ids": [
+        "RD132"
+      ],
+      "basic_count": 4,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    },
+    {
+      "region": "melilla",
+      "stage": "bach",
+      "basic_ids": [
+        "LOMLOE",
+        "RD243",
+        "RD83",
+        "EFP755"
+      ],
+      "complementary_ids": [
+        "RD132"
+      ],
+      "basic_count": 4,
+      "complementary_count": 1,
+      "conditional_organic": false,
+      "legal_full_coverage_verified": false,
+      "validity_checked_all": false
+    }
+  ]
+}
