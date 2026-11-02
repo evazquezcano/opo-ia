@@ -54,3 +54,23 @@ Directorio de portales: documento del usuario «Portales oficiales de normativa 
 
 ## Criterio de aceptación
 Una comunidad/etapa solo se habilita para exportación cuando sus fuentes se han cotejado y tiene verificados currículo, organización, evaluación, diversidad/inclusión e instrucciones aplicables, con anotación expresa del estado del reglamento orgánico y normas sustitutorias.
+
+## Protocolo de desarrollo y validación acordado (02/11/2026)
+- Priorizar el trabajo directo sobre GitHub; no solicitar operaciones manuales que puedan ejecutarse a través de las herramientas conectadas.
+- Ciclo por acción: inspección del estado real → modificación concreta → control estático/funcional/documental → corrección de fallos → nueva verificación → registro de resultado y limitaciones.
+- No considerar un enlace válido solo por su apariencia, ni equiparar la disponibilidad de un texto normativo con su vigencia o aplicabilidad. Las 17 comunidades, Ceuta y Melilla requieren cotejo por etapa.
+- Detenerse y consultar únicamente si falta una decisión esencial que impida continuar sin introducir un supuesto material.
+- La verificación jurídica precisa fuentes oficiales, control de jerarquía, modificaciones, derogaciones, carácter supletorio, ámbito de aplicación y fecha de consulta; no puede reducirse a pruebas del HTML.
+- Un producto cerrado exige **cuatro aprobaciones independientes**: (1) cobertura normativa verificada por territorio y etapa, (2) enlaces oficiales y trazabilidad, (3) pruebas reales de Word, PDF, cargas y accesibilidad, (4) página desplegada y accesible.
+
+## Registro del ciclo de controles del 02/11/2026
+**Corrección de cinco enlaces/fuentes:** se reemplazó el enlace roto de la Orden 2067/2023 de Bachillerato por el PDF oficial enlazado desde la Comunidad de Madrid, el de la Orden 130/2023 de Primaria por su publicación individual en BOCM, el de las instrucciones de inicio de curso 2026-2027 por el PDF de la Consejería, y los enlaces del Decreto 65/2022 y Decreto 64/2022 por las publicaciones oficiales individuales. Se volvió a recuperar el HTML después del commit y se comprobó que las correcciones persistían.
+**Controles automáticos:** `web/norma-ia/test-check.cjs` y `.github/workflows/norma-ia-integridad.yml`. Se han superado 13 verificaciones directas de contenido y sintaxis con lectura del repositorio y se han añadido 12 pruebas reproducibles para GitHub Actions. **No hay confirmación de ejecución exitosa del nuevo workflow en el servidor**, ni pruebas reales de generación de Word/PDF.
+**Enlaces de las disposiciones cotejadas:**
+- https://www.comunidad.madrid/docs/assets/2023/06/23/orden2067_2023_bachillerato.pdf
+- https://www.bocm.es/boletin/CM_Orden_BOCM/2023/01/30/BOCM-20230130-23.PDF
+- https://www.comunidad.madrid/docs/2026-07/instrucciones-inicio-de-curso-2026-2027.pdf?VersionId=_c5Q9Tfeyrrw4858fl2O5svnHcAVLidV
+- https://www.bocm.es/boletin/CM_Orden_BOCM/2022/07/26/BOCM-20220726-2.PDF
+- https://www.bocm.es/boletin/CM_Orden_BOCM/2022/07/26/BOCM-20220726-1.PDF
+
+**Estado del proyecto**: prototipo inicial y auditoría parcial. No cerrado. No atribuir validación jurídica integral ni cobertura de todas las comunidades. La carga de convocatoria solo comprueba que se aporte un archivo PDF; su contenido aún no se interpreta. No se ha acreditado despliegue de GitHub Pages.
