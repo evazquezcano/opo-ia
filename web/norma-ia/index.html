@@ -327,6 +327,7 @@ function docHTML(){
  if(!output)return "";
  const show=n=>'<p class="ref">'+escapeHTML(n.title+(n.condicional?" (Aplicación supletoria pendiente de comprobación en este territorio)":"")+". "+(n.bulletin?n.bulletin+". ":""))+'<a href="'+escapeHTML(n.url)+'">'+escapeHTML(n.url)+'</a></p>';
  const basic=output.basic.map(show).join(""),extra=output.extra.map(show).join("");
+ const auditNotice=output.auditNote?'<p class="notice">'+escapeHTML(output.auditNote)+'</p>':"";
  const convocatoria=output.file||output.link?'<p>Convocatoria orientativa aportada: '+escapeHTML([output.file,output.link].filter(Boolean).join(" · "))+'. No se ha analizado su contenido automáticamente.</p>':'<p>No se ha aportado convocatoria de oposiciones (opcional).</p>';
  const warning="Repertorio en revisión jurídica: no constituye una certificación de vigencia ni un inventario exhaustivo. Comprobar el texto oficial, modificaciones y condiciones de la convocatoria.";
  return '<h1>La normativa de tu programación: básica y complementaria</h1><p>Ámbito: '+escapeHTML(output.region)+' · '+escapeHTML(stageName(output.stage))+'.</p>'+convocatoria+'<p class="notice">'+escapeHTML(warning)+'</p><h2>1. Normativa básica para el epígrafe inicial de la programación</h2>'+basic+'<h2>2. Normativa complementaria para las referencias finales</h2>'+(extra||'<p>Pendiente de revisión específica de las disposiciones complementarias de este ámbito.</p>');
@@ -350,13 +351,15 @@ function makeOutput(){
  if(isMinisterio){basic=basic.concat(minimum[stage],stage==="primaria"?[rd82]:[rd83],ministerio[stage]);extra=[requisitosCentros];}
  if(autonomia){basic=basic.concat(autonomia.organizacion||[],autonomia.curriculo);extra=extra.concat(autonomia.complementaria||[]);}
  if(!isMinisterio&&!isMadrid&&!autonomia?.organizacion&&stage!=="primaria")basic.push({...rd83,condicional:true});
- output={region:r[1],stage,file:pdf?pdf.name:"",link:url,basic,extra,configured};
+ const auditNote=region==="valencia"?"ATENCIÓN: los Decretos 96/2026 (Primaria), 66/2024 (ESO) y 103/2026 (Bachillerato) modifican los currículos valencianos de 2022; falta incorporar y cotejar cada texto modificativo con su publicación individual del DOGV. Esta selección curricular es provisional.":"";
+ output={region:r[1],stage,file:pdf?pdf.name:"",link:url,basic,extra,configured,auditNote};
  byid("result-context").textContent=output.region+" · "+stageName(stage)+" · "+basic.length+" referencias básicas · "+extra.length+" complementarias";
  byid("basic-list").innerHTML=basic.map(renderNorm).join("");
  byid("extra-list").innerHTML=extra.length?extra.map(renderNorm).join(""):'<p class="hint">La normativa complementaria autonómica de este territorio está pendiente de identificación y cotejo.</p>';
  byid("status-chip").textContent=isMadrid?"Madrid · revisión inicial":isMinisterio?"Ministerio · revisión inicial":autonomia?"Currículo autonómico localizado · revisión parcial":"Normativa autonómica pendiente";
  byid("result-alert").className="strip "+(configured?"warn":"danger");
  byid("result-alert").textContent=isMadrid?"Selección inicial basada en disposiciones estatales y de la Comunidad de Madrid. Verifica sus modificaciones, supletoriedad y las instrucciones aplicables antes de utilizarla como referencia definitiva.":isMinisterio?"Se ha incorporado la orden curricular del ámbito ministerial para esta etapa. El inventario complementario y su vigencia requieren comprobación antes de usarlo en una programación definitiva.":autonomia?"Se ha localizado el currículo de esta comunidad y etapa en una publicación oficial. No se ha verificado el conjunto de disposiciones complementarias, posibles modificaciones ni el régimen orgánico y supletorio: selección parcial, no definitiva.":"Se muestran referencias estatales identificadas. Aún no se han contrastado la normativa curricular autonómica ni las disposiciones de organización, evaluación, inclusión y comienzo de curso. El resultado y los documentos exportados son parciales.";
+ if(output.auditNote)byid("result-alert").textContent+=" "+output.auditNote;
  byid("word").disabled=false;byid("pdf").disabled=false;
  byid("word").textContent="Descargar Word (revisión documental)";
  byid("pdf").textContent="Guardar PDF (revisión documental)";
@@ -370,8 +373,9 @@ const para=(text,bold,hang)=>new d.Paragraph({alignment:d.AlignmentType.JUSTIFIE
 paras.push(para("La normativa de tu programación: básica y complementaria",true));
 paras.push(para("Ámbito: "+output.region+" · "+stageName(output.stage),false));
 paras.push(para(output.file||output.link?"Convocatoria opcional: "+[output.file,output.link].filter(Boolean).join(" · "):"Convocatoria no aportada (opcional).",false));
-paras.push(para(output.configured?"Selección inicial: verificar vigencia, modificaciones y convocatoria.":"BORRADOR INCOMPLETO: pendientes las disposiciones autonómicas y su verificación. No presentar como normativa completa.",false));
+paras.push(para("REVISIÓN JURÍDICA PENDIENTE: esta selección no acredita vigencia integral, aplicabilidad ni cobertura exhaustiva. Verifica modificaciones e instrucciones del curso.",false));
 const refPara=n=>new d.Paragraph({alignment:d.AlignmentType.JUSTIFIED,spacing:{line:240,after:120},indent:{left:720,hanging:720},children:[new d.TextRun({text:n.title+(n.condicional?" (Aplicación supletoria pendiente de comprobación en este territorio)":"")+". "+(n.bulletin?n.bulletin+". ":""),font:"Times New Roman",size:24}),new d.ExternalHyperlink({children:[new d.TextRun({text:n.url,font:"Times New Roman",size:24,color:"0563C1",underline:{}})],link:n.url})]});
+if(output.auditNote)paras.push(para(output.auditNote,false));
 paras.push(para("1. Normativa básica para el epígrafe inicial de la programación",true));
 output.basic.forEach(n=>paras.push(refPara(n)));
 paras.push(para("2. Normativa complementaria para las referencias finales",true));
