@@ -149,7 +149,7 @@ let output=null;
 function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function stageName(s){return ({primaria:"Educación Primaria",eso:"Educación Secundaria Obligatoria",bach:"Bachillerato"})[s];}
 function refText(n){return n.title+". "+(n.bulletin?n.bulletin+". ":"")+n.url;}
-function renderNorm(n){return '<div class="norm"><b>'+escapeHTML(n.id)+" · "+escapeHTML(n.year)+'</b><p>'+escapeHTML(n.title)+'.</p><a href="'+escapeHTML(n.url)+'" target="_blank" rel="noopener noreferrer">Consultar disposición o acceso oficial</a></div>';}
+function renderNorm(n){return '<div class="norm"><b>'+escapeHTML(n.title.match(/^(Ley Orgánica|Real Decreto|Decreto Foral|Decreto|Orden|Ordre|Orde|Resolución|Instrucciones|Instrucción)/i)?.[0]||"Disposición normativa")+" · "+escapeHTML(n.year)+'</b><p>'+escapeHTML(n.title)+'.</p><a href="'+escapeHTML(n.url)+'" target="_blank" rel="noopener noreferrer">Consultar texto oficial de la disposición</a></div>';}
 function docHTML(){
  if(!output)return "";
  const show=n=>'<p class="ref">'+escapeHTML(n.title+". "+(n.bulletin?n.bulletin+". ":""))+'<a href="'+escapeHTML(n.url)+'">'+escapeHTML(n.url)+'</a></p>';
@@ -172,9 +172,9 @@ function makeOutput(){
  if(url){try{const link=new URL(url);if(!/^https?:$/.test(link.protocol))throw Error();}catch(e){byid("validation").textContent="El enlace debe comenzar por https:// o http://.";return;}}
  const r=regions.find(x=>x[0]===region),isMadrid=region==="madrid",isMinisterio=["ministerio","ceuta","melilla"].includes(region);
  const configured=isMadrid||isMinisterio;
- let basic=state.concat(minimum[stage]),extra=[];
- if(isMadrid){basic=basic.concat(madrid[stage].basic);extra=madrid[stage].extra;}
- if(isMinisterio){basic=basic.concat(stage==="primaria"?[rd82,order1994P]:[rd83,order1994S],ministerio[stage]);extra=[requisitosCentros];}
+ let basic=[state[1]],extra=[];
+ if(isMadrid){basic=basic.concat(madrid[stage].basic.filter(n=>!/^O1994/.test(n.id)&&n.id!=="RD82"));extra=madrid[stage].extra;}
+ if(isMinisterio){basic=basic.concat(minimum[stage],stage==="primaria"?[rd82]:[rd83],ministerio[stage]);extra=[requisitosCentros];}
  output={region:r[1],stage,file:pdf?pdf.name:"",link:url,basic,extra,configured};
  byid("result-context").textContent=output.region+" · "+stageName(stage)+" · "+basic.length+" referencias básicas · "+extra.length+" complementarias";
  byid("basic-list").innerHTML=basic.map(renderNorm).join("");
