@@ -74,3 +74,18 @@ Una comunidad/etapa solo se habilita para exportación cuando sus fuentes se han
 - https://www.bocm.es/boletin/CM_Orden_BOCM/2022/07/26/BOCM-20220726-1.PDF
 
 **Estado del proyecto**: prototipo inicial y auditoría parcial. No cerrado. No atribuir validación jurídica integral ni cobertura de todas las comunidades. La carga de convocatoria solo comprueba que se aporte un archivo PDF; su contenido aún no se interpreta. No se ha acreditado despliegue de GitHub Pages.
+
+## Revisión de interfaz y funcionalidad solicitada (02/11/2026, segunda iteración)
+
+- Pantalla inicial basada en la maquetación de `web/index.html`: cabecera OPO-IA con tres imágenes institucionales, hero verde con emblema circular y acceso en dos paneles.
+- Nombre visual: «La normativa de tu programación: básica y complementaria». En el acceso se muestra «Introduce la contraseña para acceder al generador». El botón textual «Mostrar/Ocultar» se sustituyó por un ojo con etiqueta accesible.
+- Selección: 17 comunidades, Ceuta, Melilla y ámbito explícito «Ministerio de Educación (Ceuta y Melilla)», en tres etapas. Se mantiene el filtro institucional de formato; NO constituye autenticación.
+- PDF y enlace de convocatoria: **ambos opcionales, también simultáneamente ausentes**. La aplicación no interpreta automáticamente el PDF ni la URL; sirven como referencia declarativa, sin alterar las normas seleccionadas.
+- Resultados: primero la normativa básica y después la complementaria en tarjetas verticales con enlaces a la fuente. Descargas Word DOCX y PDF (impresión) disponibles incluso si no hay convocatoria.
+- Se retiraron los dos cajones independientes de portales territoriales y el desplegable de repositorios adicionales. Un único enlace dirige al **documento PDF original del directorio**, ya publicado en Futuro Docente: https://drive.google.com/file/d/1tXqvzFR6vMdVxGmNcdtSDeaH-CJpp6kO/view?usp=sharing; esto conserva la maquetación original en vez de generar una réplica.
+- Se incluyen expresamente las órdenes de currículo del ámbito ministerial: EFP/678/2022 (Primaria), EFP/754/2022 (ESO) y EFP/755/2022 (Bachillerato), con enlaces al BOE. Marco complementario inicial: Real Decreto 132/2010 sobre requisitos mínimos de centros.
+- Madrid sigue como piloto inicial en las tres etapas; las otras **16 comunidades** todavía requieren inventario y cotejo autonómico. La aplicación muestra fuentes estatales y ofrece exportaciones marcadas como **borradores incompletos** en estos casos; nunca anuncia cobertura autonómica total.
+- Verificación de comportamiento con DOM simulado de los controles y la generación de resultados: **60 combinaciones recorridas sin excepciones**, de ellas 3 Madrid, 9 del ámbito ministerial en sus tres denominaciones y 48 de las restantes 16 comunidades. La prueba no equivale a auditoría jurídica ni sustituye una inspección visual del navegador.
+- Se actualizó `web/norma-ia/test-check.cjs` con pruebas de comportamiento y se creó `.github/workflows/publicar-herramientas.yml`. El workflow intenta desplegar `web/index.html` y `web/norma-ia/index.html` preservando la aplicación original en GitHub Pages.
+- **No se ha confirmado que GitHub Pages esté activado ni que el despliegue haya resultado exitoso**. La dirección prevista, una vez activado y publicado, es https://evazquezcano.github.io/opo-ia/web/norma-ia/ . Si GitHub Pages no está habilitado, el propietario debe seleccionar Settings → Pages → Build and deployment → Source: GitHub Actions. La herramienta conectada de GitHub disponible no permite modificar esa configuración.
+- Quedan pendientes la revisión jurídica autonómica completa, cotejo de referencias APA 7, pruebas de descarga Word/PDF en un navegador real y validación del despliegue.
