@@ -72,7 +72,7 @@ check("Reglamentos orgánicos autonómicos evitan el RD 83 donde procede",()=>{
  for(const r of ["andalucia","canarias","clm","galicia","navarra"])for(const st of ["eso","bach"]){
    el("region").value=r;el("stage").value=st;listeners["generate:click"]();
    const basic=api.output().basic;assert.ok(!basic.some(n=>n.id==="RD83"),"RD83 improcedente en "+r);
-   assert.ok(basic.some(n=>/Decreto 32[78]\/2010|Decreto 81\/2010|Orden 118\/2022/.test(n.title)),"Sin norma orgánica "+r);
+   assert.ok(basic.some(n=>/Decreto 32[78]\/2010|Decreto 81\/2010|Orden 118\/2022|Decreto 324\/1996|Decreto Foral 14\/2026/.test(n.title)),"Sin norma orgánica "+r);
  }
 });
 check("Navarra usa el Reglamento de 2026 y órdenes de desarrollo",()=>{
