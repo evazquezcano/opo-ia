@@ -91,6 +91,7 @@ const regions=[
 ["murcia","Región de Murcia","https://www.educarm.es/","https://www.carm.es/web/servlet/pagina?IDCONTENIDO=3993&IDTIPO=100&RASTRO=c77%24m2482%2C22725%2C22740%2C17798",["https://www.carm.es/web/pagina/pagina?IDCONTENIDO=27301&IDTIPO=100&RASTRO=c903%24m17010","https://transparencia.carm.es/legislacion-regional"]],
 ["navarra","Comunidad Foral de Navarra","https://www.educacion.navarra.es/","https://www.educacion.navarra.es/web/dpto/normativa",["https://www.educacion.navarra.es/web/dpto/profesorado/curriculos-y-normativa/eso?languageId=es_ES"]],
 ["euskadi","País Vasco / Euskadi","https://www.euskadi.eus/","https://www.euskadi.eus/informacion/estudios-y-centros-legislacion-educativa/web01-a2hikast/es/",[]],
+["ministerio","Ministerio de Educación (Ceuta y Melilla)","https://www.educacionfpydeportes.gob.es/","https://educagob.educacionfpydeportes.gob.es/sistema-educativo/marco-legal.html",[]],
 ["ceuta","Ceuta (ámbito ministerial)","https://www.educacionfpydeportes.gob.es/","https://educagob.educacionfpydeportes.gob.es/sistema-educativo/marco-legal.html",[]],
 ["melilla","Melilla (ámbito ministerial)","https://www.educacionfpydeportes.gob.es/","https://educagob.educacionfpydeportes.gob.es/sistema-educativo/marco-legal.html",[]]
 ];
@@ -129,45 +130,78 @@ law("D32","Decreto 32/2019, de 9 de abril, del Consejo de Gobierno, por el que s
 law("O457","Orden 457/2023, de 17 de febrero, de la Vicepresidencia, Consejería de Educación y Universidades, por la que se concreta el procedimiento para el ejercicio de la autonomía de los centros docentes que impartan la Educación Secundaria Obligatoria y el Bachillerato en la Comunidad de Madrid",2023,"https://www.comunidad.madrid/educacion/regulacion-bachillerato","Portal de regulación del Bachillerato de la Comunidad de Madrid"),
 law("O1736","Orden 1736/2023, de 19 de mayo, de la Vicepresidencia, Consejería de Educación y Universidades, por la que se establecen los catálogos de materias optativas que los centros podrán incorporar a su oferta educativa en la Educación Secundaria Obligatoria y en el Bachillerato en la Comunidad de Madrid",2023,"https://www.comunidad.madrid/educacion/regulacion-bachillerato","Portal de regulación del Bachillerato de la Comunidad de Madrid")]}
 };
+
+const ministerio={
+primaria:law("EFP678","Orden EFP/678/2022, de 15 de julio, por la que se establece el currículo y se regula la ordenación de la Educación Primaria en el ámbito de gestión del Ministerio de Educación y Formación Profesional",2022,"https://www.boe.es/eli/es/o/2022/07/15/efp678/con","Boletín Oficial del Estado, núm. 174, de 21 de julio de 2022","estatal"),
+eso:law("EFP754","Orden EFP/754/2022, de 28 de julio, por la que se establece el currículo y se regula la ordenación de la Educación Secundaria Obligatoria en el ámbito de gestión del Ministerio de Educación y Formación Profesional",2022,"https://www.boe.es/eli/es/o/2022/07/28/efp754/con","Boletín Oficial del Estado, núm. 187, de 5 de agosto de 2022","estatal"),
+bach:law("EFP755","Orden EFP/755/2022, de 31 de julio, por la que se establece el currículo y se regula la ordenación del Bachillerato en el ámbito de gestión del Ministerio de Educación y Formación Profesional",2022,"https://www.boe.es/eli/es/o/2022/07/31/efp755/con","Boletín Oficial del Estado, núm. 187, de 5 de agosto de 2022","estatal")
+};
+const requisitosCentros=law("RD132","Real Decreto 132/2010, de 12 de febrero, por el que se establecen los requisitos mínimos de los centros que impartan las enseñanzas del segundo ciclo de la educación infantil, la educación primaria y la educación secundaria",2010,"https://www.boe.es/eli/es/rd/2010/02/12/132/con","Boletín Oficial del Estado, núm. 62, de 12 de marzo de 2010","estatal");
 const $=s=>document.querySelector(s), byid=s=>document.getElementById(s);
 let output=null;
 function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function stageName(s){return ({primaria:"Educación Primaria",eso:"Educación Secundaria Obligatoria",bach:"Bachillerato"})[s];}
 function refText(n){return n.title+". "+(n.bulletin?n.bulletin+". ":"")+n.url;}
 function renderNorm(n){return '<div class="norm"><b>'+escapeHTML(n.id)+" · "+escapeHTML(n.year)+'</b><p>'+escapeHTML(n.title)+'.</p><a href="'+escapeHTML(n.url)+'" target="_blank" rel="noopener noreferrer">Consultar disposición o acceso oficial</a></div>';}
-function updatePortals(){let r=regions.find(x=>x[0]===byid("region").value)||regions[0];byid("education-link").href=r[2];byid("rules-link").href=r[3];byid("other-links").innerHTML=r[4].map(u=>'<a target="_blank" rel="noopener noreferrer" href="'+escapeHTML(u)+'">'+escapeHTML(new URL(u).hostname)+'</a>').join("")||'<span class="hint">No se especifican portales adicionales.</span>';}
-function docHTML(){if(!output)return "";let linkRef=n=>'<p class="ref">'+escapeHTML(n.title+". "+(n.bulletin?n.bulletin+". ":""))+'<a href="'+escapeHTML(n.url)+'">'+escapeHTML(n.url)+'</a></p>';let basic=output.basic.map(linkRef).join("");let extra=output.extra.map(linkRef).join("");return '<h1>Normativa educativa para la programación didáctica</h1><p>Ámbito: '+escapeHTML(output.region)+' · '+escapeHTML(stageName(output.stage))+'.</p><p>Convocatoria aportada: '+escapeHTML(output.file)+(output.link?' · Enlace: '+escapeHTML(output.link):'')+'.</p><p class="notice">Selección inicial de fuentes; la vigencia, las modificaciones y las condiciones específicas de la convocatoria deben cotejarse antes de usar estas referencias.</p><h2>1. Normativa básica para el epígrafe inicial de la programación</h2>'+basic+'<h2>2. Normativa complementaria para las referencias finales</h2>'+(extra||'<p>No existe un repertorio autonómico verificado para esta combinación.</p>');}
-function directoryHTML(){let s='<h1>Portales oficiales de normativa educativa</h1><p>Directorio de Futuro Docente (UNED). Base documental verificada el 24 de octubre de 2026. Confirmar enlaces y vigencia antes de utilizar.</p>';regions.forEach(r=>{s+='<h2>'+escapeHTML(r[1])+'</h2><p class="ref">Portal de educación: '+escapeHTML(r[2])+'</p><p class="ref">Portal principal de normativa: '+escapeHTML(r[3])+'</p>';r[4].forEach(u=>s+='<p class="ref">Portal complementario: '+escapeHTML(u)+'</p>')});s+='<h2>Normativa estatal</h2><p class="ref">https://educagob.educacionfpydeportes.gob.es/normativa/infantil.html</p><p class="ref">https://educagob.educacionfpydeportes.gob.es/sistema-educativo/marco-legal.html</p>';return s;}
+function docHTML(){
+ if(!output)return "";
+ const show=n=>'<p class="ref">'+escapeHTML(n.title+". "+(n.bulletin?n.bulletin+". ":""))+'<a href="'+escapeHTML(n.url)+'">'+escapeHTML(n.url)+'</a></p>';
+ const basic=output.basic.map(show).join(""),extra=output.extra.map(show).join("");
+ const convocatoria=output.file||output.link?'<p>Convocatoria orientativa aportada: '+escapeHTML([output.file,output.link].filter(Boolean).join(" · "))+'. No se ha analizado su contenido automáticamente.</p>':'<p>No se ha aportado convocatoria de oposiciones (opcional).</p>';
+ const warning=output.configured?'Las referencias deben cotejarse con las versiones consolidadas y con la convocatoria aplicable.':'Documento incompleto: todavía no se ha verificado el repertorio normativo completo de este ámbito y etapa. No debe presentarse como relación exhaustiva ni como normativa autonómica validada.';
+ return '<h1>La normativa de tu programación: básica y complementaria</h1><p>Ámbito: '+escapeHTML(output.region)+' · '+escapeHTML(stageName(output.stage))+'.</p>'+convocatoria+'<p class="notice">'+escapeHTML(warning)+'</p><h2>1. Normativa básica para el epígrafe inicial de la programación</h2>'+basic+'<h2>2. Normativa complementaria para las referencias finales</h2>'+(extra||'<p>Pendiente de revisión específica de las disposiciones complementarias de este ámbito.</p>');
+}
+function directoryHTML(){
+ let s='<h1>PORTALES OFICIALES DE NORMATIVA EDUCATIVA</h1><p style="text-align:center">España: Ministerio y comunidades autónomas · Futuro Docente (UNED)</p><p>Directorio basado en la tabla de portales oficiales aportada por Futuro Docente (verificación inicial: 24/10/2026). El directorio orienta la consulta y no certifica la vigencia de las disposiciones.</p><table class="directory-table"><thead><tr><th>Ámbito o comunidad</th><th>Portal de educación</th><th>Portales oficiales de normativa educativa</th></tr></thead><tbody>';
+ for(let i=0;i<regions.length;i++){let r=regions[i];if(r[0]==="ministerio")continue;s+='<tr><td>'+escapeHTML(r[1])+'</td><td><a href="'+escapeHTML(r[2])+'">'+escapeHTML(r[2])+'</a></td><td>'+[r[3],...r[4]].map(u=>'<p><a href="'+escapeHTML(u)+'">'+escapeHTML(u)+'</a></p>').join("")+'</td></tr>';}
+ s+='</tbody></table><p>Ámbito estatal: <a href="https://educagob.educacionfpydeportes.gob.es/sistema-educativo/marco-legal.html">Educagob – Marco legal</a>.</p>';
+ return s;
+}
 function printPage(kind){document.body.classList.remove("print-document","print-directory");byid("print-document").innerHTML=kind==="document"?docHTML():"";byid("print-directory").innerHTML=kind==="directory"?directoryHTML():"";document.body.classList.add(kind==="document"?"print-document":"print-directory");window.print();}
-function makeOutput(){let region=byid("region").value,stage=byid("stage").value,pdf=byid("call-pdf").files[0],url=byid("call-url").value.trim();if(!pdf){byid("validation").textContent="Debes aportar el PDF de la convocatoria para generar la selección.";return;}if(!/\.pdf$/i.test(pdf.name)&&pdf.type!=="application/pdf"){byid("validation").textContent="El archivo de convocatoria debe ser PDF.";return;}if(url){try{let link=new URL(url);if(!/^https?:$/.test(link.protocol))throw Error();}catch(e){byid("validation").textContent="El enlace de la convocatoria debe comenzar por https:// o http://.";return;}}
-let r=regions.find(x=>x[0]===region),configured=region==="madrid";
-let basic=state.concat(minimum[stage],configured?madrid[stage].basic:[]),extra=configured?madrid[stage].extra:[];
-output={region:r[1],stage:stage,file:pdf.name,link:url,basic:basic,extra:extra,configured:configured};
-byid("result-context").textContent=output.region+" · "+stageName(stage)+" · "+basic.length+" referencias básicas y "+extra.length+" complementarias";
-byid("basic-list").innerHTML=basic.map(renderNorm).join("");byid("extra-list").innerHTML=extra.length?extra.map(renderNorm).join(""):'<p class="hint">El catálogo autonómico de esta selección está pendiente de una revisión documental específica.</p>';
-byid("status-chip").textContent=configured?"Madrid · revisión inicial":"Catálogo autonómico pendiente";
-byid("result-alert").className="strip "+(configured?"warn":"danger");
-byid("result-alert").textContent=configured?"Se ha elaborado una selección inicial con fuentes estatales y autonómicas de Madrid. No es un certificado de vigencia ni un repertorio exhaustivo: comprobar modificaciones, disposiciones supletorias, instrucciones y convocatoria. Los reglamentos orgánicos de 1996 y las órdenes de 1994 se recogen como disposiciones supletorias, en la medida en que no hayan sido desplazadas por normas autonómicas. Las disposiciones sobre jornada, optativas o diversificación se aplican según el tipo de centro y programa.":"Para esta comunidad todavía no existe un repertorio autonómico suficientemente contrastado. Se muestran solo las normas estatales como orientación, pero no se permite exportar un documento incompleto. Utiliza los portales oficiales y verifica las disposiciones propias.";
-byid("word").disabled=!configured;byid("pdf").disabled=!configured;byid("results").hidden=false;byid("validation").textContent="Convocatoria aportada como referencia: "+pdf.name+". No se realiza una lectura ni una validación automática de su contenido.";byid("results").scrollIntoView({behavior:"smooth",block:"start"});}
-async function downloadWord(){if(!output||!output.configured)return;if(!window.docx){alert("No se ha podido cargar el generador de Word. Comprueba tu conexión a Internet y vuelve a intentarlo.");return;}try{
+function makeOutput(){
+ const region=byid("region").value,stage=byid("stage").value,pdf=byid("call-pdf").files[0],url=byid("call-url").value.trim();
+ byid("validation").textContent="";
+ if(pdf&&(!/\.pdf$/i.test(pdf.name)&&pdf.type!=="application/pdf")){byid("validation").textContent="La convocatoria adjunta debe ser un PDF.";return;}
+ if(url){try{const link=new URL(url);if(!/^https?:$/.test(link.protocol))throw Error();}catch(e){byid("validation").textContent="El enlace debe comenzar por https:// o http://.";return;}}
+ const r=regions.find(x=>x[0]===region),isMadrid=region==="madrid",isMinisterio=["ministerio","ceuta","melilla"].includes(region);
+ const configured=isMadrid||isMinisterio;
+ let basic=state.concat(minimum[stage]),extra=[];
+ if(isMadrid){basic=basic.concat(madrid[stage].basic);extra=madrid[stage].extra;}
+ if(isMinisterio){basic=basic.concat(stage==="primaria"?[rd82,order1994P]:[rd83,order1994S],ministerio[stage]);extra=[requisitosCentros];}
+ output={region:r[1],stage,file:pdf?pdf.name:"",link:url,basic,extra,configured};
+ byid("result-context").textContent=output.region+" · "+stageName(stage)+" · "+basic.length+" referencias básicas · "+extra.length+" complementarias";
+ byid("basic-list").innerHTML=basic.map(renderNorm).join("");
+ byid("extra-list").innerHTML=extra.length?extra.map(renderNorm).join(""):'<p class="hint">La normativa complementaria autonómica de este territorio está pendiente de identificación y cotejo.</p>';
+ byid("status-chip").textContent=isMadrid?"Madrid · revisión inicial":isMinisterio?"Ministerio · revisión inicial":"Normativa autonómica pendiente";
+ byid("result-alert").className="strip "+(configured?"warn":"danger");
+ byid("result-alert").textContent=isMadrid?"Selección inicial basada en disposiciones estatales y de la Comunidad de Madrid. Verifica sus modificaciones, supletoriedad y las instrucciones aplicables antes de utilizarla como referencia definitiva.":isMinisterio?"Se ha incorporado la orden curricular del ámbito ministerial para esta etapa. El inventario complementario y su vigencia requieren comprobación antes de usarlo en una programación definitiva.":"Se muestran referencias estatales identificadas. Aún no se han contrastado la normativa curricular autonómica ni las disposiciones de organización, evaluación, inclusión y comienzo de curso. El resultado y los documentos exportados son parciales.";
+ byid("word").disabled=false;byid("pdf").disabled=false;
+ byid("word").textContent=configured?"Descargar Word (.docx)":"Descargar Word (borrador parcial)";
+ byid("pdf").textContent=configured?"Guardar como PDF":"Guardar PDF (borrador parcial)";
+ byid("results").hidden=false;
+ byid("validation").textContent=pdf||url?"Convocatoria opcional registrada como referencia. No se analiza automáticamente su contenido.":"Consulta realizada sin convocatoria, tal como permite la herramienta.";
+ byid("results").scrollIntoView({behavior:"smooth",block:"start"});
+}
+async function downloadWord(){if(!output)return;if(!window.docx){alert("No se ha podido cargar el generador de Word. Comprueba tu conexión a Internet y vuelve a intentarlo.");return;}try{
 let d=window.docx;let paras=[];
 const para=(text,bold,hang)=>new d.Paragraph({alignment:d.AlignmentType.JUSTIFIED,spacing:{line:240,after:120},indent:hang?{left:720,hanging:720}:undefined,children:[new d.TextRun({text:text,bold:!!bold,font:"Times New Roman",size:24})]});
-paras.push(para("Normativa educativa para la programación didáctica",true));
+paras.push(para("La normativa de tu programación: básica y complementaria",true));
 paras.push(para("Ámbito: "+output.region+" · "+stageName(output.stage),false));
-paras.push(para("Convocatoria aportada: "+output.file+(output.link?" · "+output.link:""),false));
-paras.push(para("Selección inicial. Revisar la vigencia jurídica, las modificaciones y la convocatoria antes de utilizar las referencias.",false));
+paras.push(para(output.file||output.link?"Convocatoria opcional: "+[output.file,output.link].filter(Boolean).join(" · "):"Convocatoria no aportada (opcional).",false));
+paras.push(para(output.configured?"Selección inicial: verificar vigencia, modificaciones y convocatoria.":"BORRADOR INCOMPLETO: pendientes las disposiciones autonómicas y su verificación. No presentar como normativa completa.",false));
 const refPara=n=>new d.Paragraph({alignment:d.AlignmentType.JUSTIFIED,spacing:{line:240,after:120},indent:{left:720,hanging:720},children:[new d.TextRun({text:n.title+". "+(n.bulletin?n.bulletin+". ":""),font:"Times New Roman",size:24}),new d.ExternalHyperlink({children:[new d.TextRun({text:n.url,font:"Times New Roman",size:24,color:"0563C1",underline:{}})],link:n.url})]});
 paras.push(para("1. Normativa básica para el epígrafe inicial de la programación",true));
 output.basic.forEach(n=>paras.push(refPara(n)));
 paras.push(para("2. Normativa complementaria para las referencias finales",true));
 output.extra.forEach(n=>paras.push(refPara(n)));
+if(!output.extra.length)paras.push(para("Normativa complementaria autonómica pendiente de comprobación.",false));
 let doc=new d.Document({styles:{default:{document:{run:{font:"Times New Roman",size:24},paragraph:{spacing:{line:240,after:120}}}}},sections:[{properties:{page:{size:{width:11906,height:16838},margin:{top:1440,bottom:1440,left:1440,right:1440}}},children:paras}]});
 let blob=await d.Packer.toBlob(doc);let a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="NORMA-IA_"+output.stage+"_"+(byid("region").value)+".docx";document.body.append(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1200);
 }catch(e){alert("Error al generar el Word: "+e.message);}}
-regions.forEach(r=>{let o=document.createElement("option");o.value=r[0];o.textContent=r[1];byid("region").append(o);});byid("region").value="madrid";updatePortals();
-byid("region").addEventListener("change",()=>{updatePortals();byid("results").hidden=true;output=null;});
+regions.forEach(r=>{let o=document.createElement("option");o.value=r[0];o.textContent=r[1];byid("region").append(o);});byid("region").value="madrid";
+byid("region").addEventListener("change",()=>{byid("results").hidden=true;output=null;});
 byid("stage").addEventListener("change",()=>{byid("results").hidden=true;output=null;});
-byid("toggle-password").addEventListener("click",()=>{let e=byid("password");e.type=e.type==="password"?"text":"password";byid("toggle-password").textContent=e.type==="password"?"Mostrar":"Ocultar";});
+byid("toggle-password").addEventListener("click",()=>{const input=byid("password"),button=byid("toggle-password");const visible=input.type==="password";input.type=visible?"text":"password";button.classList.toggle("is-visible",visible);button.setAttribute("aria-pressed",String(visible));button.setAttribute("aria-label",visible?"Ocultar contraseña":"Mostrar contraseña");button.title=visible?"Ocultar contraseña":"Mostrar contraseña";});
 function enter(){let value=byid("password").value.trim();if(!/^[^\s@]+@alumno\.uned\.es$/i.test(value)){byid("access-error").textContent="La identificación institucional no tiene el formato admitido.";return;}byid("password").value="";byid("access").hidden=true;byid("workspace").hidden=false;}
 byid("login").addEventListener("click",enter);byid("password").addEventListener("keydown",e=>{if(e.key==="Enter")enter()});
 byid("generate").addEventListener("click",makeOutput);byid("pdf").addEventListener("click",()=>printPage("document"));byid("word").addEventListener("click",downloadWord);byid("all-portals").addEventListener("click",()=>printPage("directory"));window.addEventListener("afterprint",()=>{document.body.classList.remove("print-document","print-directory");});
