@@ -328,7 +328,7 @@ function docHTML(){
  const show=n=>'<p class="ref">'+escapeHTML(n.title+(n.condicional?" (Aplicación supletoria pendiente de comprobación en este territorio)":"")+". "+(n.bulletin?n.bulletin+". ":""))+'<a href="'+escapeHTML(n.url)+'">'+escapeHTML(n.url)+'</a></p>';
  const basic=output.basic.map(show).join(""),extra=output.extra.map(show).join("");
  const convocatoria=output.file||output.link?'<p>Convocatoria orientativa aportada: '+escapeHTML([output.file,output.link].filter(Boolean).join(" · "))+'. No se ha analizado su contenido automáticamente.</p>':'<p>No se ha aportado convocatoria de oposiciones (opcional).</p>';
- const warning=output.configured?'Las referencias deben cotejarse con las versiones consolidadas y con la convocatoria aplicable.':'Documento incompleto: todavía no se ha verificado el repertorio normativo completo de este ámbito y etapa. No debe presentarse como relación exhaustiva ni como normativa autonómica validada.';
+ const warning="Repertorio en revisión jurídica: no constituye una certificación de vigencia ni un inventario exhaustivo. Comprobar el texto oficial, modificaciones y condiciones de la convocatoria.";
  return '<h1>La normativa de tu programación: básica y complementaria</h1><p>Ámbito: '+escapeHTML(output.region)+' · '+escapeHTML(stageName(output.stage))+'.</p>'+convocatoria+'<p class="notice">'+escapeHTML(warning)+'</p><h2>1. Normativa básica para el epígrafe inicial de la programación</h2>'+basic+'<h2>2. Normativa complementaria para las referencias finales</h2>'+(extra||'<p>Pendiente de revisión específica de las disposiciones complementarias de este ámbito.</p>');
 }
 function directoryHTML(){
@@ -358,8 +358,8 @@ function makeOutput(){
  byid("result-alert").className="strip "+(configured?"warn":"danger");
  byid("result-alert").textContent=isMadrid?"Selección inicial basada en disposiciones estatales y de la Comunidad de Madrid. Verifica sus modificaciones, supletoriedad y las instrucciones aplicables antes de utilizarla como referencia definitiva.":isMinisterio?"Se ha incorporado la orden curricular del ámbito ministerial para esta etapa. El inventario complementario y su vigencia requieren comprobación antes de usarlo en una programación definitiva.":autonomia?"Se ha localizado el currículo de esta comunidad y etapa en una publicación oficial. No se ha verificado el conjunto de disposiciones complementarias, posibles modificaciones ni el régimen orgánico y supletorio: selección parcial, no definitiva.":"Se muestran referencias estatales identificadas. Aún no se han contrastado la normativa curricular autonómica ni las disposiciones de organización, evaluación, inclusión y comienzo de curso. El resultado y los documentos exportados son parciales.";
  byid("word").disabled=false;byid("pdf").disabled=false;
- byid("word").textContent=configured?"Descargar Word (.docx)":"Descargar Word (borrador parcial)";
- byid("pdf").textContent=configured?"Guardar como PDF":"Guardar PDF (borrador parcial)";
+ byid("word").textContent="Descargar Word (revisión documental)";
+ byid("pdf").textContent="Guardar PDF (revisión documental)";
  byid("results").hidden=false;
  byid("validation").textContent=pdf||url?"Convocatoria opcional registrada como referencia. No se analiza automáticamente su contenido.":"Consulta realizada sin convocatoria, tal como permite la herramienta.";
  byid("results").scrollIntoView({behavior:"smooth",block:"start"});
