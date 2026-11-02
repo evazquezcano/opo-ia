@@ -89,3 +89,28 @@ Una comunidad/etapa solo se habilita para exportación cuando sus fuentes se han
 - Se actualizó `web/norma-ia/test-check.cjs` con pruebas de comportamiento y se creó `.github/workflows/publicar-herramientas.yml`. El workflow intenta desplegar `web/index.html` y `web/norma-ia/index.html` preservando la aplicación original en GitHub Pages.
 - **No se ha confirmado que GitHub Pages esté activado ni que el despliegue haya resultado exitoso**. La dirección prevista, una vez activado y publicado, es https://evazquezcano.github.io/opo-ia/web/norma-ia/ . Si GitHub Pages no está habilitado, el propietario debe seleccionar Settings → Pages → Build and deployment → Source: GitHub Actions. La herramienta conectada de GitHub disponible no permite modificar esa configuración.
 - Quedan pendientes la revisión jurídica autonómica completa, cotejo de referencias APA 7, pruebas de descarga Word/PDF en un navegador real y validación del despliegue.
+
+## Auditoría territorial incremental — 02/11/2026
+
+### Reglas aplicadas
+- Identificación de las disposiciones mediante rango y año, con título íntegro; no mostrar como título los códigos de desarrollo internos.
+- Sin LOE separada ni reales decretos estatales de mínimos 157/2022, 217/2022 y 243/2022 en las 17 selecciones autonómicas. Se conservan los correspondientes a Ceuta y Melilla.
+- Sin órdenes estatales de organización de junio de 1994 en ningún resultado.
+- RD 83/1996 solo como norma de posible aplicación supletoria cuando no se ha codificado regulación orgánica autonómica, con advertencia visible y pendiente de determinación jurídica.
+- Referencias con hipervínculo a disposiciones individuales en boletines o fichas jurídicas oficiales.
+
+### Datos incorporados
+- 17 autonomías por tres etapas: norma curricular principal identificada en las 51 combinaciones.
+- Marco orgánico territorial identificado y codificado para Andalucía, Canarias, Castilla-La Mancha, Galicia, Navarra (Decreto Foral 14/2026; Órdenes Forales 36/2026 y 40/2026) e Illes Balears (Decret 4/2023 modificado en 2025).
+- Complementarias específicas para cada una de las 51 combinaciones (al menos una), incluyendo organización, evaluación, currículo modificado, diversidad e inclusión según las normas encontradas.
+- Aragón incorpora modificaciones curriculares 2024 y 2025; Asturias las resoluciones de ordenación y evaluación 2023; Castilla y León evaluación de Primaria, ESO y Bachillerato de 2024; Canarias evaluación de 2023.
+- La Rioja: Decreto 43/2025 inclusión; Orden EDE/75/2025 PADI; Decreto 39/2025 convivencia, sin incorporar normas derogadas (Orden 6/2014 y Decreto 31/2022).
+- Cataluña: Decret 150/2017 de inclusión con enlace a su PDF original DOGC; Comunitat Valenciana: Decreto 104/2018 de inclusión, con advertencia de modificaciones parciales.
+- Las normas de Navarra sustituyen el reglamento orgánico anterior, preservando sus desarrollos de 2026. Galicia incluye sus reglamentos orgánicos autonómicos.
+
+### Comprobaciones y límites
+- Pruebas de 60 selecciones en entorno DOM simulado completadas sin excepciones; sintaxis JavaScript comprobada. Los tests reproducibles del repositorio se han ampliado para las reglas y la normativa de los territorios.
+- Una referencia individual identificada no significa que esté contrastada la vigencia integral de todo el repertorio. **No se ha completado la auditoría jurídica de las 51 combinaciones**: faltan normas transversales o específicas de algunos centros, instrucciones anuales y verificación de sustituciones o derogaciones en cada categoría.
+- Persisten referencias de RD 83/1996 con advertencia de suplencia no resuelta; no declararlas normas definitivamente aplicables hasta contrastar cada territorio.
+- Los enlaces a documentos concretos aún requieren revisión de accesibilidad uno por uno. También están pendientes las pruebas reales de Word/PDF, la revisión fina de estilo APA 7 y la confirmación del despliegue activo de GitHub Pages.
+- El proyecto continúa en desarrollo; estos avances no constituyen un cierre o una certificación de vigencia.
