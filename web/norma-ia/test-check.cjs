@@ -49,7 +49,7 @@ check("Las autonomías con currículo identificado advierten de los límites de 
  el("region").value="andalucia";el("stage").value="primaria";listeners["generate:click"]();
  assert.match(el("basic-list").innerHTML,/Decreto 101\/2023/);
  assert.match(el("result-alert").textContent,/selección parcial/i);assert.equal(el("word").disabled,false);
- assert.match(api.docHTML(),/Documento incompleto/);
+ assert.match(api.docHTML(),/Repertorio en revisión jurídica/);
 });
 check("Las 60 combinaciones incluyen normas territoriales, sin LOE independiente ni RD de mínimos autonómico",()=>{
  const autonomous=["andalucia","aragon","asturias","baleares","canarias","cantabria","clm","cyl","cataluna","valencia","extremadura","galicia","rioja","madrid","murcia","navarra","euskadi"];
