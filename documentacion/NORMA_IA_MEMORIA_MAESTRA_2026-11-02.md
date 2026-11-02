@@ -8,6 +8,7 @@
 **Interfaz actual:** `web/norma-ia/index.html`.  
 **Generador anterior protegido:** `web/index.html`.  
 **Referencia de diseño anterior protegida:** `web/referencia-original.html`.  
+**Informe jurídico territorial:** `documentacion/NORMA_IA_AUDITORIA_JURIDICA_2026-11-02.md`.  
 **Matriz jurídica por referencia y ámbito:** `documentacion/NORMA_IA_MANIFIESTO_FUENTES_2026-11-02.json`.  
 **Registro histórico de especificaciones y decisiones:** `documentacion/NORMA_IA_ESPECIFICACION_2026-11-02.md`.  
 **Pruebas:** `web/norma-ia/test-check.cjs`.  
@@ -77,14 +78,14 @@ Hallazgos verificados especialmente relevantes:
 - Tests de `web/norma-ia/test-check.cjs`: 20 comprobaciones reproducidas en entorno JavaScript simulado sobre acceso, tres logotipos, 20 ámbitos (17 + Ceuta/Melilla + selector ministerial), tres etapas, consulta sin convocatoria, normas excluidas, Word/PDF, revisión territorial y ROC autonómicos. Estas pruebas no equivalen a pruebas visuales ni a auditoría jurídica.
 - GitHub Pages Source se configuró manualmente a «GitHub Actions» por el propietario, comprobado mediante captura.
 - Workflow `.github/workflows/publicar-herramientas.yml`: empaqueta `web/index.html` como página anterior y `web/norma-ia/index.html` como aplicación NORMA-IA. Página prevista https://evazquezcano.github.io/opo-ia/web/norma-ia/.
-- **Incidencia detectada y corregida el 02/11/2026:** las primeras ejecuciones de Pages e integridad fallaban porque una aserción conservaba el texto antiguo «Documento incompleto» y la aplicación ya decía «Repertorio en revisión jurídica». Se actualizó la aserción (commit 89bbec00a4a23aa140d4de28e9d0bd5676b7f575). Debe verificarse que las nuevas ejecuciones en GitHub Actions hayan terminado correctamente y que la URL pública responda.
+- **Incidencia detectada y corregida el 02/11/2026:** las primeras ejecuciones de Pages e integridad fallaban porque una aserción conservaba el texto antiguo «Documento incompleto» y la aplicación ya decía «Repertorio en revisión jurídica». Se actualizó la aserción (commit 89bbec00a4a23aa140d4de28e9d0bd5676b7f575). **Verificación posterior:** GitHub Actions confirmó éxito del control de integridad [ejecución 41515214305](https://github.com/evazquezcano/opo-ia/actions/runs/41515214305) y de la publicación [ejecución 41515214303](https://github.com/evazquezcano/opo-ia/actions/runs/41515214303). La consulta externa desde el navegador del usuario sigue pendiente; el servicio de consulta web de esta sesión no pudo abrir el dominio de Pages.
 - El enlace de previsualización raw.githack mostró una advertencia intermedia del proxy; no se desea utilizarlo como enlace definitivo.
 - No afirmar accesibilidad pública del sitio si no se ha contrastado la ejecución de Pages.
 - No se han validado aún las descargas DOCX y PDF en un navegador real, ni su conformidad editorial/visual completa.
 
 ## 8. Copia de seguridad y metodología de trabajo
 
-El código fuente vive en GitHub, no solo en la memoria de una conversación. El usuario solicitó expresamente respaldar la totalidad del proyecto: conservar HTML, tests, workflows, memoria, manifiesto normativo, fuentes y decisiones. Existe una rama congelada de recuperación cuando se haya creado y verificado en GitHub (consultar las ramas del repositorio). El PDF original de portales figura también como adjunto original de la conversación y está enlazado desde la aplicación.
+El código fuente vive en GitHub, no solo en la memoria de una conversación. El usuario solicitó expresamente respaldar la totalidad del proyecto: conservar HTML, tests, workflows, memoria, manifiesto normativo, fuentes y decisiones. La instantánea de continuidad se guardará en una rama de archivo propia tras incorporar este documento y el informe jurídico. Consultar la rama `archivo/norma-ia-2026-11-02` cuando esté confirmada en GitHub. El PDF original de portales figura también como adjunto original de la conversación y está enlazado desde la aplicación.
 
 **Bucle obligatorio para futuras sesiones:** identificar la siguiente tarea → consultar fuentes oficiales → modificar UNA parte → pruebas de sintaxis y comportamiento → corregir fallos → ejecutar y verificar GitHub Actions → comprobar sitio → actualizar matriz legal y memoria maestra → continuar. Realizar directamente las operaciones de GitHub cuando sea posible; solicitar intervención humana únicamente ante decisión fundamental o control externo imposible de ejecutar. No trabajar de modo asíncrono sin una automatización explícita.
 
