@@ -265,6 +265,13 @@ autonomicas.navarra.bach.complementaria=[law("Orden Foral 45/2023","Orden Foral 
 
 const evaluacionCantabria=law("Orden EDU/7/2023","Orden EDU/7/2023, de 23 de marzo, por la que se regula el derecho del alumnado a una evaluación objetiva y se establece el procedimiento de revisión de calificaciones y de reclamación contra las decisiones de promoción y titulación, en la Comunidad Autónoma de Cantabria",2023,"https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=387300","BOC núm. 65, de 3 de abril de 2023");
 for(const etapa of ["primaria","eso","bach"])autonomicas.cantabria[etapa].complementaria=[evaluacionCantabria];
+
+autonomicas.galicia.primaria.organizacion=[
+ law("Decreto 374/1996","Decreto 374/1996, do 17 de outubro, polo que se aproba o Regulamento orgánico das escolas de educación infantil e dos colexios de educación primaria",1996,"https://www.xunta.gal/dog/Publicados/1996/19961021/AnuncioAD36_gl.html","DOG núm. 206, de 21 de outubro de 1996; modificado posteriormente")
+];
+for(const etapa of ["eso","bach"])autonomicas.galicia[etapa].organizacion=[
+ law("Decreto 324/1996","Decreto 324/1996, do 26 de xullo, polo que se aproba o Regulamento orgánico dos institutos de educación secundaria",1996,"https://www.xunta.gal/dog/Publicados/1996/19960809/Anuncio9002_gl.html","DOG núm. 156, de 9 de agosto de 1996; determinados artigos derrogados polo Decreto 29/2007")
+];
 const ministerio={
 primaria:law("EFP678","Orden EFP/678/2022, de 15 de julio, por la que se establece el currículo y se regula la ordenación de la Educación Primaria en el ámbito de gestión del Ministerio de Educación y Formación Profesional",2022,"https://www.boe.es/eli/es/o/2022/07/15/efp678/con","Boletín Oficial del Estado, núm. 174, de 21 de julio de 2022","estatal"),
 eso:law("EFP754","Orden EFP/754/2022, de 28 de julio, por la que se establece el currículo y se regula la ordenación de la Educación Secundaria Obligatoria en el ámbito de gestión del Ministerio de Educación y Formación Profesional",2022,"https://www.boe.es/eli/es/o/2022/07/28/efp754/con","Boletín Oficial del Estado, núm. 187, de 5 de agosto de 2022","estatal"),
