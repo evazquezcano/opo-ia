@@ -28,7 +28,7 @@ function el(id){return elements[id]??(elements[id]={value:"",type:"password",inn
 const document={getElementById:el,querySelector:q=>el(q.replace(/^#/,"")),createElement:()=>el("_"+(++counter)),body:{classList:{add(){},remove(){}},append(){}}};
 const window={addEventListener(){},print(){}};
 const URLMock=class{constructor(url){if(!/^https?:\/\/[^/]+/.test(url))throw Error("invalid");this.protocol=url.split(":")[0]+":";this.hostname=url.split("/")[2]}};
-const api=new Function("document","window","URL","setTimeout",scripts[0]+"\nreturn {regions,docHTML,directoryHTML};")(document,window,URLMock,()=>{});
+const api=new Function("document","window","URL","setTimeout",scripts[0]+"\nreturn {regions,docHTML,directoryHTML,output:()=>output};")(document,window,URLMock,()=>{});
 check("Inicialización y selector completo",()=>{assert.equal(api.regions.length,20);assert.equal(el("region").value,"madrid")});
 check("Control de acceso e icono ojo",()=>{
  el("password").value="invalido";listeners["login:click"]();assert.ok(el("access-error").textContent);
@@ -45,10 +45,41 @@ check("Madrid ESO sin convocatoria presenta dos grupos",()=>{
 check("Ministerio, Ceuta y Melilla seleccionan currículo ministerial",()=>{
  for(const region of ["ministerio","ceuta","melilla"]){el("region").value=region;el("stage").value="bach";listeners["generate:click"]();assert.match(el("basic-list").innerHTML,/EFP\/755\/2022/);}
 });
-check("Autonomías sin cotejo advierten que el borrador es parcial",()=>{
+check("Las autonomías con currículo identificado advierten de los límites de cobertura",()=>{
  el("region").value="andalucia";el("stage").value="primaria";listeners["generate:click"]();
- assert.match(el("result-alert").textContent,/no se han contrastado/);assert.equal(el("word").disabled,false);
+ assert.match(el("basic-list").innerHTML,/Decreto 101\/2023/);
+ assert.match(el("result-alert").textContent,/selección parcial/i);assert.equal(el("word").disabled,false);
  assert.match(api.docHTML(),/Documento incompleto/);
+});
+check("Las 60 combinaciones incluyen normas territoriales, sin LOE independiente ni RD de mínimos autonómico",()=>{
+ const autonomous=["andalucia","aragon","asturias","baleares","canarias","cantabria","clm","cyl","cataluna","valencia","extremadura","galicia","rioja","madrid","murcia","navarra","euskadi"];
+ let count=0;for(const r of api.regions)for(const st of ["primaria","eso","bach"]){
+   el("region").value=r[0];el("stage").value=st;el("call-pdf").files=[];el("call-url").value="";
+   listeners["generate:click"]();
+   const o=api.output();assert.ok(o&&o.basic.length,"No hay normas: "+r[0]+" "+st);
+   assert.ok(o.basic.some(n=>n.id==="LOMLOE"),"Falta LOMLOE: "+r[0]+" "+st);
+   assert.ok(!o.basic.some(n=>n.id==="LOE"||/^O1994/.test(n.id)),"Normativa excluida: "+r[0]+" "+st);
+   if(autonomous.includes(r[0])){
+      assert.ok(!o.basic.some(n=>/^RD(157|217|243)$/.test(n.id)),"Real Decreto de mínimos improcedente: "+r[0]+" "+st);
+      assert.ok(o.basic.some(n=>n.scope!=="estatal"),"Falta normativa autonómica: "+r[0]+" "+st);
+   }else assert.ok(o.basic.some(n=>/^RD(157|217|243)$/.test(n.id)),"Real Decreto de mínimos ausente en Ministerio: "+st);
+   assert.equal(el("results").hidden,false);assert.equal(el("word").disabled,false);
+   count++;
+ }
+ assert.equal(count,60);
+});
+check("Reglamentos orgánicos autonómicos evitan el RD 83 donde procede",()=>{
+ for(const r of ["andalucia","canarias","clm"])for(const st of ["eso","bach"]){
+   el("region").value=r;el("stage").value=st;listeners["generate:click"]();
+   const basic=api.output().basic;assert.ok(!basic.some(n=>n.id==="RD83"),"RD83 improcedente en "+r);
+   assert.ok(basic.some(n=>/Decreto 32[78]\/2010|Decreto 81\/2010|Orden 118\/2022/.test(n.title)),"Sin norma orgánica "+r);
+ }
+});
+check("Referencias con enlace individual y denominación íntegra en pantalla",()=>{
+ el("region").value="navarra";el("stage").value="eso";listeners["generate:click"]();
+ assert.match(el("basic-list").innerHTML,/Decreto Foral/);
+ assert.doesNotMatch(el("basic-list").innerHTML,/>RD83 ·/);
+ assert.match(el("basic-list").innerHTML,/Consultar texto oficial de la disposición/);
 });
 check("Directorio PDF contiene tabla completa",()=>{assert.match(api.directoryHTML(),/directory-table/);assert.match(api.directoryHTML(),/educagob/);});
 check("No se ha modificado el generador anterior",()=>{assert.ok(fs.existsSync(path.join(__dirname,"..","index.html")))});
