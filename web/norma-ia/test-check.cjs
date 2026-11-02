@@ -69,10 +69,23 @@ check("Las 60 combinaciones incluyen normas territoriales, sin LOE independiente
  assert.equal(count,60);
 });
 check("Reglamentos orgánicos autonómicos evitan el RD 83 donde procede",()=>{
- for(const r of ["andalucia","canarias","clm"])for(const st of ["eso","bach"]){
+ for(const r of ["andalucia","canarias","clm","galicia","navarra"])for(const st of ["eso","bach"]){
    el("region").value=r;el("stage").value=st;listeners["generate:click"]();
    const basic=api.output().basic;assert.ok(!basic.some(n=>n.id==="RD83"),"RD83 improcedente en "+r);
    assert.ok(basic.some(n=>/Decreto 32[78]\/2010|Decreto 81\/2010|Orden 118\/2022/.test(n.title)),"Sin norma orgánica "+r);
+ }
+});
+check("Navarra usa el Reglamento de 2026 y órdenes de desarrollo",()=>{
+ for(const etapa of ["primaria","eso","bach"]){el("region").value="navarra";el("stage").value=etapa;listeners["generate:click"]();
+   const basic=api.output().basic;
+   assert.ok(basic.some(n=>n.id==="Decreto Foral 14/2026"));
+   assert.ok(basic.some(n=>n.id=== (etapa==="primaria"?"Orden Foral 36/2026":"Orden Foral 40/2026")));
+   assert.ok(!basic.some(n=>n.id==="RD83"));
+ }
+});
+check("Galicia presenta reglamentos autonómicos propios",()=>{
+ for(const etapa of ["primaria","eso","bach"]){el("region").value="galicia";el("stage").value=etapa;listeners["generate:click"]();
+   assert.ok(api.output().basic.some(n=>n.id===(etapa==="primaria"?"Decreto 374/1996":"Decreto 324/1996")));
  }
 });
 check("Referencias con enlace individual y denominación íntegra en pantalla",()=>{
