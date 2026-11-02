@@ -63,6 +63,7 @@ check("Las 60 combinaciones incluyen normas territoriales, sin LOE independiente
       assert.ok(!o.basic.some(n=>/^RD(157|217|243)$/.test(n.id)),"Real Decreto de mínimos improcedente: "+r[0]+" "+st);
       assert.ok(o.basic.some(n=>n.scope!=="estatal"),"Falta normativa autonómica: "+r[0]+" "+st);
    }else assert.ok(o.basic.some(n=>/^RD(157|217|243)$/.test(n.id)),"Real Decreto de mínimos ausente en Ministerio: "+st);
+   assert.ok(o.extra.length>0,"Sin normativa complementaria: "+r[0]+" "+st);
    assert.equal(el("results").hidden,false);assert.equal(el("word").disabled,false);
    count++;
  }
@@ -102,5 +103,17 @@ check("Referencias con enlace individual y denominación íntegra en pantalla",(
  assert.match(el("basic-list").innerHTML,/Consultar texto oficial de la disposición/);
 });
 check("Directorio PDF contiene tabla completa",()=>{assert.match(api.directoryHTML(),/directory-table/);assert.match(api.directoryHTML(),/educagob/);});
+check("La Rioja no incorpora normativas derogadas de convivencia o diversidad",()=>{
+  for(const st of ["primaria","eso","bach"]){el("region").value="rioja";el("stage").value=st;listeners["generate:click"]();
+    const codes=api.output().extra.map(n=>n.id);
+    assert.ok(codes.includes("Decreto 43/2025"));assert.ok(codes.includes("Orden EDE/75/2025"));
+    assert.ok(codes.includes("Decreto 39/2025"));assert.ok(!codes.includes("Orden 6/2014"));
+  }
+});
+check("Comunitat Valenciana y Cataluña tienen normas de inclusión",()=>{
+  for(const r of ["valencia","cataluna"]){el("region").value=r;el("stage").value="bach";listeners["generate:click"]();
+    assert.ok(api.output().extra.some(n=>n.id===(r==="valencia"?"Decreto 104/2018":"Decret 150/2017")));
+  }
+});
 check("No se ha modificado el generador anterior",()=>{assert.ok(fs.existsSync(path.join(__dirname,"..","index.html")))});
 console.log("NORMA-IA: "+passed+" comprobaciones superadas.");
