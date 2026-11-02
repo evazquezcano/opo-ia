@@ -1,0 +1,25 @@
+name: NORMA-IA · Control de integridad
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'web/norma-ia/**'
+      - '.github/workflows/norma-ia-integridad.yml'
+  pull_request:
+    paths:
+      - 'web/norma-ia/**'
+  workflow_dispatch:
+jobs:
+  integridad:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Recuperar el repositorio
+        uses: actions/checkout@v4
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Comprobar interfaz, enlaces y código
+        run: node web/norma-ia/test-check.cjs
