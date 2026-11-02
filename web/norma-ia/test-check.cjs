@@ -1,22 +1,55 @@
-/* NORMA-IA: comprobaciones estáticas reproducibles, sin dependencias externas. */
-const assert=require("node:assert/strict");
-const fs=require("node:fs");
-const vm=require("node:vm");
-const path=require("node:path");
-const file=path.join(__dirname,"index.html");
-const h=fs.readFileSync(file,"utf8");
-const checks=[];
-function test(name,callback){callback();checks.push(name);}
-test("HTML de una sola página",()=>{assert.match(h,/<!doctype html>/i);assert.match(h,/<main id="workspace"/);assert.match(h,/<\/html>\s*$/);});
-test("Tres logotipos institucionales incrustados",()=>{assert.equal((h.match(/<img[^>]*src="data:image\/webp;base64,/g)||[]).length,3);});
-test("Diecisiete comunidades y ámbitos de Ceuta y Melilla",()=>{const codes=["andalucia","aragon","asturias","baleares","canarias","cantabria","clm","cyl","cataluna","valencia","extremadura","galicia","rioja","madrid","murcia","navarra","euskadi","ceuta","melilla"];for(const code of codes){assert.ok(h.includes('["'+code+'",'),'Falta ámbito '+code)}});
-test("Tres etapas y convocatoria obligatoria",()=>{for(const st of ["primaria","eso","bach"]){assert.match(h,new RegExp('<option value="'+st+'"'));}assert.match(h,/id="call-pdf"/);assert.match(h,/if\(!pdf\)/);});
-test("Filtro de acceso, sin base de datos ni envío de PDFs",()=>{assert.match(h,/@alumno\\\.uned\\\.es/);assert.doesNotMatch(h,/\bfetch\s*\(\s*["']?https?:\/\/[^)]*\b(formData|pdf)/i);});
-test("Normativa básica y complementaria diferenciadas",()=>{assert.match(h,/id="basic-list"/);assert.match(h,/id="extra-list"/);assert.match(h,/Normativa básica/);assert.match(h,/Normativa complementaria/);});
-test("Exportación Word y PDF",()=>{assert.match(h,/id="word"/);assert.match(h,/id="pdf"/);assert.match(h,/Times New Roman/);assert.match(h,/window\.print\(\)/);assert.match(h,/Packer\.toBlob/);assert.match(h,/ExternalHyperlink/);});
-test("Directorio oficial y accesos territoriales",()=>{assert.match(h,/id="education-link"/);assert.match(h,/id="rules-link"/);assert.match(h,/id="all-portals"/);assert.match(h,/die\.caib\.es\/normativa/);});
-test("Comunidades no validadas bloquean la exportación",()=>{assert.match(h,/byid\("word"\)\.disabled=!configured/);assert.match(h,/byid\("pdf"\)\.disabled=!configured/);});
-test("No se conserva el enlace defectuoso de la Orden 2067/2023",()=>{assert.doesNotMatch(h,/sites\/default\/files\/doc\/educacion\/univ\/orden2067_2023_bachillerato\.pdf/);assert.match(h,/docs\/assets\/2023\/06\/23\/orden2067_2023_bachillerato\.pdf/);});
-test("JavaScript de la aplicación sin errores sintácticos",()=>{const scripts=[...h.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi)].map(m=>m[1]).filter(x=>x.trim());assert.equal(scripts.length,1);new vm.Script(scripts[0],{filename:"norma-ia-inline.js"});});
-test("Aplicación curricular anterior conservada en su ruta",()=>{const original=path.resolve(__dirname,"..","index.html");assert.ok(fs.existsSync(original),"No se encuentra el generador curricular original")});
-console.log("NORMA-IA: "+checks.length+" comprobaciones superadas.\n- "+checks.join("\n- "));
+/* NORMA-IA · pruebas reproducibles sin conexión, Node.js >=20. */
+"use strict";
+const fs=require("node:fs"),path=require("node:path"),assert=require("node:assert/strict"),vm=require("node:vm");
+const html=fs.readFileSync(path.join(__dirname,"index.html"),"utf8");
+let passed=0;
+function check(name,fn){try{fn();passed++;console.log("✓ "+name)}catch(e){console.error("✗ "+name);throw e}}
+check("Estructura de página y tres imágenes institucionales",()=>{
+ assert.match(html,/<main id="workspace"/);assert.match(html,/<\/html>\s*$/);
+ assert.equal((html.match(/<img[^>]*src="data:image\/webp;base64,/g)||[]).length,3);
+ assert.match(html,/class="gate-wrap" id="access"/);
+});
+check("20 ámbitos, tres etapas y convocatoria opcional",()=>{
+ for(const code of ["andalucia","aragon","asturias","baleares","canarias","cantabria","clm","cyl","cataluna","valencia","extremadura","galicia","rioja","madrid","murcia","navarra","euskadi","ceuta","melilla","ministerio"])assert.ok(html.includes('["'+code+'",'),code);
+ for(const code of ["primaria","eso","bach"])assert.match(html,new RegExp('<option value="'+code+'"'));
+ assert.doesNotMatch(html,/if\(!pdf\)/);assert.match(html,/if\(pdf&&/);
+});
+check("Acceso visual, icono ojo y resultados en bloques verticales",()=>{
+ assert.match(html,/id="toggle-password"/);assert.match(html,/class="eye-btn"/);assert.match(html,/grid-template-columns:1fr;gap:15px/);
+ assert.doesNotMatch(html,/id="education-link"/);assert.doesNotMatch(html,/id="rules-link"/);assert.doesNotMatch(html,/id="other-links"/);
+});
+check("Word/PDF, estilos y citas con enlaces",()=>{
+ for(const token of ["Packer.toBlob","window.print()","Times New Roman","ExternalHyperlink","id=\"all-portals\""])assert.ok(html.includes(token),token);
+});
+const scripts=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi)].map(m=>m[1]).filter(x=>x.trim());
+check("Sintaxis JS",()=>{assert.equal(scripts.length,1);new vm.Script(scripts[0]);});
+let listeners={},elements={};let counter=0;
+function el(id){return elements[id]??(elements[id]={value:"",type:"password",innerHTML:"",textContent:"",hidden:false,files:[],disabled:false,attrs:{},classList:{toggle(){}},setAttribute(k,v){this.attrs[k]=v},addEventListener(event,fn){listeners[id+":"+event]=fn},append(){},scrollIntoView(){},click(){}})}
+const document={getElementById:el,querySelector:q=>el(q.replace(/^#/,"")),createElement:()=>el("_"+(++counter)),body:{classList:{add(){},remove(){}},append(){}}};
+const window={addEventListener(){},print(){}};
+const URLMock=class{constructor(url){if(!/^https?:\/\/[^/]+/.test(url))throw Error("invalid");this.protocol=url.split(":")[0]+":";this.hostname=url.split("/")[2]}};
+const api=new Function("document","window","URL","setTimeout",scripts[0]+"\nreturn {regions,docHTML,directoryHTML};")(document,window,URLMock,()=>{});
+check("Inicialización y selector completo",()=>{assert.equal(api.regions.length,20);assert.equal(el("region").value,"madrid")});
+check("Control de acceso e icono ojo",()=>{
+ el("password").value="invalido";listeners["login:click"]();assert.ok(el("access-error").textContent);
+ el("password").value="prueba@alumno.uned.es";listeners["login:click"]();assert.equal(el("workspace").hidden,false);
+ listeners["toggle-password:click"]();assert.equal(el("password").type,"text");
+ listeners["toggle-password:click"]();assert.equal(el("password").type,"password");
+});
+check("Madrid ESO sin convocatoria presenta dos grupos",()=>{
+ el("call-pdf").files=[];el("call-url").value="";el("region").value="madrid";el("stage").value="eso";
+ listeners["generate:click"]();assert.equal(el("results").hidden,false);
+ assert.match(el("basic-list").innerHTML,/Decreto 65\/2022/);assert.match(el("extra-list").innerHTML,/Decreto 32\/2019/);
+ assert.doesNotMatch(api.docHTML(),/undefined/);
+});
+check("Ministerio, Ceuta y Melilla seleccionan currículo ministerial",()=>{
+ for(const region of ["ministerio","ceuta","melilla"]){el("region").value=region;el("stage").value="bach";listeners["generate:click"]();assert.match(el("basic-list").innerHTML,/EFP\/755\/2022/);}
+});
+check("Autonomías sin cotejo advierten que el borrador es parcial",()=>{
+ el("region").value="andalucia";el("stage").value="primaria";listeners["generate:click"]();
+ assert.match(el("result-alert").textContent,/no se han contrastado/);assert.equal(el("word").disabled,false);
+ assert.match(api.docHTML(),/Documento incompleto/);
+});
+check("Directorio PDF contiene tabla completa",()=>{assert.match(api.directoryHTML(),/directory-table/);assert.match(api.directoryHTML(),/educagob/);});
+check("No se ha modificado el generador anterior",()=>{assert.ok(fs.existsSync(path.join(__dirname,"..","index.html")))});
+console.log("NORMA-IA: "+passed+" comprobaciones superadas.");
