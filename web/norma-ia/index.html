@@ -226,6 +226,18 @@ eso:{curriculo:[law("Decreto 77/2023","Decreto 77/2023, de 30 de mayo, de establ
 bach:{curriculo:[law("Decreto 76/2023","Decreto 76/2023, de 30 de mayo, de establecimiento del currículo de Bachillerato e implantación del mismo en la Comunidad Autónoma de Euskadi",2023,"https://www.euskadi.eus/bopv2/datos/2023/06/2302728a.pdf","BOPV núm. 109, de 9 de junio de 2023")]}
 }
 };
+
+// Organización autonómica documentada: evita citar de modo automático el RD 83/1996
+// donde existe reglamento o disposición autonómica específica para los centros.
+for(const stage of ["primaria","eso","bach"])autonomicas.canarias[stage].organizacion=[
+law("Decreto 81/2010","Decreto 81/2010, de 8 de julio, por el que se aprueba el Reglamento Orgánico de los centros docentes públicos no universitarios de la Comunidad Autónoma de Canarias",2010,"https://www.gobiernodecanarias.org/boc/2010/143/001.html","Boletín Oficial de Canarias núm. 143, de 22 de julio de 2010")];
+autonomicas.clm.primaria.organizacion=[
+law("Orden 121/2022","Orden 121/2022, de 14 de junio, de regulación de la organización y el funcionamiento de los centros públicos que imparten enseñanzas de Educación Infantil y Primaria en Castilla-La Mancha",2022,"https://educacion.castillalamancha.es/sites/default/files/normativas/2025-09/ORDEN%20121_2022%20Organizacion%20y%20funcionamiento%20CEIP%20.pdf","DOCM núm. 118, de 22 de junio de 2022")];
+for(const stage of ["eso","bach"])autonomicas.clm[stage].organizacion=[
+law("Orden 118/2022","Orden 118/2022, de 14 de junio, de regulación de la organización y el funcionamiento de los centros públicos que imparten enseñanzas de Educación Secundaria Obligatoria, Bachillerato y Formación Profesional en Castilla-La Mancha",2022,"https://educacion.castillalamancha.es/biblioteca-normativa/organizacion-y-funcionamiento-de-centros/organizacion-y-funcionamiento-de-centros/ies/orden-1182022-de-14-de-junio-organizacion-y-funcionamiento-ies","DOCM núm. 118, de 22 de junio de 2022; ficha individual")];
+autonomicas.clm.primaria.complementaria=[law("Orden 185/2022","Orden 185/2022, de 27 de septiembre, por la que se regula la evaluación en la etapa de Educación Primaria en Castilla-La Mancha",2022,"https://educacion.castillalamancha.es/sites/default/files/normativas/2025-09/ORDEN%20185-2022%20evaluaci%C3%B3n%20etapa%20Educaci%C3%B3n%20primaria.pdf","DOCM núm. 189, de 30 de septiembre de 2022")];
+autonomicas.clm.eso.complementaria=[law("Orden 186/2022","Orden 186/2022, de 27 de septiembre, por la que se regula la evaluación en la etapa de Educación Secundaria Obligatoria en Castilla-La Mancha",2022,"https://educacion.castillalamancha.es/sites/default/files/normativas/2025-09/ORDEN%20186-2022%20evaluaci%C3%B3n%20etapa%20ESO.pdf","DOCM núm. 189, de 30 de septiembre de 2022")];
+autonomicas.clm.bach.complementaria=[law("Orden 187/2022","Orden 187/2022, de 27 de septiembre, por la que se regula la evaluación en la etapa de Bachillerato en Castilla-La Mancha",2022,"https://educacion.castillalamancha.es/sites/default/files/normativas/2025-09/ORDEN%20187-2022%20evaluaci%C3%B3n%20Bachillerato.pdf","DOCM núm. 189, de 30 de septiembre de 2022")];
 const ministerio={
 primaria:law("EFP678","Orden EFP/678/2022, de 15 de julio, por la que se establece el currículo y se regula la ordenación de la Educación Primaria en el ámbito de gestión del Ministerio de Educación y Formación Profesional",2022,"https://www.boe.es/eli/es/o/2022/07/15/efp678/con","Boletín Oficial del Estado, núm. 174, de 21 de julio de 2022","estatal"),
 eso:law("EFP754","Orden EFP/754/2022, de 28 de julio, por la que se establece el currículo y se regula la ordenación de la Educación Secundaria Obligatoria en el ámbito de gestión del Ministerio de Educación y Formación Profesional",2022,"https://www.boe.es/eli/es/o/2022/07/28/efp754/con","Boletín Oficial del Estado, núm. 187, de 5 de agosto de 2022","estatal"),
@@ -237,7 +249,7 @@ let output=null;
 function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function stageName(s){return ({primaria:"Educación Primaria",eso:"Educación Secundaria Obligatoria",bach:"Bachillerato"})[s];}
 function refText(n){return n.title+". "+(n.bulletin?n.bulletin+". ":"")+n.url;}
-function renderNorm(n){return '<div class="norm"><b>'+escapeHTML(n.title.match(/^(Ley Orgánica|Real Decreto|Decreto Foral|Decreto|Orden|Ordre|Orde|Resolución|Instrucciones|Instrucción)/i)?.[0]||"Disposición normativa")+" · "+escapeHTML(n.year)+'</b><p>'+escapeHTML(n.title)+'.</p><a href="'+escapeHTML(n.url)+'" target="_blank" rel="noopener noreferrer">Consultar texto oficial de la disposición</a></div>';}
+function renderNorm(n){return '<div class="norm"><b>'+escapeHTML(n.title.match(/^(Ley Orgánica|Real Decreto|Decreto Foral|Decreto|Decret|Orden Foral|Orden|Ordre|Orde|Resolución|Instrucciones|Instrucción)/i)?.[0]||"Disposición normativa")+" · "+escapeHTML(n.year)+'</b><p>'+escapeHTML(n.title)+'.</p><a href="'+escapeHTML(n.url)+'" target="_blank" rel="noopener noreferrer">Consultar texto oficial de la disposición</a></div>';}
 function docHTML(){
  if(!output)return "";
  const show=n=>'<p class="ref">'+escapeHTML(n.title+". "+(n.bulletin?n.bulletin+". ":""))+'<a href="'+escapeHTML(n.url)+'">'+escapeHTML(n.url)+'</a></p>';
